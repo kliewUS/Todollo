@@ -1,3 +1,22 @@
 .nav-bar{
-    background-color: skyblue;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #abcdef;
+    padding: 5px;
+}
+
+.nav-btn{
+    background-color: white;
+    color: #abcdef;
+    padding: 10px;
+}
+
+.nav-btn:first-child{
+    background-color: #abcdef;    
+    color: white;
+}
+
+.nav-btn:last-child{
+    border: 1px solid transparent;
+    border-radius: 25px;    
 }

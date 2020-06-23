@@ -11,8 +11,8 @@ export default ({ currentUser, logoutUser }) => { //{} Destructing
 
     const login = () => (
         <nav className="nav-bar">
-            <Link className="nav" to="/signup">Sign Up</Link>
-            <Link className="nav" to="/login">Log In</Link>
+            <Link className="nav-btn" to="/login">Log In</Link>
+            <Link className="nav-btn" to="/signup">Sign Up</Link>
         </nav>        
     );
 
