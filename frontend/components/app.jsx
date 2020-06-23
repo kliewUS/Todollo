@@ -8,7 +8,6 @@ import { AuthRoute } from '../util/routes_util'
 const App = () => (
   <div>
     <header>
-        <h1>Todollo</h1>
         <NavBarContainer />
     </header>
 
