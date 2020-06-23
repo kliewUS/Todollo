@@ -23,10 +23,10 @@ class SessionForm extends React.Component {
     }
 
     render(){
-
         let errors_arr = this.props.errors.map((error, i) => {
-            <li key={i}>{error}</li>
+            return (<li key={i}>{error}</li>);
         });
+
 
         return (
             <div className="session-form">

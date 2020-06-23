@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default ({ currentUser, logout }) => { //{} Destructing
+export default ({ currentUser, logoutUser }) => { //{} Destructing
     const welcome = () => (
         <div>
             <h3>Hello, {currentUser.username}!</h3>
-            <button onClick={logout}>Log Out</button>
+            <button onClick={logoutUser}>Log Out</button>
         </div>        
     );
 

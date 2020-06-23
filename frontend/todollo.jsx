@@ -2,7 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Root from "./components/root";
 import configureStore from "./store/store";
-import {receiveCurrentUser, logoutCurrentUser, receiveErrors, createNewUser, login, logout} from './actions/session_actions';
+import {receiveCurrentUser, logoutCurrentUser, receiveSessionErrors, createNewUser, loginUser, logoutUser} from './actions/session_actions';
+import {signUp, login, logout} from './util/session_api_util';
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const store = configureStore();
@@ -17,8 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.receiveCurrentUser = receiveCurrentUser;
 window.logoutCurrentUser = logoutCurrentUser;
-window.receiveErrors = receiveErrors;
+window.receiveSessionErrors = receiveSessionErrors;
 
 window.createNewUser = createNewUser;
+window.loginUser = loginUser;
+window.logoutUser = logoutUser;
+
+window.signUp = signUp;
 window.login = login;
 window.logout = logout;
