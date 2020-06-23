@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom';
 
 export default ({ currentUser, logoutUser }) => { //{} Destructing
     const welcome = () => (
-        <div>
+        <nav className="nav-bar">
             <h3>Hello, {currentUser.username}!</h3>
             <button onClick={logoutUser}>Log Out</button>
-        </div>        
+        </nav>        
     );
 
     const login = () => (
-        <div>
+        <nav className="nav-bar">
             <Link className="nav" to="/signup">Sign Up</Link>
             <Link className="nav" to="/login">Log In</Link>
-        </div>        
+        </nav>        
     );
 
     return currentUser ? welcome() : login();
