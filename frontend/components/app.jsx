@@ -3,7 +3,7 @@ import NavBarContainer from "./navbar/navbar_container";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import { Route, Switch, Redirect } from "react-router-dom";
-import { AuthRoute } from '../util/route_util'
+import { AuthRoute } from '../util/routes_util'
 
 const App = () => (
   <div>
