@@ -10,6 +10,10 @@ class SessionForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentWillUnmount(){
+        this.props.clearErrors();
+    }
+
     handleInput(type){
         return (e) => {
             this.setState({[type]: e.target.value}); //[] will make variable evaluated before it's turned into a key.
@@ -23,9 +27,26 @@ class SessionForm extends React.Component {
     }
 
     render(){
-        let errors_arr = this.props.errors.map((error, i) => {
+        //Figure out a way how to clear errors messages upon switching login/signup.
+
+        let errorsArr = this.props.errors.map((error, i) => {
             return (<li key={i}>{error}</li>);
-        });
+        }); 
+
+        const demoUser = {
+            username: 'Edmund',
+            password: 'hunter12'
+        }
+
+        let demoButton = () => {
+            if (this.props.formType === 'Log In'){
+                return (
+                    <button onClick={() => this.props.processForm(demoUser)}>Demo Log In</button>
+                );
+            }else{
+                return undefined;
+            }
+        }
 
 
         return (
@@ -40,8 +61,9 @@ class SessionForm extends React.Component {
                     </label>
                     <button type="submit">{this.props.formType}</button>
                 </form>
+                {demoButton()}
                 <ul className="errors_list">
-                    {errors_arr}
+                    {errorsArr}
                 </ul>
             </div>
         )

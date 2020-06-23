@@ -2,13 +2,25 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Root from "./components/root";
 import configureStore from "./store/store";
-import {receiveCurrentUser, logoutCurrentUser, receiveSessionErrors, createNewUser, loginUser, logoutUser} from './actions/session_actions';
+import {receiveCurrentUser, logoutCurrentUser, receiveErrors, createNewUser, loginUser, logoutUser} from './actions/session_actions';
 import {signUp, login, logout} from './util/session_api_util';
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const store = configureStore();
+    // const store = configureStore();
     const root = document.getElementById('root');
+
+    let store;
+    if (window.currentUser) {
+      const preloadedState = {
+        users: { [window.currentUser.id]: window.currentUser },
+        session: { id: window.currentUser.id }
+      };
+      store = configureStore(preloadedState);
+      delete window.currentUser;
+    } else {
+      store = configureStore();
+    }    
 
     ReactDOM.render(<Root store={store}/>, root);
 
@@ -19,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.receiveCurrentUser = receiveCurrentUser;
 window.logoutCurrentUser = logoutCurrentUser;
-window.receiveSessionErrors = receiveSessionErrors;
+window.receiveErrors = receiveErrors;
 
 window.createNewUser = createNewUser;
 window.loginUser = loginUser;
