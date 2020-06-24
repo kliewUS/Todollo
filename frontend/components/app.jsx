@@ -8,19 +8,19 @@ import { AuthRoute, ProtectedRoute } from '../util/routes_util'
 import Board from "./boards/board";
 
 const App = () => (
-  <div>
+  <div className="todollo">
     {/* <header>
         <NavBarContainer />
     </header> */}
 
     <Switch>
       <AuthRoute exact path="/" component={Splash}/>
-      <AuthRoute exact={true} path="/login" component={LoginFormContainer} />
-      <AuthRoute exact={true} path="/signup" component={SignupFormContainer} />
-      <ProtectedRoute path="/boards" component={NavBarContainer} />
-      <ProtectedRoute path="/boards" component={Board} />
-      {/* <Redirect to="/" /> */}
+      <AuthRoute path="/login" component={LoginFormContainer} />
+      <AuthRoute path="/signup" component={SignupFormContainer} />
+      <ProtectedRoute path="/" component={NavBarContainer} />
+      <Redirect to="/" />
     </Switch>
+      <ProtectedRoute exact path="/boards" component={Board} />
   </div>
 );
 

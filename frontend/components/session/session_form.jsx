@@ -50,7 +50,7 @@ class SessionForm extends React.Component {
                             (null);
 
         return (
-            <div className="todollo">
+            <div className="main-session-form">
 
                 <div className="session-header">
                     <h1 id="session-logo">Todollo</h1>
