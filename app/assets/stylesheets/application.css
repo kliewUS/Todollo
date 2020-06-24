@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+button:hover{
+    background-color: gray;
+}
+
+input:focus{
+    background-color: gray;
+}

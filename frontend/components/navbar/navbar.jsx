@@ -8,7 +8,7 @@ export default ({ currentUser, logoutUser }) => { //{} Destructing
             <nav className="nav-bar-left">
                 <button className="nav-btn-2">Home</button>
                 <button className="nav-btn-2">Boards</button>
-                <input className="nav-input" type="text"/>
+                <input className="search-bar" type="text"/>
             </nav>
 
             <nav className="nav-bar-center">

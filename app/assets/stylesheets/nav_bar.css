@@ -6,11 +6,10 @@
     padding: 5px;
 }
 
-
 .nav-btn{
     background-color: whitesmoke;
     color: #abcdef;
-    padding: 10px;
+    padding: 7.5px;
 }
 
 .nav-btn:first-child{
@@ -36,11 +35,10 @@
     font-size: 30px;
 }
 
-
 .nav-btn-2{
     background-color: whitesmoke;
     color: #abcdef;
-    padding: 10px;
+    padding: 7.5px;
     border: 1px solid transparent;
     border-radius: 7.5px;
     margin: auto 2px;        
@@ -49,10 +47,17 @@
 .logout-btn{
     background-color: whitesmoke;
     font-size: 15px;
-    padding: 10px;
+    padding: 7.5px;
     border-radius: 50%;
     margin: auto 2px;
     height: 17.5px;
     width: 17.5px;
     text-align: center;  
+}
+
+.search-bar{
+    background-color: whitesmoke;
+    margin: auto 2px;
+    border-radius: 7.5px;
+    padding: 7.5px;  
 }
