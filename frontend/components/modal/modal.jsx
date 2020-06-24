@@ -6,6 +6,7 @@ import NotificationsMenu from '../navbar/notifications_menu';
 import InformationMenu from '../navbar/information_menu';
 import BoardCreateMenu from '../navbar/board_create_menu';
 import BoardNavMenu from '../navbar/board_nav_menu';
+// import AccountMenu from '../navbar/account_menu';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
