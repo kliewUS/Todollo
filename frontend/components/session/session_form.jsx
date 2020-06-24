@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class SessionForm extends React.Component {
     constructor(props){
@@ -33,24 +34,20 @@ class SessionForm extends React.Component {
             password: 'hunter12'
         }
 
-        let demoButton = () => {
-            if (this.props.formType === 'Log In'){
-                return (
-                    <button className="session-btn" onClick={() => this.props.processForm(demoUser)}>Demo Log In</button>
-                );
-            }else{
-                return undefined;
-            }
-        }
+        let accountHeader = this.props.formType === 'Log In' ? ('Log in to Todollo') : ('Sign up for your account');                            
 
-        let accountHeader = this.props.formType === 'Log In' ? ('Log in to Todollo') : ('Sign up for your account');
+        let demoButton = this.props.formType === 'Log In' ?
+                            (<button className="session-btn" onClick={() => this.props.processForm(demoUser)}>Demo Log In</button>) :
+                            (null);
 
-        let switchFormLink = this.props.formType === 'Log In' ? ('Sign up for an account') : ('Already have an account? Log In');
+        let switchFormLink = this.props.formType === 'Log In' ? 
+                            (<Link to='/signup'>Sign up for an account</Link>) : 
+                            (<Link to='/login'>Already have an account? Log In</Link>);
 
-        let errorsArr = this.props.errors.map((error, i) => {
-            return (<li key={i}>{error}</li>);
-        });         
 
+        const sessionError = this.props.errors[0] ? 
+                            (<h1 className="errors-list">{this.props.errors[0]}</h1>) :
+                            (null);
 
         return (
             <div className="todollo">
@@ -61,15 +58,15 @@ class SessionForm extends React.Component {
 
                 <div className="session-form">
                     <h1 className="account-header">{accountHeader}</h1>
+
+                    {sessionError}
+
                     <form className="account-form" onSubmit={this.handleSubmit}>
                             <input id="username-input" type="text" placeholder="Enter username" value={this.state.username} onChange={this.handleInput('username')}/>
                             <input id="password-input" type="password" placeholder="Enter password" value={this.state.password} onChange={this.handleInput('password')}/>
                             <button className="session-btn" type="submit">{this.props.formType}</button>
                     </form>
-                    {demoButton()}
-                    <ul className="errors_list">
-                        {errorsArr}
-                    </ul>
+                    {demoButton}
                     <hr/>
                     <p>{switchFormLink}</p>
                 </div>
