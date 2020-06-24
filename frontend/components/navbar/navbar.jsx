@@ -1,43 +1,91 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default ({ currentUser, logoutUser }) => { //{} Destructing
-    const navBar = () => (
-        <nav className="nav-bar">
 
-            <nav className="nav-bar-left">
-                <button className="nav-btn-2">Home</button>
-                <button className="nav-btn-2">Boards</button>
-                <input className="search-bar" type="text"/>
-            </nav>
+class NavBar extends React.Component{
+    constructor(props){
+        super(props);
+        // this.showModal = this.showModal.bind(this);
+    }
 
-            <nav className="nav-bar-center">
-                <h1 className="logo">Todollo</h1>            
-            </nav>
 
-            <nav className="nav-bar-right">
-                <button className="nav-btn-2">Create New Board</button>
-                <button className="nav-btn-2">Information</button>
-                <button className="nav-btn-2">Notifications</button>
-                <button className="logout-btn" onClick={logoutUser}>{currentUser.username.substring(0, 1)}</button>
-            </nav>
+    componentDidMount(){ //Any existing modal should close when visiting a new page.
+        this.props.closeModal();
+    }
 
-        </nav>        
-    );
+    componentWillUnmount(){ //Should also close modal when leaving a page.
+        this.props.closeModal();
+    }
 
-    return navBar();
+    showModal(field){
+        // debugger;
+        if(this.props.modal === field){
+            return () => this.props.closeModal();
+        }else{
+            return () => this.props.openModal(field);
+        }
+    }
 
-    // const login = () => (
-    //   <nav className="nav-bar">
-    //     <nav className="nav-bar-left">
-    //         <h1 className="logo">Todollo</h1>
-    //     </nav>
-    //     <nav className="nav-bar-right">
-    //         <Link className="nav-btn" to="/login">Log In</Link>
-    //         <Link className="nav-btn" to="/signup">Sign Up</Link>
-    //     </nav>        
-    //   </nav>  
-    // );
+    //Click on user avatar button.
+    //Modal should show up. 
+    
+    
+    render(){
+        const {currentUser} = this.props;
 
-    // return currentUser ? navBar() : login();
-};
+        return (
+            <nav className="nav-bar">
+
+                <nav className="nav-bar-left">
+                    <button className="nav-btn-2">Home</button>
+                    <button className="nav-btn-2">Boards</button>
+                    <input className="search-bar" type="text"/>
+                </nav>
+
+                <nav className="nav-bar-center">
+                    <h1 className="logo">Todollo</h1>            
+                </nav>
+
+                <nav className="nav-bar-right">
+                    <button className="nav-btn-2">Create New Board</button>
+                    <button className="nav-btn-2" onClick={this.showModal('information-menu')}>Information</button>
+                    <button className="nav-btn-2" onClick={this.showModal('notification-menu')}>Notifications</button>
+                    {/* <button className="logout-btn" onClick={logoutUser}>{currentUser.username.substring(0, 1)}</button> */}
+                    <button className="logout-btn" onClick={this.showModal('account-menu')}>{currentUser.username.substring(0, 1)}</button>
+                </nav>
+
+            </nav>   
+        );
+    }
+}
+
+export default NavBar;
+
+
+//May need to refactor this component.
+// export default ({ currentUser, logoutUser }) => { //{} Destructing
+//     const navBar = () => (
+//         <nav className="nav-bar">
+
+//             <nav className="nav-bar-left">
+//                 <button className="nav-btn-2">Home</button>
+//                 <button className="nav-btn-2">Boards</button>
+//                 <input className="search-bar" type="text"/>
+//             </nav>
+
+//             <nav className="nav-bar-center">
+//                 <h1 className="logo">Todollo</h1>            
+//             </nav>
+
+//             <nav className="nav-bar-right">
+//                 <button className="nav-btn-2">Create New Board</button>
+//                 <button className="nav-btn-2">Information</button>
+//                 <button className="nav-btn-2">Notifications</button>
+//                 <button className="logout-btn" onClick={logoutUser}>{currentUser.username.substring(0, 1)}</button>
+//             </nav>
+
+//         </nav>        
+//     );
+
+//     return navBar();
+// };
