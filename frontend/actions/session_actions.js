@@ -19,13 +19,11 @@ export const receiveErrors = errors => ({
 });
 
 export const createNewUser = formUser => dispatch => {
-    // debugger;
     return SessionUtil.signUp(formUser)
         .then(user => dispatch(receiveCurrentUser(user)), 
         err => dispatch(receiveErrors(err.responseJSON)) );
 }
 export const loginUser = formUser => dispatch => {
-    // debugger;
     return SessionUtil.login(formUser)
         .then(user => dispatch(receiveCurrentUser(user)), 
         err => dispatch(receiveErrors(err.responseJSON)) );

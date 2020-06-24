@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 class NavBar extends React.Component{
     constructor(props){
         super(props);
-        // this.showModal = this.showModal.bind(this);
     }
 
 
@@ -18,7 +17,6 @@ class NavBar extends React.Component{
     }
 
     showModal(field){
-        // debugger;
         if(this.props.modal === field){
             return () => this.props.closeModal();
         }else{
@@ -26,10 +24,6 @@ class NavBar extends React.Component{
         }
     }
 
-    //Click on user avatar button.
-    //Modal should show up. 
-    
-    
     render(){
         const {currentUser} = this.props;
 
