@@ -38,7 +38,7 @@ class NavBar extends React.Component{
 
                 <nav className="nav-bar-left">
                     <button className="nav-btn-2">Home</button>
-                    <button className="nav-btn-2">Boards</button>
+                    <button className="nav-btn-2" onClick={this.showModal('board-nav-menu')}>Boards</button>
                     <input className="search-bar" type="text"/>
                 </nav>
 
@@ -47,10 +47,9 @@ class NavBar extends React.Component{
                 </nav>
 
                 <nav className="nav-bar-right">
-                    <button className="nav-btn-2">Create New Board</button>
+                    <button className="nav-btn-2" onClick={this.showModal('board-create-menu')}>Create New Board</button>
                     <button className="nav-btn-2" onClick={this.showModal('information-menu')}>Information</button>
                     <button className="nav-btn-2" onClick={this.showModal('notification-menu')}>Notifications</button>
-                    {/* <button className="logout-btn" onClick={logoutUser}>{currentUser.username.substring(0, 1)}</button> */}
                     <button className="logout-btn" onClick={this.showModal('account-menu')}>{currentUser.username.substring(0, 1)}</button>
                 </nav>
 

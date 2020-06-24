@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import AccountMenuContainer from '../navbar/account_menu_container';
 import NotificationsMenu from '../navbar/notifications_menu';
 import InformationMenu from '../navbar/information_menu';
+import BoardCreateMenu from '../navbar/board_create_menu';
+import BoardNavMenu from '../navbar/board_nav_menu';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -21,12 +23,12 @@ function Modal({modal, closeModal}) {
     case 'information-menu':
         component = <InformationMenu />;
         break;
-    // case 'board-nav-menu':
-    //     component = 'create-board';
-    //     break;      
-    // case 'board-create-menu':
-    //     component = 'create-board';
-    //     break;      
+    case 'board-create-menu':
+        component = <BoardCreateMenu />;
+        break;      
+    case 'board-nav-menu':
+        component = <BoardNavMenu />;
+        break;      
     default:
       return null;
   }
