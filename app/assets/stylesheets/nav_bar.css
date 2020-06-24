@@ -8,27 +8,51 @@
 
 
 .nav-btn{
-    background-color: white;
+    background-color: whitesmoke;
     color: #abcdef;
     padding: 10px;
 }
 
 .nav-btn:first-child{
     background-color: #abcdef;    
-    color: white;
+    color: whitesmoke;
 }
 
 .nav-btn:last-child{
     border: 1px solid transparent;
-    border-radius: 25px;    
+    border-radius: 7.5px;    
 }
 
 .nav-bar-left{
     display: flex;
-    /* justify-content: flex-end; */
+    margin: auto 2px;
+}
+
+.nav-bar-right{
+    margin: auto 2px;  
 }
 
 .logo{
-    font-size: 50px;
+    font-size: 30px;
 }
 
+
+.nav-btn-2{
+    background-color: whitesmoke;
+    color: #abcdef;
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 7.5px;
+    margin: auto 2px;        
+}
+
+.logout-btn{
+    background-color: whitesmoke;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 50%;
+    margin: auto 2px;
+    height: 17.5px;
+    width: 17.5px;
+    text-align: center;  
+}

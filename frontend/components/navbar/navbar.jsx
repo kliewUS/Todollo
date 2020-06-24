@@ -2,10 +2,26 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default ({ currentUser, logoutUser }) => { //{} Destructing
-    const welcome = () => (
+    const navBar = () => (
         <nav className="nav-bar">
-            <h3>{currentUser.username}</h3>
-            <button onClick={logoutUser}>Log Out</button>
+
+            <nav className="nav-bar-left">
+                <button className="nav-btn-2">Home</button>
+                <button className="nav-btn-2">Boards</button>
+                <input className="nav-input" type="text"/>
+            </nav>
+
+            <nav className="nav-bar-center">
+                <h1 className="logo">Todollo</h1>            
+            </nav>
+
+            <nav className="nav-bar-right">
+                <button className="nav-btn-2">Create New Board</button>
+                <button className="nav-btn-2">Information</button>
+                <button className="nav-btn-2">Notifications</button>
+                <button className="logout-btn" onClick={logoutUser}>{currentUser.username.substring(0, 1)}</button>
+            </nav>
+
         </nav>        
     );
 
@@ -21,5 +37,5 @@ export default ({ currentUser, logoutUser }) => { //{} Destructing
       </nav>  
     );
 
-    return currentUser ? welcome() : login();
+    return currentUser ? navBar() : login();
 };
