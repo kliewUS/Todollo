@@ -2,18 +2,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #abcdef;
+    background-color: #519839;
     padding: 5px;
 }
 
 .nav-btn{
     background-color: whitesmoke;
-    color: #abcdef;
+    color: #519839;
     padding: 7.5px;
 }
 
 .nav-btn:first-child{
-    background-color: #abcdef;    
+    background-color: #519839;    
     color: whitesmoke;
 }
 
@@ -33,11 +33,16 @@
 
 .logo{
     font-size: 30px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.logo:hover{
+    color: rgba(255, 255, 255, 0.3);
 }
 
 .nav-btn-2{
-    background-color: whitesmoke;
-    color: #abcdef;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: whitesmoke;
     padding: 7.5px;
     border: 1px solid transparent;
     border-radius: 7.5px;
@@ -47,16 +52,21 @@
 .logout-btn{
     background-color: whitesmoke;
     font-size: 15px;
+    font-weight: 600;
     padding: 7.5px;
     border-radius: 50%;
     margin: auto 2px;
-    height: 17.5px;
-    width: 17.5px;
+    height: 20px;
+    width: 20px;
     text-align: center;  
 }
 
-.search-bar{
+.logout-btn:hover{
     background-color: whitesmoke;
+}
+
+.search-bar{
+    background-color: rgba(255, 255, 255, 0.4);
     margin: auto 2px;
     border-radius: 7.5px;
     padding: 7.5px;  

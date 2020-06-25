@@ -37,7 +37,7 @@ class NavBar extends React.Component{
                 </nav>
 
                 <nav className="nav-bar-center">
-                    <h1 className="logo">Todollo</h1>            
+                    <Link to='/boards' className="logo">Todollo</Link>
                 </nav>
 
                 <nav className="nav-bar-right">

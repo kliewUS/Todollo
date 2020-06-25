@@ -14,12 +14,21 @@
  *= require_self
  */
 
+ html, body, header, nav, h1, a,
+ ul, li, strong, main, button, i,
+ section, img, div, h2, p, form,
+ fieldset, label, input, textarea,
+ span, article, footer, time, small, h3 {
+    font-family: 'Patrick Hand', cursive;
+}
+
+
 button:hover{
-    background-color: gray;
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 input:focus{
-    background-color: gray;
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 .modal-background {
@@ -84,7 +93,7 @@ input:focus{
     width: 90%;
 }
 
-.account-logout-btn{
+.account-logout-btn:hover{
     background-color: transparent;
 }
 

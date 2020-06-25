@@ -5,7 +5,7 @@ const LoginBar = () => {
     return (
         <nav className="nav-bar">
         <nav className="nav-bar-left">
-            <h1 className="logo">Todollo</h1>
+            <Link to='/' className="logo">Todollo</Link>
         </nav>
         <nav className="nav-bar-right">
             <Link className="nav-btn" to="/login">Log In</Link>
