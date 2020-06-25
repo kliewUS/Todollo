@@ -18,7 +18,7 @@ class AccountMenu extends React.Component{
                 
                 <div id="current-user">
                     <span id="profile-name">{username}</span>
-                    <span onClick={closeModal} className="close-btn">close</span>
+                    <span onClick={closeModal} className="material-icons close-btn">clear</span>
                 </div>
 
                 <ul id="account-menu-options">

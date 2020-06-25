@@ -5,7 +5,7 @@ const NotificationsMenu = (props) => {
         <div className="notice-menu">
             <div className="notice-header">
                 <p className="notice-header-text">Notifications</p>
-                <span onClick={() => props.closeModal()} className="notice-close-btn">close</span> 
+                <span onClick={() => props.closeModal()} className="material-icons notice-close-btn">clear</span> 
             </div>
 
             <hr className='menu-line'/>

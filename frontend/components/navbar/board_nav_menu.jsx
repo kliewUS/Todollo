@@ -5,7 +5,7 @@ const BoardNavMenu = (props) => {
         <div className="board-nav">
             <div className='board-nav-header'>
                 <h3 id="board-nav-header">PERSONAL BOARDS</h3>
-                <span onClick={() => props.closeModal()} className="board-nav-close-btn">close</span> 
+                <span onClick={() => props.closeModal()} className="material-icons board-nav-close-btn ">clear</span> 
             </div>
             <hr className='menu-line'/>
             <ul className="board-nav-content">

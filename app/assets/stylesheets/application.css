@@ -92,7 +92,7 @@ input:focus{
     justify-content: center;
 }
 
-.close-btn{
+.material-icons.close-btn{
     position: absolute;
     right: 6px;
     cursor: pointer;
@@ -142,7 +142,7 @@ input:focus{
     color: darkgray;    
 }
 
-.notice-close-btn{
+.material-icons.notice-close-btn{
     position: absolute;
     top: 8px;
     right: 6px;
@@ -173,7 +173,7 @@ input:focus{
     padding: 5px 0;     
 }
 
-.info-close-btn{
+.material-icons.info-close-btn{
     position: absolute;
     top: 5px;
     right: 6px;
@@ -234,7 +234,7 @@ input:focus{
     letter-spacing: 0.07em;
 }
 
-.board-nav-close-btn{
+.material-icons.board-nav-close-btn{
     position: absolute;
     top: 5px;
     right: 6px;
@@ -253,7 +253,7 @@ input:focus{
     padding: 10px 0;
 }
 
-.board-create-close-btn{
+.material-icons.board-create-close-btn{
     position: absolute;
     top: 20px;
     right: 6px;

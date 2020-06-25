@@ -7,7 +7,7 @@ const BoardCreateMenu = (props) => {
 
                 <div className="board-create-main-form">
                     <input className="board-title-input" type="text" placeholder="Add board title"/>
-                    <span onClick={() => props.closeModal()} className="board-create-close-btn">close</span>                 
+                    <span onClick={() => props.closeModal()} className="material-icons board-create-close-btn">clear</span>                 
                     <select id="visibility">
                         <option value="public">Public</option>
                         <option value="private">Private</option>
