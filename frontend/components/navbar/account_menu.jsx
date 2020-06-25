@@ -23,8 +23,8 @@ class AccountMenu extends React.Component{
                 <ul id="account-menu-options">
                     <hr className='menu-line'/>
                     <li>Profile</li>
-                    <li>Github</li>
-                    <li>LinkedIn</li>
+                    <li>Settings</li>
+                    <li>About</li>
                     <hr className='menu-line'/>
                     <li onClick={logoutUser}>Logout</li>
                 </ul>
