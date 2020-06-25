@@ -22,6 +22,31 @@
     font-family: 'Patrick Hand', cursive;
 }
 
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
 
 button:hover{
     background-color: rgba(255, 255, 255, 0.3);
@@ -79,7 +104,7 @@ input:focus{
 }
 
 #account-menu-options li:hover{
-    background-color: darkgray;
+    background-color: rgba(169,169,169, 0.3);
 }
 
 #profile-name{
@@ -140,16 +165,17 @@ input:focus{
 }
 
 .info-header-content{
-    padding: 20px 0;      
+    padding: 5px 0;
+    color: darkgray;      
 }
 
 .info-content{
-    padding: 2% 0;     
+    padding: 5px 0;     
 }
 
 .info-close-btn{
     position: absolute;
-    top: 20px;
+    top: 5px;
     right: 6px;
     cursor: pointer;
 }
@@ -176,7 +202,7 @@ input:focus{
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;    
-    background-color: whitesmoke;
+    background-color: #519839;
     min-width: 300px;
     min-height: 150px;
     border-radius: 4px;
@@ -196,7 +222,7 @@ input:focus{
 }
 
 .board-nav-content li:hover{
-    background-color: darkgray;  
+    background-color: rgba(169,169,169, 0.3);  
 }
 
 .board-nav-header{
@@ -235,15 +261,19 @@ input:focus{
 }
 
 #new-board-btn{
-    background-color: gray;
-    color: #abcdef;
+    background-color: #519839;
+    color: whitesmoke;
     border-radius: 7.5px;     
     padding: 7.5px;
     margin: 15px 0;
 }
 
+#new-board-btn:hover{
+    background-color: rgba(81, 152, 57,0.8);
+}
+
 .board-title-input{
-    background-color: gray;
+    background-color: rgba(255, 255, 255, 0.4);
     margin: auto 2px;
     border-radius: 7.5px;
     padding: 5px;

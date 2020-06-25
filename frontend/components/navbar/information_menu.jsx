@@ -4,7 +4,7 @@ const InformationMenu = (props) => {
     return (
         <div className="info-menu">
             <div className='info-header'>
-                <p className="info-header-content">Information is displayed here!</p>
+                <p className="info-header-content">Information</p>
                 <span onClick={() => props.closeModal()} className="info-close-btn">close</span>                
             </div>
             <div className='info-content'>
