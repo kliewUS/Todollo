@@ -26,7 +26,7 @@ class AccountMenu extends React.Component{
                     <li>Github</li>
                     <li>LinkedIn</li>
                     <hr className='menu-line'/>
-                    <li><button className="account-logout-btn" onClick={logoutUser}>Logout</button></li>
+                    <li onClick={logoutUser}>Logout</li>
                 </ul>
             </div>
         );

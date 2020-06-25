@@ -1,0 +1,26 @@
+.info-menu{
+    position: absolute;
+    background-color: whitesmoke;
+    min-width: 300px;
+    min-height: 100px; 
+    right: 3px;
+    top: 48px;    
+    border-radius: 4px;
+    box-shadow: 0 0 1px; 
+}
+
+.info-header-content{
+    padding: 5px 0;
+    color: darkgray;      
+}
+
+.info-content{
+    padding: 5px 0;     
+}
+
+.material-icons.info-close-btn{
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    cursor: pointer;
+}

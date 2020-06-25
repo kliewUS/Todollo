@@ -1,0 +1,44 @@
+.board-nav{
+    position: absolute;
+    background-color: whitesmoke;
+    min-width: 300px;
+    min-height: 300px; 
+    left: 3px;
+    top: 48px;    
+    border-radius: 4px;
+    box-shadow: 0 0 1px;    
+}
+
+
+#create-board-btn{
+    text-decoration: underline;      
+}
+
+.board-nav-content li{
+    cursor: pointer;
+}
+
+.board-nav-content li:hover{
+    background-color: rgba(169,169,169, 0.3);  
+}
+
+.board-nav-header{
+    padding: 5px 0;
+}
+
+#board-nav-header{
+    color: darkgray;
+    letter-spacing: 0.07em;
+}
+
+.material-icons.board-nav-close-btn{
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    cursor: pointer;   
+}
+
+.board-nav-content li{
+    font-size: 14px;
+    padding: 15px 15px;
+}

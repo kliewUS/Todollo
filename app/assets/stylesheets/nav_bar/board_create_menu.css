@@ -1,0 +1,59 @@
+.board-create-content{
+    position: absolute;
+    left: 50%;
+    transform: translate(-60%, 10%);    
+}
+
+.board-create-main-form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;    
+    background-color: #519839;
+    min-width: 300px;
+    min-height: 150px;
+    border-radius: 4px;
+    box-shadow: 0 0 1px;
+    padding: 0 10px;             
+}
+
+.board-create-btn{
+    position: absolute;
+    left: 0;
+    top: 165px;
+}
+
+.board-create-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.material-icons.board-create-close-btn{
+    position: absolute;
+    top: 20px;
+    right: 6px;
+    cursor: pointer;   
+}
+
+#new-board-btn{
+    background-color: #519839;
+    color: whitesmoke;
+    border-radius: 7.5px;     
+    padding: 7.5px;
+    margin: 15px 0;
+}
+
+#new-board-btn:hover{
+    background-color: rgba(81, 152, 57,0.8);
+}
+
+.board-title-input{
+    background-color: rgba(255, 255, 255, 0.4);
+    margin: auto 2px;
+    border-radius: 7.5px;
+    padding: 5px;
+    margin: 15px 0;
+    text-align: left; 
+}

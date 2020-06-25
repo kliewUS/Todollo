@@ -1,0 +1,30 @@
+.notice-menu{
+    position: absolute;
+    background-color: whitesmoke;
+    min-width: 400px;
+    min-height: 400px; 
+    right: 3px;
+    top: 48px;    
+    border-radius: 4px;
+    box-shadow: 0 0 1px;
+    text-align: center;       
+}
+
+.notice-header{
+    padding: 2% 0;
+}
+
+.notice-header-text{
+    color: darkgray;    
+}
+
+.material-icons.notice-close-btn{
+    position: absolute;
+    top: 8px;
+    right: 6px;
+    cursor: pointer;
+}
+
+.notice-comments{
+    padding: 35% 0;
+}

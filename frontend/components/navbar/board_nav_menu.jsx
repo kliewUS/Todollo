@@ -29,7 +29,7 @@ class BoardNavMenu extends React.Component{
                     <li>Board 3</li>
                     <li>Board 4</li>
                     <li>Board 5</li>
-                    <li><button id="create-board-btn" onClick={this.showModal('board-create-menu')}>Create New Board...</button></li>
+                    <li id="create-board-btn" onClick={this.showModal('board-create-menu')}>Create New Board...</li>
                 </ul>
             </div>
         );
