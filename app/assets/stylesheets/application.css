@@ -30,15 +30,97 @@ input:focus{
     left: 0;
     background: rgba(0, 0, 0, 0.7);
     z-index: 10;
+    text-align: center;
 }
   
 .modal-child {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: inline-block;
 }
 
 .modal-background.none{
     background: rgba(0, 0, 0, 0);
+}
+
+#account-menu-options{
+    position: absolute;
+    background-color: whitesmoke;
+    min-width: 300px;
+    right: 3px;
+    top: 48px;
+    padding: 5px 0;
+    border-radius: 4px;
+    box-shadow: 0 0 1px;
+    text-align: left;
+}
+
+#account-menu-options li{
+    padding: 8px;
+}
+
+#account-menu-options li:hover{
+    background-color: darkgray;
+}
+
+#profile-name{
+    color: darkgray;
+    font-size: 16px;
+    text-align: center;
+}
+
+.account-menu-line{
+    border: 1px solid lightgray;
+    width: 90%;
+}
+
+.account-logout-btn{
+    background-color: none;
+}
+
+.notice-menu{
+    position: absolute;
+    background-color: whitesmoke;
+    min-width: 400px;
+    min-height: 400px; 
+    right: 3px;
+    top: 48px;    
+    border-radius: 4px;
+    box-shadow: 0 0 1px;       
+}
+
+.notice-comments{
+    text-align: center;
+    padding: 45% 0;
+}
+
+.info-menu{
+    position: absolute;
+    background-color: whitesmoke;
+    min-width: 300px;
+    min-height: 300px; 
+    right: 3px;
+    top: 48px;    
+    border-radius: 4px;
+    box-shadow: 0 0 1px;       
+}
+
+.board-nav-content{
+    position: absolute;
+    background-color: whitesmoke;
+    min-width: 300px;
+    min-height: 300px; 
+    left: 3px;
+    top: 48px;    
+    border-radius: 4px;
+    box-shadow: 0 0 1px;    
+}
+
+.board-create-content{
+    position: absolute;
+    background-color: whitesmoke;
+    min-width: 300px;
+    min-height: 300px; 
+    left: 50%;
+    transform: translate(-60%, 10%);    
+    border-radius: 4px;
+    box-shadow: 0 0 1px;    
 }
