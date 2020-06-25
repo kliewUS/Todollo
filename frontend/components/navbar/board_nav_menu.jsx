@@ -15,7 +15,6 @@ class BoardNavMenu extends React.Component{
     }    
     
     render(){
-        debugger;
 
         return (
             <div className="board-nav">

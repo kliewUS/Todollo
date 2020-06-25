@@ -6,7 +6,6 @@ class AccountMenu extends React.Component{
     }
 
     render(){ 
-        // debugger
         const {currentUser, logoutUser, closeModal} = this.props;
         let username;
         if(currentUser){

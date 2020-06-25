@@ -10,15 +10,11 @@ import Board from "./boards/board";
 
 const App = () => (
   <div className="todollo">
-    {/* <header>
-        <NavBarContainer />
-    </header> */}
-
     <Switch>
       <AuthRoute exact path="/" component={Splash}/>
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
-      <ProtectedRoute path="/boards" component={NavBarContainer} />
+      <ProtectedRoute path="/" component={NavBarContainer} />
       <Redirect to="/" />
     </Switch>
       <Modal />

@@ -14,7 +14,6 @@ function Modal({modal, closeModal}) {
 
   let component;
   let background = 'transparent';
-  // debugger;
   switch (modal) {
     case 'account-menu':
         component = <AccountMenuContainer closeModal={closeModal} />;
