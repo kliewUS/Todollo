@@ -4,7 +4,7 @@ class Board extends React.Component{
     render(){
         return(
             <div>
-                <h1>Placeholder text</h1>
+                {/* <h1>Placeholder text</h1> */}
             </div>
         );
     }
