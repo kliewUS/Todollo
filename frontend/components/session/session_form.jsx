@@ -57,9 +57,9 @@ class SessionForm extends React.Component {
                 </div>
 
                 <div className="session-form">
-                    <h1 className="account-header">{accountHeader}</h1>
-
                     {sessionError}
+
+                    <h1 className="account-header">{accountHeader}</h1>
 
                     <form className="account-form" onSubmit={this.handleSubmit}>
                             <input id="username-input" type="text" placeholder="Enter username" value={this.state.username} onChange={this.handleInput('username')}/>
