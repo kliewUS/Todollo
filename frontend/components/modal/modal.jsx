@@ -5,7 +5,7 @@ import AccountMenuContainer from '../navbar/account_menu_container';
 import NotificationsMenu from '../navbar/notifications_menu';
 import InformationMenu from '../navbar/information_menu';
 import BoardCreateMenu from '../navbar/board_create_menu';
-import BoardNavMenu from '../navbar/board_nav_menu';
+import BoardNavMenuContainer from '../navbar/board_nav_menu_container';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -14,7 +14,7 @@ function Modal({modal, closeModal}) {
 
   let component;
   let background = 'transparent';
-
+  // debugger;
   switch (modal) {
     case 'account-menu':
         component = <AccountMenuContainer closeModal={closeModal} />;
@@ -32,7 +32,7 @@ function Modal({modal, closeModal}) {
         component = <BoardCreateMenu closeModal={closeModal} />;
         break;      
     case 'board-nav-menu':
-        component = <BoardNavMenu closeModal={closeModal} />;
+        component = <BoardNavMenuContainer closeModal={closeModal} />;
         background = 'none';        
         break;      
     default:
