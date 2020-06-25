@@ -32,7 +32,11 @@ class NavBar extends React.Component{
                 <nav className="nav-bar-left">
                     <Link to='/boards'><button className="nav-btn-2"><span className="material-icons nav-icons">home</span></button></Link>
                     <button className="nav-btn-2" onClick={this.showModal('board-nav-menu')}><span className="material-icons nav-icons">assignment</span> Boards</button>
-                    <input className="search-bar" type="text"/>
+
+                    <div className="search-content">
+                        <input className="search-bar" type="text"/>
+                        <span className="material-icons search-icon">search</span>
+                    </div>
                 </nav>
 
                 <nav className="nav-bar-center">

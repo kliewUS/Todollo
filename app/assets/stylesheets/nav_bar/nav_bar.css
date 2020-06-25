@@ -7,22 +7,6 @@
     margin-top: -1px;
 }
 
-.nav-btn{
-    background-color: whitesmoke;
-    color: #519839;
-    padding: 7.5px;
-}
-
-.nav-btn:first-child{
-    background-color: #519839;    
-    color: whitesmoke;
-}
-
-.nav-btn:last-child{
-    border: 1px solid transparent;
-    border-radius: 7.5px;    
-}
-
 .nav-bar-left{
     display: flex;
     margin: auto 2px;
@@ -68,6 +52,10 @@
     background-color: whitesmoke;
 }
 
+.search-content{
+    position: relative;
+}
+
 .search-bar{
     background-color: rgba(255, 255, 255, 0.4);
     margin: auto 2px;
@@ -78,3 +66,11 @@
 .material-icons.nav-icons{
     font-size: 22px;
 }
+
+.material-icons.search-icon{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    color: white;
+}
+
