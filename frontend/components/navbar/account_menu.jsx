@@ -15,11 +15,11 @@ class AccountMenu extends React.Component{
         return (
                 <ul id="account-menu-options">
                     <li id="profile-name">{username}</li>
-                    <hr className='account-menu-line'/>
+                    <hr className='menu-line'/>
                     <li>Profile</li>
                     <li>Github</li>
                     <li>LinkedIn</li>
-                    <hr className='account-menu-line'/>
+                    <hr className='menu-line'/>
                     <li><button className="account-logout-btn" onClick={logoutUser}>Logout</button></li>
                 </ul>
         );
