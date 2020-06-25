@@ -1,9 +1,13 @@
 import React from 'react';
 
-const BoardNavMenu = () => {
+const BoardNavMenu = (props) => {
     return (
         <div className="board-nav">
-            <h3 id="board-nav-header">PERSONAL BOARDS</h3>
+            <div className='board-nav-header'>
+                <h3 id="board-nav-header">PERSONAL BOARDS</h3>
+                <span onClick={() => props.closeModal()} className="board-nav-close-btn">close</span> 
+            </div>
+            <hr className='menu-line'/>
             <ul className="board-nav-content">
                 <li>Board 1</li>
                 <li>Board 2</li>

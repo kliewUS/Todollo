@@ -1,9 +1,13 @@
 import React from 'react';
 
-const NotificationsMenu = () => {
+const NotificationsMenu = (props) => {
     return (
         <div className="notice-menu">
-            <p className="notice-header">Notifications</p>
+            <div className="notice-header">
+                <p className="notice-header-text">Notifications</p>
+                <span onClick={() => props.closeModal()} className="notice-close-btn">close</span> 
+            </div>
+
             <hr className='menu-line'/>
             <p className="notice-comments">Notifications are found here!</p>
         </div>

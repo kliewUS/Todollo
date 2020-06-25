@@ -17,22 +17,22 @@ function Modal({modal, closeModal}) {
 
   switch (modal) {
     case 'account-menu':
-        component = <AccountMenuContainer />;
+        component = <AccountMenuContainer closeModal={closeModal} />;
         background = 'none';
         break;      
     case 'notification-menu':
-        component = <NotificationsMenu />;
+        component = <NotificationsMenu closeModal={closeModal} />;
         background = 'none';        
         break;      
     case 'information-menu':
-        component = <InformationMenu />;
+        component = <InformationMenu closeModal={closeModal} />;
         background = 'none';        
         break;
     case 'board-create-menu':
-        component = <BoardCreateMenu />;
+        component = <BoardCreateMenu closeModal={closeModal} />;
         break;      
     case 'board-nav-menu':
-        component = <BoardNavMenu />;
+        component = <BoardNavMenu closeModal={closeModal} />;
         background = 'none';        
         break;      
     default:

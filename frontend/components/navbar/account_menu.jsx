@@ -6,15 +6,22 @@ class AccountMenu extends React.Component{
     }
 
     render(){ 
-        const {currentUser, logoutUser} = this.props;
+        // debugger
+        const {currentUser, logoutUser, closeModal} = this.props;
         let username;
         if(currentUser){
             username = currentUser.username;
         }
 
         return (
+            <div className="account-menu-content">
+                
+                <div id="current-user">
+                    <span id="profile-name">{username}</span>
+                    <span onClick={closeModal} className="close-btn">close</span>
+                </div>
+
                 <ul id="account-menu-options">
-                    <li id="profile-name">{username}</li>
                     <hr className='menu-line'/>
                     <li>Profile</li>
                     <li>Github</li>
@@ -22,6 +29,7 @@ class AccountMenu extends React.Component{
                     <hr className='menu-line'/>
                     <li><button className="account-logout-btn" onClick={logoutUser}>Logout</button></li>
                 </ul>
+            </div>
         );
     }
 }

@@ -1,13 +1,18 @@
 import React from 'react';
 
-const InformationMenu = () => {
+const InformationMenu = (props) => {
     return (
         <div className="info-menu">
-            <p>Information is displayed here!</p>
-            <hr className='menu-line'/>
-            <p>Help Image</p>
-            <hr className='menu-line'/>
-            <p>Have some new tips</p>
+            <div className='info-header'>
+                <p className="info-header-content">Information is displayed here!</p>
+                <span onClick={() => props.closeModal()} className="info-close-btn">close</span>                
+            </div>
+            <div className='info-content'>
+                <hr className='menu-line'/>
+                <p>Help Image</p>
+                <hr className='menu-line'/>
+                <p>Have some new tips</p>
+            </div>
         </div>
     );
 }
