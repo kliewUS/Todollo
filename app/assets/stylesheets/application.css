@@ -171,9 +171,15 @@ input:focus{
     min-width: 300px;
     min-height: 150px;
     border-radius: 4px;
-    box-shadow: 0 0 1px;             
+    box-shadow: 0 0 1px;
+    padding: 0 10px;             
 }
 
+.board-create-btn{
+    position: absolute;
+    left: 0;
+    top: 165px;
+}
 
 #create-board-btn{
     background-color: transparent;
