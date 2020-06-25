@@ -3,7 +3,8 @@
     align-items: center;
     justify-content: space-between;
     background-color: #519839;
-    padding: 5px;
+    padding-bottom: 2px;
+    margin-top: -1px;
 }
 
 .nav-btn{
@@ -28,6 +29,7 @@
 }
 
 .nav-bar-right{
+    display: flex;    
     margin: auto 2px;  
 }
 
@@ -41,11 +43,12 @@
 }
 
 .nav-btn-2{
+    display: flex;    
     background-color: rgba(255, 255, 255, 0.4);
     color: whitesmoke;
-    padding: 7.5px;
+    padding: 5px;
     border: 1px solid transparent;
-    border-radius: 7.5px;
+    border-radius: 5px;
     margin: auto 2px;        
 }
 
@@ -68,6 +71,10 @@
 .search-bar{
     background-color: rgba(255, 255, 255, 0.4);
     margin: auto 2px;
-    border-radius: 7.5px;
-    padding: 7.5px;  
+    border-radius: 5px;
+    padding: 5px;  
+}
+
+.material-icons.nav-icons{
+    font-size: 22px;
 }

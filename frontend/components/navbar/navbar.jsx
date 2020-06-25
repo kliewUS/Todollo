@@ -31,8 +31,8 @@ class NavBar extends React.Component{
             <nav className="nav-bar">
 
                 <nav className="nav-bar-left">
-                    <button className="nav-btn-2">Home</button>
-                    <button className="nav-btn-2" onClick={this.showModal('board-nav-menu')}>Boards</button>
+                    <button className="nav-btn-2"><span class="material-icons nav-icons">home</span></button>
+                    <button className="nav-btn-2" onClick={this.showModal('board-nav-menu')}><span class="material-icons nav-icons">assignment</span> Boards</button>
                     <input className="search-bar" type="text"/>
                 </nav>
 
@@ -41,9 +41,9 @@ class NavBar extends React.Component{
                 </nav>
 
                 <nav className="nav-bar-right">
-                    <button className="nav-btn-2" onClick={this.showModal('board-create-menu')}>Create New Board</button>
-                    <button className="nav-btn-2" onClick={this.showModal('information-menu')}>Information</button>
-                    <button className="nav-btn-2" onClick={this.showModal('notification-menu')}>Notifications</button>
+                    <button className="nav-btn-2" onClick={this.showModal('board-create-menu')}><span class="material-icons nav-icons">add_box</span></button>
+                    <button className="nav-btn-2" onClick={this.showModal('information-menu')}><span class="material-icons nav-icons">info</span></button>
+                    <button className="nav-btn-2" onClick={this.showModal('notification-menu')}><span class="material-icons nav-icons">notifications</span></button>
                     <button className="logout-btn" onClick={this.showModal('account-menu')}>{currentUser.username.substring(0, 1)}</button>
                 </nav>
 
