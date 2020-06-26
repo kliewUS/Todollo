@@ -18,6 +18,15 @@ class User < ApplicationRecord
     validates :password, length: {minimum: 8, allow_nil: true}
 
     after_initialize :ensure_session_token
+
+    has_many :boards,
+        foreign_key: :owner_id,
+        class_name: :Board
+
+    has_many :board_memberships,
+        through: :boards,
+        source: :board_members
+
     #SPIRE
 
     def self.find_by_credentials(username, password)
