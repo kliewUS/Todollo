@@ -35,6 +35,11 @@
     margin: auto 2px;        
 }
 
+.nav-btn-2.board-btn{
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+}
+
 .logout-btn{
     background-color: whitesmoke;
     font-size: 15px;
