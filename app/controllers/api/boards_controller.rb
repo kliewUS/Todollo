@@ -1,7 +1,6 @@
 class Api::BoardsController < ApplicationController
     before_action :require_login
 
-
     def new
         @board = Board.new
 
@@ -16,10 +15,13 @@ class Api::BoardsController < ApplicationController
 
     def show
         @board = Board.find_by(id: params[:id])
-        if @board
+        
+        if @board && !@board.visibility && !@board.board_members.find(current_user.id)
+            render json:["You do not have permission to view this board"], status: 403
+        elsif @board
             render :show
         else
-            render json:["The board you are looking does not exist."], status: 404
+            render json:["This board does not exist."], status: 404
         end
     end
 
@@ -54,9 +56,9 @@ class Api::BoardsController < ApplicationController
                 render json: @board.errors.full_messages, status: 422
             end
         elsif @board
-            render json:["You are do not have permission to delete the board."], status: 403
+            render json:["You are not the owner of this board."], status: 403
         else
-            render json:["The board you are looking does not exist."], status: 404
+            render json:["This board does not exist."], status: 404
         end
         
     end
