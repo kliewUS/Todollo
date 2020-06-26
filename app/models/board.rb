@@ -18,7 +18,7 @@ class Board < ApplicationRecord
         class_name: :User    
 
     has_many :board_members,
-        foreign_key: :user_id,
+        foreign_key: :board_id,
         class_name: :BoardMembership
 
 end

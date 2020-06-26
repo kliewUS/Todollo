@@ -24,8 +24,8 @@ class User < ApplicationRecord
         class_name: :Board
 
     has_many :board_memberships,
-        through: :boards,
-        source: :board_members
+        foreign_key: :user_id,
+        class_name: :BoardMemberships
 
     #SPIRE
 
