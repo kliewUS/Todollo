@@ -7,16 +7,17 @@
     top: 48px;    
     border-radius: 4px;
     box-shadow: 0 0 1px;
-    text-align: center;       
+    text-align: center;
+    color: rgba(0, 0, 0, 0.8);            
 }
 
 .notice-header{
     padding: 2% 0;
 }
 
-.notice-header-text{
+/* .notice-header-text{
     color: darkgray;    
-}
+} */
 
 .material-icons.notice-close-btn{
     position: absolute;

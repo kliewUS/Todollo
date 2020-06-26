@@ -7,15 +7,15 @@
     top: 48px;    
     border-radius: 4px;
     box-shadow: 0 0 1px; 
+    color: rgba(0, 0, 0, 0.8);   
 }
 
 .info-header-content{
-    padding: 5px 0;
-    color: darkgray;      
+    padding-top: 5px;   
 }
 
 .info-content{
-    padding: 5px 0;     
+    padding: 7.5px 0;     
 }
 
 .material-icons.info-close-btn{
