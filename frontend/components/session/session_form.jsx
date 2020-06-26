@@ -70,6 +70,15 @@ class SessionForm extends React.Component {
                     <hr/>
                     <p>{switchFormLink}</p>
                 </div>
+
+                <div className="session-background">
+                    <div className="left-img">
+                        <img src="https://assets-ouch.icons8.com/preview/606/90c1f2d7-b42f-4d7e-9d17-e183179862b7.png"/>
+                    </div>
+                    <div className="right-img">
+                        <img src="https://assets-ouch.icons8.com/preview/349/60ecf980-8a30-436d-813d-734cc1ba9de7.png"/>
+                    </div>
+                </div>
             </div>
         )
     }

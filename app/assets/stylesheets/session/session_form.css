@@ -82,3 +82,29 @@
     width: 100%;
     padding: .7em 1.2em;
 }
+
+.session-background{
+    z-index: -999;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.left-img{
+    position: absolute;
+    width: 500px;
+    bottom: 0;
+    left: 0;
+    max-width: 30%;
+}
+
+.right-img{
+    position: absolute;
+    width: 500px;
+    bottom: 0;
+    right: 0;
+    max-width: 30%;
+}
