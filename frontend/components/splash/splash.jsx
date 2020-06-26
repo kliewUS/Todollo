@@ -7,17 +7,16 @@ class Splash extends React.Component{
             <div>
                 <LoginBar />
                 <section id="splash">
-                    <div className="splash-text">
-                        <h1>Todollo lets you work together easily and achieve more.</h1>
-                        <p>Todollo organizes your projects in a flexible and rewarding way. Our boards, lists, cards can help you achieve more in your projects</p>
+                    <div className="container">
+                        <div className="splash-text">
+                            <h1>Todollo lets you work together easily and achieve more.</h1>
+                            <p>Todollo organizes your projects in a flexible and rewarding way. Our boards, lists, cards can help you achieve more in your projects.</p>
+                        </div>
+                        <div className="splash-img">
+                            <img src={window.splash_img} />
+                        </div>
                     </div>
                 </section>
-
-                <section id="info"></section>
-
-                <section id="demo"></section>
-
-                <section id="get-started"></section>
             </div>
         );
     }
