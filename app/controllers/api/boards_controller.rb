@@ -11,7 +11,7 @@ class Api::BoardsController < ApplicationController
         @board = Board.find_by(id: params[:id])
         @board_members = @board.members.pluck(:id)
         
-        if @board && !@board.visibility && !@board_members.include?(current_user.id)
+        if @board && !@board.visibility && (!@board_members.include?(current_user.id) || current_user.id != @board.owner_id)
             render json:["You do not have permission to view this board"], status: 403
         elsif @board
             render :show
@@ -36,6 +36,8 @@ class Api::BoardsController < ApplicationController
         @board = Board.find_by(id: params[:id])
         if current_user.id == @board.owner_id && @board.update(board_params)
             render :show
+        elsif @board.update(board_params)
+            render json:["You do not have permission to update this board"], status: 403            
         else
             render json:["Unable to update the board"], status: 422
         end        
