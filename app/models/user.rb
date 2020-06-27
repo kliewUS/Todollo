@@ -19,13 +19,17 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
-    has_many :boards,
+    has_many :owned_boards,
         foreign_key: :owner_id,
         class_name: :Board
 
     has_many :board_memberships,
         foreign_key: :user_id,
         class_name: :BoardMembership
+
+    has_many :boards,
+        through: :board_memberships,
+        source: :board
 
     #SPIRE
 

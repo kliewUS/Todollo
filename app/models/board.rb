@@ -21,4 +21,8 @@ class Board < ApplicationRecord
         foreign_key: :board_id,
         class_name: :BoardMembership
 
+    has_many :members,
+        through: :board_members,
+        source: :user
+
 end
