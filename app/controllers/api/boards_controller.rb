@@ -15,7 +15,7 @@ class Api::BoardsController < ApplicationController
 
     def show
         @board = Board.find_by(id: params[:id])
-        @board_members = @board.board_members.pluck(:user_id)
+        @board_members = @board.members.pluck(:id)
         
         if @board && !@board.visibility && !@board_members.include?(current_user.id)
             render json:["You do not have permission to view this board"], status: 403
