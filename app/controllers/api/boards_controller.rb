@@ -1,12 +1,6 @@
 class Api::BoardsController < ApplicationController
     before_action :require_login
 
-    def new
-        @board = Board.new
-
-        render :new
-    end
-
     def index
         @boards = current_user.boards
 
