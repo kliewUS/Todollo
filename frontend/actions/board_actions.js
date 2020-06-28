@@ -9,13 +9,13 @@ const receiveBoards = boards => ({
     type: RECEIVE_BOARDS,
     boards
 });
-const receiveBoard = event => ({
+const receiveBoard = board => ({
     type: RECEIVE_BOARD,
-    event
+    board
 });
-const removeBoard = eventId => ({
+const removeBoard = boardId => ({
     type: REMOVE_BOARD,
-    eventId
+    boardId
 });
 
 export const receiveBoardErrors = errors => ({
@@ -34,17 +34,17 @@ export const requestBoard = (boardId) => dispatch => {
         .then(board => dispatch(receiveBoard(board)));
 }
 
-export const createBoard = (board) => dispatch => {
+export const postBoard = (board) => dispatch => {
     return BoardAPIUtil.createBoard(board)
         .then(board => dispatch(receiveBoard(board)));
 }
 
-export const updateBoard = (board) => dispatch => {
+export const patchBoard = (board) => dispatch => {
     return BoardAPIUtil.updateBoard(board)
         .then(board => dispatch(receiveBoard(board)));
 }
 
-export const deleteBoard = (boardId) => dispatch => {
+export const destroyBoard = (boardId) => dispatch => {
     return BoardAPIUtil.deleteBoard(boardId)
         .then(() => dispatch(removeBoard(boardId)));
 }

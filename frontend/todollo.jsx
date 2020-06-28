@@ -2,12 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Root from "./components/root";
 import configureStore from "./store/store";
-import {receiveCurrentUser, logoutCurrentUser, receiveErrors, createNewUser, loginUser, logoutUser} from './actions/session_actions';
-import {signUp, login, logout} from './util/session_api_util';
-
+import {fetchBoards, fetchBoard, createBoard, updateBoard, deleteBoard} from './util/board_util'
+import {requestBoards, requestBoard, postBoard, patchBoard, destroyBoard} from './actions/board_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
-    // const store = configureStore();
     const root = document.getElementById('root');
 
     let store;
@@ -31,14 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-window.receiveCurrentUser = receiveCurrentUser;
-window.logoutCurrentUser = logoutCurrentUser;
-window.receiveErrors = receiveErrors;
+window.requestBoards = requestBoards;
+window.requestBoard = requestBoard;
+window.postBoard = postBoard;
+window.patchBoard = patchBoard;
+window.destroyBoard = destroyBoard;
 
-window.createNewUser = createNewUser;
-window.loginUser = loginUser;
-window.logoutUser = logoutUser;
-
-window.signUp = signUp;
-window.login = login;
-window.logout = logout;
+window.fetchBoards = fetchBoards;
+window.fetchBoard = fetchBoard;
+window.createBoard = createBoard;
+window.updateBoard = updateBoard;
+window.deleteBoard = deleteBoard;
