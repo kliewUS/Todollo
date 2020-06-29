@@ -6,7 +6,7 @@ import Modal from './modal/modal';
 import Splash from './splash/splash';
 import { Route, Switch, Redirect } from "react-router-dom";
 import { AuthRoute, ProtectedRoute } from '../util/routes_util'
-import Board from "./boards/board";
+import BoardContainer from "./boards/board_container";
 
 const App = () => (
   <div className="todollo">
@@ -18,7 +18,7 @@ const App = () => (
       <Redirect to="/" />
     </Switch>
       <Modal />
-      <ProtectedRoute exact path="/boards" component={Board} />
+      <ProtectedRoute exact path="/boards" component={BoardContainer} />
   </div>
 );
 
