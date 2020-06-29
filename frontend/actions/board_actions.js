@@ -5,15 +5,15 @@ export const RECEIVE_BOARD = 'RECEIVE_BOARD';
 export const REMOVE_BOARD = 'REMOVE_BOARD';
 export const RECEIVE_BOARD_ERRORS = "RECEIVE_BOARD_ERRORS";
 
-const receiveBoards = boards => ({
+export const receiveBoards = boards => ({
     type: RECEIVE_BOARDS,
     boards
 });
-const receiveBoard = board => ({
+export const receiveBoard = board => ({
     type: RECEIVE_BOARD,
     board
 });
-const removeBoard = boardId => ({
+export const removeBoard = boardId => ({
     type: REMOVE_BOARD,
     boardId
 });
@@ -26,25 +26,35 @@ export const receiveBoardErrors = errors => ({
 
 export const requestBoards = () => dispatch => {
     return BoardAPIUtil.fetchBoards()
-        .then(boards => dispatch(receiveBoards(boards)));
+        .then(boards => dispatch(receiveBoards(boards)), 
+        err => dispatch(receiveBoardErrors(err.responseJSON))
+        );
 }
 
 export const requestBoard = (boardId) => dispatch => {
     return BoardAPIUtil.fetchBoard(boardId)
-        .then(board => dispatch(receiveBoard(board)));
+        .then(board => dispatch(receiveBoard(board)), 
+        err => dispatch(receiveBoardErrors(err.responseJSON))
+        );
 }
 
 export const postBoard = (board) => dispatch => {
     return BoardAPIUtil.createBoard(board)
-        .then(board => dispatch(receiveBoard(board)));
+        .then(board => dispatch(receiveBoard(board)), 
+        err => dispatch(receiveBoardErrors(err.responseJSON))
+        );
 }
 
 export const patchBoard = (board) => dispatch => {
     return BoardAPIUtil.updateBoard(board)
-        .then(board => dispatch(receiveBoard(board)));
+        .then(board => dispatch(receiveBoard(board)), 
+        err => dispatch(receiveBoardErrors(err.responseJSON))
+        );
 }
 
 export const destroyBoard = (boardId) => dispatch => {
     return BoardAPIUtil.deleteBoard(boardId)
-        .then(() => dispatch(removeBoard(boardId)));
+        .then(() => dispatch(removeBoard(boardId)), 
+        err => dispatch(receiveBoardErrors(err.responseJSON))
+        );
 }

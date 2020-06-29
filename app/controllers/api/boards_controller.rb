@@ -2,14 +2,16 @@ class Api::BoardsController < ApplicationController
     before_action :require_login
 
     def index
-        @boards = current_user.boards
+        # debugger
+        @boards = current_user.owned_boards
+        # debugger
 
         render :index
     end
 
     def show
         @board = Board.find_by(id: params[:id])
-        @board_members = @board.members.pluck(:id)
+        @board_members = @board.members.pluck(:id) if @board
         
         if @board && !@board.visibility && (!@board_members.include?(current_user.id) || current_user.id != @board.owner_id)
             render json:["You do not have permission to view this board"], status: 403
@@ -21,8 +23,10 @@ class Api::BoardsController < ApplicationController
     end
 
     def create
+        # debugger
         @board = Board.create(board_params)
         @board.owner_id = current_user.id
+        # debugger
 
         if @board.save
             render :show
@@ -34,30 +38,33 @@ class Api::BoardsController < ApplicationController
 
     def update
         @board = Board.find_by(id: params[:id])
-        if current_user.id == @board.owner_id && @board.update(board_params)
+
+        if !@board
+            render json:["Unable to update the board"], status: 422            
+        elsif current_user.id == @board.owner_id && @board.update(board_params)
             render :show
         elsif @board.update(board_params)
-            render json:["You do not have permission to update this board"], status: 403            
-        else
-            render json:["Unable to update the board"], status: 422
-        end        
+            render json:["You do not have permission to update this board"], status: 403 
+        end
+      
     end
 
     def destroy
         @board = Board.find_by(id: params[:id])
 
-        if current_user.id == @board.owner_id && @board
+        if !@board
+            render json:["The board you are trying to delete does not exist."], status: 404
+        elsif current_user.id == @board.owner_id && @board
             if @board.destroy
-                render :index
+                render :show
             else
                 render json: @board.errors.full_messages, status: 422
-            end
+            end            
         elsif @board
-            render json:["You are not the owner of this board."], status: 403
-        else
-            render json:["This board does not exist."], status: 404
+            render json:["You are not authorized to delete this board."], status: 403
         end
-        
+
+
     end
 
     private

@@ -4,7 +4,7 @@ import {
     REMOVE_BOARD,
   } from '../actions/board_actions';
 
-const BoardReducer = (state = {}, action) => {
+const boardsReducer = (state = {}, action) => {
     Object.freeze(state);
     let nextState = Object.assign({}, state)
     switch (action.type) {
@@ -14,11 +14,13 @@ const BoardReducer = (state = {}, action) => {
         nextState[action.board.id] = action.board;
         return nextState;
       case REMOVE_BOARD:
+        debugger
         delete nextState[action.boardId];
+        debugger
         return nextState;
       default:
         return state;
     }
   }
   
-  export default BoardReducer;
+  export default boardsReducer;
