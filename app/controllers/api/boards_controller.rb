@@ -58,7 +58,7 @@ class Api::BoardsController < ApplicationController
             if @board.destroy
                 render :show
             else
-                render json: @board.errors.full_messages, status: 422
+                render json: ["Board deletion failed"], status: 422
             end            
         elsif @board
             render json:["You are not authorized to delete this board."], status: 403
