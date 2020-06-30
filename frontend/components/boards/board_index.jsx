@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import BoardIndexItem from './board_index_item';
 
 class BoardIndex extends React.Component{
     constructor(props){
@@ -15,9 +16,7 @@ class BoardIndex extends React.Component{
 
         let boards_arr = this.props.boards.map(board => {
             return (
-                <li key={board.id}>
-                    <Link to={`/boards/${board.id}`}>{board.title}</Link>
-                </li>
+                <BoardIndexItem board={board} key={board.id} />
             );
         })
 

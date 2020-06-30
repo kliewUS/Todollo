@@ -6,10 +6,12 @@ import Modal from './modal/modal';
 import Splash from './splash/splash';
 import { Route, Switch, Redirect } from "react-router-dom";
 import { AuthRoute, ProtectedRoute } from '../util/routes_util'
-import BoardContainer from "./boards/board_container";
+import BoardIndexContainer from "./boards/board_index_container";
+import BoardShowContainer from "./boards/board_show_container";
 
 const App = () => (
   <div className="todollo">
+    
     <Switch>
       <AuthRoute exact path="/" component={Splash}/>
       <AuthRoute path="/login" component={LoginFormContainer} />
@@ -17,8 +19,13 @@ const App = () => (
       <ProtectedRoute path="/" component={NavBarContainer} />
       <Redirect to="/" />
     </Switch>
+
       <Modal />
-      <ProtectedRoute exact path="/boards" component={BoardContainer} />
+
+    <Switch>
+      <ProtectedRoute exact path="/boards" component={BoardIndexContainer} />
+      <ProtectedRoute exact path="/boards/:boardId" component={BoardShowContainer} />
+    </Switch>
   </div>
 );
 
