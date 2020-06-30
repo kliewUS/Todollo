@@ -20,14 +20,13 @@ class BoardIndex extends React.Component{
             );
         })
 
-
         return(
             <div className="boards-content">
                 <h1>Personal Boards</h1>
                 <ul className="boards-list">
                     {boards_arr}
                 </ul>
-                <button>Create New Board</button>
+                <button onClick={this.props.openModal}>Create New Board</button>
             </div>
         );
     }

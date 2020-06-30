@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import AccountMenuContainer from '../navbar/account_menu_container';
 import NotificationsMenu from '../navbar/notifications_menu';
 import InformationMenu from '../navbar/information_menu';
-import BoardCreateMenu from '../navbar/board_create_menu';
+import BoardFormContainer from '../boards/board_form_container';
 import BoardNavMenuContainer from '../navbar/board_nav_menu_container';
 
 function Modal({modal, closeModal}) {
@@ -28,7 +28,7 @@ function Modal({modal, closeModal}) {
         background = 'none';        
         break;
     case 'board-create-menu':
-        component = <BoardCreateMenu closeModal={closeModal} />;
+        component = <BoardFormContainer closeModal={closeModal} />;
         break;      
     case 'board-nav-menu':
         component = <BoardNavMenuContainer closeModal={closeModal} />;
