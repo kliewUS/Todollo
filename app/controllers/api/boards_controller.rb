@@ -2,9 +2,8 @@ class Api::BoardsController < ApplicationController
     before_action :require_login
 
     def index
-        # debugger
         @boards = current_user.owned_boards
-        # debugger
+        @boardMemberships = current_user.board_memberships
 
         render :index
     end

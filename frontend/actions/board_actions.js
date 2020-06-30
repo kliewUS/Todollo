@@ -5,9 +5,10 @@ export const RECEIVE_BOARD = 'RECEIVE_BOARD';
 export const REMOVE_BOARD = 'REMOVE_BOARD';
 export const RECEIVE_BOARD_ERRORS = "RECEIVE_BOARD_ERRORS";
 
-export const receiveBoards = boards => ({
+export const receiveBoards = ({boards, boardMemberships}) => ({
     type: RECEIVE_BOARDS,
-    boards
+    boards,
+    boardMemberships
 });
 export const receiveBoard = board => ({
     type: RECEIVE_BOARD,
@@ -26,7 +27,7 @@ export const receiveBoardErrors = errors => ({
 
 export const requestBoards = () => dispatch => {
     return BoardAPIUtil.fetchBoards()
-        .then(boards => dispatch(receiveBoards(boards)), 
+        .then(payload => dispatch(receiveBoards(payload)), 
         err => dispatch(receiveBoardErrors(err.responseJSON))
         );
 }

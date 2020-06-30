@@ -27,7 +27,7 @@ class User < ApplicationRecord
         foreign_key: :user_id,
         class_name: :BoardMembership
 
-    has_many :boards,
+    has_many :shared_boards,
         through: :board_memberships,
         source: :board
 
