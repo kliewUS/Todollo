@@ -14,7 +14,7 @@ class BoardForm extends React.Component{
     }
 
     componentWillUnmount(){
-        this.props.clearErrors();
+        this.props.clearBoardErrors();
     }
 
     handleInput(type){

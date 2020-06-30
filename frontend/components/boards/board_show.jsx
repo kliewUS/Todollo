@@ -1,4 +1,5 @@
 import React from 'react';
+import BoardShowNavBar from './board_show_navbar';
 
 class BoardShow extends React.Component{
     constructor(props){
@@ -11,9 +12,14 @@ class BoardShow extends React.Component{
 
     render(){
         return (
-            <div className="board-show-main">
-                <p>This is a Board Show Page.</p>
-            </div>
+            <BoardShowNavBar 
+                board={this.props.board}
+                patchBoard={this.props.patchBoard}
+                destroyBoard={this.props.destroyBoard}
+                clearErrors={this.props.clearErrors}
+                currentUser={this.props.currentUser}
+                errors={this.props.errors}
+            />
         )
     }
 

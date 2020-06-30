@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from 'react-redux';
 import BoardForm from "./board_form";
-import { postBoard } from "../../actions/board_actions";
+import { postBoard, receiveBoardErrors } from "../../actions/board_actions";
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state) => ({
@@ -11,7 +11,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     processBoard: formBoard => dispatch(postBoard(formBoard)),
-    clearErrors: () => dispatch(receiveBoardErrors([]))
+    clearBoardErrors: () => dispatch(receiveBoardErrors([]))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(BoardForm));
