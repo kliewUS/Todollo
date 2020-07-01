@@ -22,7 +22,9 @@ class BoardIndex extends React.Component{
 
         return(
             <div className="boards-content">
-                <h1>Personal Boards</h1>
+                <div className="boards-header">
+                    <h1>Personal Boards</h1>
+                </div>
                 <ul className="boards-list">
                     {boards_arr}
                 </ul>
