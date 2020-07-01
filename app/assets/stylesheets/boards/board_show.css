@@ -20,3 +20,7 @@
 .side-nav.closed{
     display: none;
 }
+
+#title-input{
+    color:black;
+}
