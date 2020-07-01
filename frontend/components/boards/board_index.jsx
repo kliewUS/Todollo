@@ -22,13 +22,19 @@ class BoardIndex extends React.Component{
 
         return(
             <div className="boards-content">
-                <div className="boards-header">
-                    <h1>Personal Boards</h1>
+                <div className="boards-index-main">
+                    <div className="boards-header">
+                        <div>
+                            <span className="material-icons">assignment_ind</span>
+                        </div>
+                        <h1>Personal Boards</h1>
+                    </div>
+
+                    <ul className="boards-list">
+                        {boards_arr}
+                        <li className="board-item create-board-btn" onClick={this.props.openModal}>Create New Board</li>
+                    </ul>
                 </div>
-                <ul className="boards-list">
-                    {boards_arr}
-                </ul>
-                <button onClick={this.props.openModal}>Create New Board</button>
             </div>
         );
     }

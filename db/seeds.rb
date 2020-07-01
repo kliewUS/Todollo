@@ -36,7 +36,7 @@ u5 = User.create!(
 )
 
 b1 = Board.create!(title: 'Building the Azure Cub Inn', owner_id: 2, visibility: true)
-b2 = Board.create!(title: 'Renvoate the Golden Fawn Cafe', owner_id: 1, visibility: true)
+b2 = Board.create!(title: 'Renovate the Golden Fawn Cafe', owner_id: 1, visibility: true)
 b3 = Board.create!(title: 'Planning a dinner in the Screaming Fledglings', owner_id: 3, visibility: false)
 b4 = Board.create!(title: 'Planning a church party', owner_id: 1, visibility: false)
 b5 = Board.create!(title: 'Dinner at Finn\'s House', owner_id: 2, visibility: false)

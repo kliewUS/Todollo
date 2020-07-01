@@ -22,10 +22,8 @@ class Api::BoardsController < ApplicationController
     end
 
     def create
-        # debugger
         @board = Board.create(board_params)
         @board.owner_id = current_user.id
-        # debugger
 
         if @board.save
             render :show
