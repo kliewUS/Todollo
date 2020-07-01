@@ -11,14 +11,26 @@ class BoardIndex extends React.Component{
         this.props.requestBoards();
     }
 
+    componentDidUpdate(oldProps){
+        if(this.props.currentUser !== oldProps.currentUser){
+            this.props.requestBoards();        
+        }
+    }
+
 
     render(){
-
-        let boards_arr = this.props.boards.map(board => {
+        // debugger;
+        let boards_arr = (this.props.boards !== undefined) ? this.props.boards.map(board => {
             return (
                 <BoardIndexItem board={board} key={board.id} />
             );
-        })
+        }) : (null);
+
+        // let boards_arr = this.props.boards.map(board => {
+        //     return (
+        //         <BoardIndexItem board={board} key={board.id} />
+        //     );
+        // })
 
         return(
             <div className="boards-content">

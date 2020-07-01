@@ -7,7 +7,11 @@ const boardMembershipsReducer = (state = {}, action) => {
     // let nextState = Object.assign({}, state)
     switch (action.type) {
       case RECEIVE_BOARDS:
-        return action.boardMemberships;
+        if(!action.boardMemberships){
+          return {};
+        }else{
+          return action.boardMemberships;
+        }
       default:
         return state;
     }

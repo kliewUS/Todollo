@@ -9,7 +9,11 @@ const boardsReducer = (state = {}, action) => {
     let nextState = Object.assign({}, state)
     switch (action.type) {
       case RECEIVE_BOARDS:
-        return action.boards;
+        if(!action.boards){
+          return {};
+        }else{
+          return action.boards;
+        }
       case RECEIVE_BOARD:
         nextState[action.board.id] = action.board;
         return nextState;
