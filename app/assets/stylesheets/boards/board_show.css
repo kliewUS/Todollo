@@ -1,0 +1,22 @@
+.board-show-navbar{
+    display: flex;
+    background-color: green;
+    color: white;
+    justify-content: space-between;
+}
+
+.side-nav.open {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: whitesmoke;
+    overflow-x: hidden;
+    padding-top: 60px;
+}
+
+.side-nav.closed{
+    display: none;
+}
