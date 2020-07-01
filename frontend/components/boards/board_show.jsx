@@ -1,5 +1,4 @@
 import React from 'react';
-import BoardShowNavBar from './board_show_navbar';
 
 class BoardShow extends React.Component{
     constructor(props){
@@ -11,15 +10,23 @@ class BoardShow extends React.Component{
     }
 
     render(){
+
+        if (this.props.board === undefined){ //Allows the board to render the page again.
+            return null;
+        }
+
+        let boardVisible = this.props.board.visibility === true ? ('Public') : ('Private'); 
+
+
         return (
-            <BoardShowNavBar 
-                board={this.props.board}
-                patchBoard={this.props.patchBoard}
-                destroyBoard={this.props.destroyBoard}
-                clearErrors={this.props.clearErrors}
-                currentUser={this.props.currentUser}
-                errors={this.props.errors}
-            />
+            <div className="board-show-main">
+                <h1>{this.props.board.title}</h1>
+                <h2>{boardVisible}</h2>
+                <button>{this.props.currentUser.username.substring(0, 1)}</button>
+                <button>Invite</button>
+                <button>Show Menu</button>                
+                <button>Add New List</button>
+            </div>
         )
     }
 
