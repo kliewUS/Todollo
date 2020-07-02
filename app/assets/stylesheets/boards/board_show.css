@@ -24,3 +24,7 @@
 #title-input{
     color:black;
 }
+
+#delete-btn{
+    cursor: pointer;
+}

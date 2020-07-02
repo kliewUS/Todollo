@@ -13,7 +13,12 @@ class BoardShow extends React.Component{
         this.toggleSideBar = this.toggleSideBar.bind(this);
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);        
+        this.handleDelete = this.handleDelete.bind(this);        
     }
+
+    // componentWillUnmount(){
+    //     this.props.clearBoardErrors();
+    // }    
 
     componentDidMount(){
         this.props.requestBoard(this.props.match.params.boardId)
@@ -35,6 +40,17 @@ class BoardShow extends React.Component{
         this.props.patchBoard(updateBoard);
     }
 
+    handleDelete(e){
+        e.preventDefault();
+        if(this.props.board.ownerId === this.props.currentUser.id){
+            this.props.destroyBoard(this.props.match.params.boardId)
+                .then(() => 
+                {
+                    this.props.history.push(`/boards`)
+                });            
+        }
+    }
+
 
     toggleSideBar(){
         if(this.state.sideNavOpen === false){
@@ -49,6 +65,10 @@ class BoardShow extends React.Component{
         let boardVisible = this.props.board.visibility === true ? ('Public') : ('Private');
         
         let sideNavOpen = this.state.sideNavOpen ? 'open' : 'closed';
+
+        // const boardError = this.props.errors[0] ? 
+        //                     (<h1 className="errors-list">{this.props.errors[0]}</h1>) :
+        //                     (null);        
 
         return (
             <div className="board-show-main">
@@ -68,8 +88,9 @@ class BoardShow extends React.Component{
                 </div>
                 <div className={`side-nav ${sideNavOpen}`}>
                     <button onClick={this.toggleSideBar}>Close</button>
+                    {/* <p>{boardError}</p> */}
                     <ul>
-                        <li>Delete Board</li>
+                        <li id="delete-btn" onClick={this.handleDelete}>Delete Board</li>
                     </ul>
                 </div>
             </div>
