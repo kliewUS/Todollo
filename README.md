@@ -1,24 +1,31 @@
-# README
+# Todollo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Live Site](https://todollo.herokuapp.com/#/)
 
-Things you may want to cover:
+## Introduction
 
-* Ruby version
+Todollo is based on the site, Trello. This site clone offers tools to assist in project management and allows users to streamline their workflows by creating boards, lists, and cards.
 
-* System dependencies
+## Technologies used
 
-* Configuration
+Todollo's backend is built using Ruby on Rails and PostgreSOL and the frontend is built using React, Redux, and Javascript. The live site is using Heroku for hosting.
 
-* Database creation
+## Features
 
-* Database initialization
+### User Auth
 
-* How to run the test suite
+User is able to sign up or log in by clicking either buttons on the top of the splash page. A demo login is provided upon reaching the login form.
 
-* Services (job queues, cache servers, search engines, etc.)
+### Boards
 
-* Deployment instructions
+User is able to create new boards, update existing boards, and delete boards.
 
-* ...
+## Features to be implemented
+
+Todollo will soon have the following features.
+
+* Creating, deleting, and updating Lists and Cards
+* Creating, deleting, and updating Comments
+* Putting labels on Cards.
+* Change the order of lists and cards by dragging and dropping
+* Setting and changing the Background of a board.
