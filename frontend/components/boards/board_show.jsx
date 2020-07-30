@@ -16,10 +16,6 @@ class BoardShow extends React.Component{
         this.handleDelete = this.handleDelete.bind(this);        
     }
 
-    // componentWillUnmount(){
-    //     this.props.clearBoardErrors();
-    // }    
-
     componentDidMount(){
         this.props.requestBoard(this.props.match.params.boardId)
                     .then((res) => {
@@ -66,31 +62,42 @@ class BoardShow extends React.Component{
         
         let sideNavOpen = this.state.sideNavOpen ? 'open' : 'closed';
 
-        // const boardError = this.props.errors[0] ? 
-        //                     (<h1 className="errors-list">{this.props.errors[0]}</h1>) :
-        //                     (null);        
-
         return (
             <div className="board-show-main">
                 <div className="board-show-navbar">
 
-                    <form onSubmit={this.handleSubmit}>
-                        <input id="title-input" type="text" value={this.state.title} onChange={this.update('title')} onBlur={this.handleSubmit} />
-                    </form>
+                    <div id="left-show-menu">
+                        <form onSubmit={this.handleSubmit}>
+                            <input id="title-input" type="text" value={this.state.title} onChange={this.update('title')} onBlur={this.handleSubmit} />
+                        </form>
 
-                    <h2>{boardVisible}</h2>
-                    <button>{this.props.currentUser.username.substring(0, 1)}</button>
-                    <button>Invite</button>
-                    <button onClick={this.toggleSideBar}>Show Menu</button>                
+                        <button className="left-show-btn"><p className="left-show-content-btn">{boardVisible}</p></button>
+                        <button className="left-show-btn"><p className="left-show-content-btn user-btn">{this.props.currentUser.username.substring(0, 1)}</p></button>
+                        <button className="left-show-btn"><p className="left-show-content-btn">Invite</p></button>
+                    </div>
+
+                    <div id="right-show-menu">
+                        <button className="right-show-btn" onClick={this.toggleSideBar}><p className="right-show-content-btn">Show Menu</p></button>                
+                    </div>
+
                 </div>
                 <div className="board-lists">
-                    <button>Add New List</button>
+                    <button className="show-btn"><p className="show-content-btn">Add New List</p></button>
                 </div>
                 <div className={`side-nav ${sideNavOpen}`}>
-                    <button onClick={this.toggleSideBar}>Close</button>
-                    {/* <p>{boardError}</p> */}
+                    <div className="side-nav-header">
+                        <h3 id="sidenav-title">Menu</h3>
+                        <span onClick={this.toggleSideBar} className="material-icons close-btn-2">clear</span>
+                    </div>
                     <ul>
-                        <li id="delete-btn" onClick={this.handleDelete}>Delete Board</li>
+                        <hr className='menu-line'/>
+                        <div className="sidenav-links">
+                            <li><a href="https://github.com/kliewUS">Github</a></li>
+                            <li><a href="#">Linkedin</a></li>
+                            <li><a href="#">Portfolio</a></li>
+                        </div>
+                        <hr className='menu-line'/>
+                        <li id="delete-btn" onClick={this.handleDelete}><p id="delete-text-btn">Delete Board</p></li>
                     </ul>
                 </div>
             </div>
