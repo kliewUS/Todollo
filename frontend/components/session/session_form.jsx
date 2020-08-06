@@ -73,10 +73,10 @@ class SessionForm extends React.Component {
 
                 <div className="session-background">
                     <div className="left-img">
-                        <img src={window.session_left_img}/>
+                        <img src="https://gist.githubusercontent.com/kliewUS/049d8cfda828ab0fe5a9caaf7270c6aa/raw/38267aef7dab0104ab5d0939e21bc3fe5b59c51a/session-left-img.png"/>
                     </div>
                     <div className="right-img">
-                        <img src={window.session_right_img}/>
+                        <img src="https://gist.githubusercontent.com/kliewUS/049d8cfda828ab0fe5a9caaf7270c6aa/raw/38267aef7dab0104ab5d0939e21bc3fe5b59c51a/session-right-img.png"/>
                     </div>
                 </div>
             </div>
