@@ -32,7 +32,7 @@ class BoardShow extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        const updateBoard = {id: this.props.match.params.boardId, title: this.state.title, owner_id: this.props.currentUser.id};
+        const updateBoard = {id: this.props.match.params.boardId, title: this.state.title, visibility: this.state.visibility, owner_id: this.props.currentUser.id};
         this.props.patchBoard(updateBoard);
     }
 
@@ -58,8 +58,6 @@ class BoardShow extends React.Component{
 
     render(){
 
-        let boardVisible = this.props.board.visibility === true ? ('Public') : ('Private');
-        
         let sideNavOpen = this.state.sideNavOpen ? 'open' : 'closed';
 
         return (
@@ -69,9 +67,12 @@ class BoardShow extends React.Component{
                     <div id="left-show-menu">
                         <form onSubmit={this.handleSubmit}>
                             <input id="title-input" type="text" value={this.state.title} onChange={this.update('title')} onBlur={this.handleSubmit} />
+                            <select id="visibility-show-btn" value={this.state.visibility} onChange={this.update('visibility')} onBlur={this.handleSubmit}>
+                                <option value="true">Public</option>
+                                <option value="false">Private</option>
+                            </select>                            
                         </form>
 
-                        <button className="left-show-btn"><p className="left-show-content-btn">{boardVisible}</p></button>
                         <button className="left-show-btn"><p className="left-show-content-btn user-btn">{this.props.currentUser.username.substring(0, 1)}</p></button>
                         <button className="left-show-btn"><p className="left-show-content-btn">Invite</p></button>
                     </div>

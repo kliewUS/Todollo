@@ -156,3 +156,24 @@
 .show-content-btn:hover{
     background-color:rgba(245,245,245, 0.6);    
 }
+
+#visibility-show-btn{
+    border: 1px solid transparent;
+    font-size: 16px;
+    color: white;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    margin: 0 5px 0 5px;
+    background-color:rgba(245,245,245, 0.4);
+    border-radius: 5px;
+    padding: 5px 0 5px 5px;      
+    
+}
+
+#visibility-show-btn:hover{
+    background-color:rgba(245,245,245, 0.6);    
+}
+
+#visibility-show-btn option{
+    color: black;
+}
