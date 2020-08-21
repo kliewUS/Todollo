@@ -20,6 +20,7 @@ const mapDispatchToProps = (dispatch) => ({
     requestBoard: (boardId) => dispatch(requestBoard(boardId)),
     patchBoard: (board) => dispatch(patchBoard(board)),
     destroyBoard: (boardId) => dispatch(destroyBoard(boardId)),
+    openModal: () => dispatch(openModal('board-membership-menu')),
     clearErrors: () => dispatch(receiveBoardErrors([]))
 });
 

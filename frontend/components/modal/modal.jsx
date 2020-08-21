@@ -6,6 +6,7 @@ import NotificationsMenu from '../navbar/notifications_menu';
 import InformationMenu from '../navbar/information_menu';
 import BoardFormContainer from '../boards/board_form_container';
 import BoardNavMenuContainer from '../navbar/board_nav_menu_container';
+import BoardMembershipMenu from '../boards/board_membership_menu';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -33,7 +34,11 @@ function Modal({modal, closeModal}) {
     case 'board-nav-menu':
         component = <BoardNavMenuContainer closeModal={closeModal} />;
         background = 'none';        
-        break;      
+        break;
+    case 'board-membership-menu':
+        component = <BoardMembershipMenu closeModal={closeModal} />;
+        background = 'none';        
+        break;            
     default:
       return null;
   }
