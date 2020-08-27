@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import Root from "./components/root";
 import configureStore from "./store/store";
 import {fetchBdMembers, fetchBdMember, createBdMember, deleteBdMember} from './util/boardMembership_util';
+import {fetchUsers} from './util/user_util';
+import {receiveUsers, requestUsers} from './actions/userRoster_actions';
 import { receiveBoardMembers, receiveBoardMember, removeBoardMember, requestBoardMembers, requestBoardMember, postBoardMember, destroyBoardMember } from "./actions/boardMembership_actions";
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -26,6 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.getState = store.getState;
     window.dispatch = store.dispatch;
+
+    window.fetchUsers = fetchUsers;
+
+    window.receiveUsers = receiveUsers;
+    
+    window.requestUsers = requestUsers;
 
     window.fetchBdMembers = fetchBdMembers; //Works
     window.fetchBdMember = fetchBdMember; //Works
