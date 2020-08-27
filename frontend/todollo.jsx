@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Root from "./components/root";
 import configureStore from "./store/store";
-import {fetchBoards, fetchBoard, createBoard, updateBoard, deleteBoard} from './util/board_util'
-import {requestBoards, requestBoard, postBoard, patchBoard, destroyBoard, receiveBoards, receiveBoard, removeBoard} from './actions/board_actions'
+import {fetchBdMembers, fetchBdMember, createBdMember, deleteBdMember} from './util/boardMembership_util';
+import { receiveBoardMembers, receiveBoardMember, removeBoardMember, requestBoardMembers, requestBoardMember, postBoardMember, destroyBoardMember } from "./actions/boardMembership_actions";
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
@@ -25,23 +25,20 @@ document.addEventListener('DOMContentLoaded', () => {
     ReactDOM.render(<Root store={store}/>, root);
 
     window.getState = store.getState;
-    window.dispatch = store.dispatch;   
+    window.dispatch = store.dispatch;
+
+    window.fetchBdMembers = fetchBdMembers; //Works
+    window.fetchBdMember = fetchBdMember; //Works
+    window.createBdMember = createBdMember; //Works
+    window.deleteBdMember = deleteBdMember; //Works
     
+    window.receiveBoardMembers = receiveBoardMembers; //Work
+    window.receiveBoardMember = receiveBoardMember; //Work
+    window.removeBoardMember = removeBoardMember; //Work
     
-    window.receiveBoards = receiveBoards;
-    window.receiveBoard = receiveBoard;
-    window.removeBoard = removeBoard;
-    
-    window.requestBoards = requestBoards;
-    window.requestBoard = requestBoard;
-    window.postBoard = postBoard;
-    window.patchBoard = patchBoard;
-    window.destroyBoard = destroyBoard;
-    
-    window.fetchBoards = fetchBoards;
-    window.fetchBoard = fetchBoard;
-    window.createBoard = createBoard;
-    window.updateBoard = updateBoard;
-    window.deleteBoard = deleteBoard;    
+    window.requestBoardMembers = requestBoardMembers; //Work
+    window.requestBoardMember = requestBoardMember; //Work
+    window.postBoardMember = postBoardMember; //Work
+    window.destroyBoardMember = destroyBoardMember; //Work
 
 });

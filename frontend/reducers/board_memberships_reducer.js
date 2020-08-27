@@ -5,7 +5,7 @@ import {
 
 const boardMembershipsReducer = (state = {}, action) => {
     Object.freeze(state);
-    // let nextState = Object.assign({}, state)
+    let nextState = Object.assign({}, state);
     switch (action.type) { //All other cases are for showing the users that are a member of a specfic board.
       case RECEIVE_BOARD_MEMBERS: 
         return action.boardMembers

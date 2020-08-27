@@ -37,7 +37,7 @@ export const requestBoardMember = (boardMemberId) => dispatch => {
         );
 }
 
-export const postBoard = (boardMember) => dispatch => {
+export const postBoardMember = (boardMember) => dispatch => {
     return BdMemberAPIUtil.createBdMember(boardMember)
         .then(boardMember => dispatch(receiveBoardMember(boardMember)), 
         err => dispatch(receiveBoardMemberErrors(err.responseJSON))

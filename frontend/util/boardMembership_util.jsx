@@ -11,11 +11,11 @@ export const fetchBdMember = (bdMemberId) => {
 }
 
 
-export const createBdMember = (bdMember) => {
+export const createBdMember = (board_membership) => {
     return $.ajax({
         method: 'POST',
         url: `/api/board_memberships`,
-        data: {bdMember}
+        data: {board_membership}
     });
 }
 

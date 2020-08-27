@@ -7,9 +7,9 @@ class Api::BoardMembershipsController < ApplicationController
     end
 
     def show
-        @boardMembership = BoardMembership.find_by(id: params[:id])
+        @boardmembership = BoardMembership.find_by(id: params[:id])
         @user = User.find_by(id: @boardmembership.user_id)
-        if @boardMembership
+        if @boardmembership
             render :show
         else
             render json:["This person is not a member of this board."], status: 404
@@ -25,7 +25,7 @@ class Api::BoardMembershipsController < ApplicationController
         end
     end
 
-    def delete
+    def destroy
         @boardmembership = BoardMembership.find_by(id: params[:id])
         @board = Board.find_by(id: @boardmembership.board_id)
 
