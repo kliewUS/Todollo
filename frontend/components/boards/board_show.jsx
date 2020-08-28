@@ -74,7 +74,8 @@ class BoardShow extends React.Component{
                         </form>
 
                         <button className="left-show-btn"><p className="left-show-content-btn user-btn">{this.props.currentUser.username.substring(0, 1)}</p></button>
-                        <button className="left-show-btn"><p className="left-show-content-btn">Invite</p></button>
+                        <button className="left-show-btn" onClick={this.props.openModal}><p className="left-show-content-btn">Invite</p></button>
+                        {/* <button className="left-show-btn"><p className="left-show-content-btn">Invite</p></button> */}
                     </div>
 
                     <div id="right-show-menu">
