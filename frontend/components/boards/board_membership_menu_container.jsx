@@ -2,6 +2,8 @@ import React from "react";
 import {connect} from 'react-redux';
 import BoardMembershipMenu from './board_membership_menu';
 import { withRouter } from 'react-router-dom';
+import { postBoardMember } from "../../actions/boardMembership_actions";
+import { requestUsers } from "../../actions/userRoster_actions";
 
 const mapStateToProps = (state) => ({
     userRoster: Object.values(state.entities.userRoster),
@@ -10,7 +12,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    postBoardMember: boardMember => dispatch(postBoard(boardMember)),
+    postBoardMember: boardMember => dispatch(postBoardMember(boardMember)),
     requestUsers: () => dispatch(receiveUsers()),
     clearBoardMemberErrors: () => dispatch(receiveBoardMemberErrors([]))
 });

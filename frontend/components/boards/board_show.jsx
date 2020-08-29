@@ -21,6 +21,8 @@ class BoardShow extends React.Component{
                     .then((res) => {
                         this.setState({title: res.board.title, visibility: res.board.visibility}); //Pretty Hacky. Perhaps there's a better solution to this?
                     });
+        this.props.requestBoardMembers();
+        this.props.requestUsers();
     }
 
     update(field){

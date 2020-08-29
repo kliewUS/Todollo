@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state) => ({
     userProfile: Object.values(state.entities.userRoster),
+    boardMembership: Object.values(state.entities.boardMemberships),
     errors: state.errors.boardMembershipErrors
 });
 
