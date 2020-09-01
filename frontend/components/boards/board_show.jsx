@@ -61,7 +61,24 @@ class BoardShow extends React.Component{
     render(){
 
         let sideNavOpen = this.state.sideNavOpen ? 'open' : 'closed';
+        let currentBoardId = parseInt(this.props.match.params.boardId);
 
+        let boardMembers = this.props.boardMemberships
+        .filter(boardMember => boardMember.boardId === currentBoardId)
+        .slice(0, 4);
+
+        let users = (boardMembers.length > 0 && this.props.userRoster.length > 0) ? (boardMembers
+            .map((member) => {
+
+                let user = this.props.userRoster.find(x => x.id === member.userId); 
+
+                //Key is not unique even though I have set the key to the primary key of the member object.
+                return (
+                <ul>
+                    <li key={member.id}>{user.username.substring(0, 1)}</li> 
+                </ul>);            
+        })) : (null);
+        
         return (
             <div className="board-show-main">
                 <div className="board-show-navbar">
@@ -76,6 +93,7 @@ class BoardShow extends React.Component{
                         </form>
 
                         <button className="left-show-btn"><p className="left-show-content-btn user-btn">{this.props.currentUser.username.substring(0, 1)}</p></button>
+                        {users}
                         <button className="left-show-btn" onClick={this.props.openModal}><p className="left-show-content-btn">Invite</p></button>
                         {/* <button className="left-show-btn"><p className="left-show-content-btn">Invite</p></button> */}
                     </div>

@@ -4,6 +4,7 @@ import BoardShow from "./board_show";
 import { requestBoard, patchBoard, destroyBoard } from "../../actions/board_actions";
 import { requestBoardMembers } from "../../actions/boardMembership_actions";
 import { requestUsers } from "../../actions/userRoster_actions";
+import { openModal } from '../../actions/modal_actions';
 // import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
@@ -25,7 +26,7 @@ const mapDispatchToProps = (dispatch) => ({
     patchBoard: (board) => dispatch(patchBoard(board)),
     destroyBoard: (boardId) => dispatch(destroyBoard(boardId)),
     requestBoardMembers: () => dispatch(requestBoardMembers()),
-    requestUsers: () => dispatch(receiveUsers()),
+    requestUsers: () => dispatch(requestUsers()),
     openModal: () => dispatch(openModal('board-membership-menu')),
     clearErrors: () => dispatch(receiveBoardErrors([]))
 });

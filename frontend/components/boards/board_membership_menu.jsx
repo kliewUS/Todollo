@@ -5,9 +5,9 @@ class BoardMembershipMenu extends React.Component{
         super(props)
     }
 
-    componentDidMount(){
-        this.props.requestUsers();
-    }
+    // componentDidMount(){
+    //     this.props.requestUsers();
+    // }
 
     componentWillUnmount(){
         this.props.clearBoardMemberErrors();
@@ -24,9 +24,10 @@ class BoardMembershipMenu extends React.Component{
     }
 
     render(){
+        // console.log(this.props.board);
         return(
-            <div className="bdmMenu">
-                <p>Test Text</p>
+            <div className="bdm-menu">
+                <p className="bdm-content">Test Text</p>
             </div>
         )
     }
