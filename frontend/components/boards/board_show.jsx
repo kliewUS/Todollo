@@ -88,7 +88,8 @@ class BoardShow extends React.Component{
                 //How would I pass the member.id to the Board Membership Show Component for this case?
                 return (
                 <ul>
-                    <li key={member.id} onClick={this.showModal('board-membership-show')}>{user.username.substring(0, 1)}</li>
+                    {/* <li key={member.id} onClick={this.showModal('board-membership-show')}>{user.username.substring(0, 1)}</li> */}
+                    <li key={member.id}>{user.username.substring(0, 1)}</li>
                 </ul>);            
         })) : (null);
 
