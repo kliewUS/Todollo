@@ -89,7 +89,7 @@ class BoardShow extends React.Component{
                 return (
                 <ul>
                     {/* <li key={member.id} onClick={this.showModal('board-membership-show')}>{user.username.substring(0, 1)}</li> */}
-                    <li key={member.id}>{user.username.substring(0, 1)}</li>
+                    <li data-text={user.username} className="tooltip" key={member.id}>{user.username.substring(0, 1)}</li>
                 </ul>);            
         })) : (null);
 

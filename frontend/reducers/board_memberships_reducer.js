@@ -15,12 +15,12 @@ const boardMembershipsReducer = (state = {}, action) => {
       case REMOVE_BOARD_MEMBER:
         delete nextState[action.boardMemberId];
         return nextState;
-        case RECEIVE_BOARDS: //For showing the current user's board memberships.
-          if(!action.boardMemberships){
-            return {};
-          }else{
-            return action.boardMemberships;
-          }        
+        // case RECEIVE_BOARDS: //For showing the current user's board memberships.
+        //   if(!action.boardMemberships){
+        //     return {};
+        //   }else{
+        //     return action.boardMemberships;
+        //   }        
       default:
         return state;
     }

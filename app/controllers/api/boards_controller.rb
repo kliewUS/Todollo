@@ -3,7 +3,10 @@ class Api::BoardsController < ApplicationController
 
     def index
         @boards = current_user.owned_boards
-        @boardMemberships = current_user.board_memberships
+        @shared_boards = current_user.shared_boards
+        # @boardMemberships = current_user.board_memberships
+
+        # puts current_user.shared_boards
 
         render :index
     end
@@ -12,7 +15,7 @@ class Api::BoardsController < ApplicationController
         @board = Board.find_by(id: params[:id])
         @board_members = @board.members.pluck(:id) if @board
         
-        if @board && !@board.visibility && (!@board_members.include?(current_user.id) || current_user.id != @board.owner_id)
+        if @board && (@board.visibility == false) && (@board_members.include?(current_user.id) == false) && current_user.id != @board.owner_id
             render json:["You do not have permission to view this board"], status: 403
         elsif @board
             render :show
