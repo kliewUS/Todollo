@@ -25,7 +25,7 @@ class BoardIndex extends React.Component{
                         <div>
                             <span className="material-icons">assignment_ind</span>
                         </div>
-                        <h1>Personal Boards</h1>
+                        <h1>Your Boards</h1>
                     </div>
 
                     <ul className="boards-list">

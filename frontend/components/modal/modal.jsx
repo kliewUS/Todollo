@@ -7,6 +7,8 @@ import InformationMenu from '../navbar/information_menu';
 import BoardFormContainer from '../boards/board_form_container';
 import BoardNavMenuContainer from '../navbar/board_nav_menu_container';
 import BoardMembershipMenuContainer from '../boards/board_membership_menu_container';
+import BoardMembershipShowContainer from '../boards/board_membership_show_container';
+import BoardMembershipIndexContainer from '../boards/board_membership_index_container';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -36,9 +38,18 @@ function Modal({modal, closeModal}) {
         background = 'none';        
         break;
     case 'board-membership-menu':
+        // debugger;
         component = <BoardMembershipMenuContainer closeModal={closeModal} />;
         background = 'none';        
-        break;            
+        break;
+    case 'board-membership-show':
+        component = <BoardMembershipShowContainer closeModal={closeModal} />;
+        background = 'none';        
+        break;
+    case 'board-membership-index-menu':
+        component = <BoardMembershipIndexContainer closeModal={closeModal} />;
+        background = 'none';        
+        break;                          
     default:
       return null;
   }

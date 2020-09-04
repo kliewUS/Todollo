@@ -1,7 +1,16 @@
 .bdm-menu{
     background-color: whitesmoke;
+    padding: 50px;
 }
 
 .bdm-content{
     font-size: 20px;
 }
+
+.member-search{
+    display:none;
+}
+
+.bdm-input:focus + .member-search {
+    display: block;
+  }

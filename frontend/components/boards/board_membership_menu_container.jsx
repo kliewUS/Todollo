@@ -7,13 +7,12 @@ import { postBoardMember, receiveBoardMemberErrors } from "../../actions/boardMe
 
 const mapStateToProps = (state) => ({
     userRoster: Object.values(state.entities.userRoster),
-    board: state.entities.boards,
+    board: Object.values(state.entities.boards),
     errors: state.errors.boardMembershipErrors
 });
 
 const mapDispatchToProps = (dispatch) => ({
     postBoardMember: boardMember => dispatch(postBoardMember(boardMember)),
-    // requestUsers: () => dispatch(requestUsers()),
     clearBoardMemberErrors: () => dispatch(receiveBoardMemberErrors([]))
 });
 

@@ -30,7 +30,7 @@ class BoardNavMenu extends React.Component{
             <div className="board-nav">
                 <div className='board-nav-header'>
                     <span className="material-icons person-icon">person</span>
-                    <h3 id="board-nav-header">PERSONAL BOARDS</h3>
+                    <h3 id="board-nav-header">YOUR BOARDS</h3>
                     <span onClick={this.props.closeModal} className="material-icons board-nav-close-btn ">clear</span> 
                 </div>
                 <hr className='menu-line'/>

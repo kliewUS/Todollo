@@ -2,6 +2,8 @@ import React from "react";
 import {connect} from 'react-redux';
 import BoardMembershipShow from './board_membership_show';
 import { withRouter } from 'react-router-dom';
+import { destroyBoardMember, requestBoardMember } from "../../actions/boardMembership_actions";
+import {requestUser} from "../../actions/userRoster_actions";
 
 const mapStateToProps = (state) => ({
     userProfile: Object.values(state.entities.userRoster),
@@ -11,7 +13,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     destroyBoardMember: boardMemberId => dispatch(destroyBoardMember(boardMemberId)),
-    requestUser: (userId) => dispatch(receiveUser(userId)),
+    requestBoardMember: (boardMemberId) => dispatch(requestBoardMember(boardMemberId)),
+    requestUser: (userId) => dispatch(requestUser(userId)),
     clearBoardMemberErrors: () => dispatch(receiveBoardMemberErrors([]))
 });
 

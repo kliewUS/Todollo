@@ -8,7 +8,7 @@ class Api::BoardMembershipsController < ApplicationController
 
     def show
         @boardmembership = BoardMembership.find_by(id: params[:id])
-        @user = User.find_by(id: @boardmembership.user_id)
+        # @user = User.find_by(id: @boardmembership.user_id)
         if @boardmembership
             render :show
         else
@@ -17,11 +17,18 @@ class Api::BoardMembershipsController < ApplicationController
     end    
     
     def create
-        @boardmembership = BoardMembership.create(board_membership_params)
-        if @boardmembership.save
-            render :show
+        @bdmExist = BoardMembership.find_by(board_id: params[:board_membership][:board_id], user_id: params[:board_membership][:user_id])
+        debugger
+        puts @bdmExist
+        if @bdmExist
+            render json:["This person is already a member of this board"], status: 422
         else
-            render json: @boardmembership.errors.full_messages, status: 422
+            @boardmembership = BoardMembership.create(board_membership_params)
+            if @boardmembership.save
+                render :show       
+            else
+                render json: @boardmembership.errors.full_messages, status: 422
+            end            
         end
     end
 

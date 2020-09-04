@@ -6,7 +6,7 @@ class BoardForm extends React.Component{
         super(props)
         this.state = {
             title: '',
-            owner_id: this.props.currentUser,
+            owner_id: this.props.currentUser.id,
             visibility: true
         }
 
@@ -31,7 +31,11 @@ class BoardForm extends React.Component{
             this.props.processBoard(board)
                 .then((res) => 
                 {
-                    this.props.history.push(`/boards/${res.board.id}`)
+                    this.props.postBoardMember({board_id: res.board.id, user_id: this.state.owner_id})
+                    .then(() => 
+                    {
+                        this.props.history.push(`/boards/${res.board.id}`)
+                    })
                 });
         }
     }

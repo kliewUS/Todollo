@@ -17,7 +17,8 @@ const mapStateToProps = (state, ownProps) => {
         board: state.entities.boards[ownProps.match.params.boardId] || defaultBoard,
         boardMemberships: Object.values(state.entities.boardMemberships),
         userRoster: Object.values(state.entities.userRoster),
-        errors: state.errors.boardErrors
+        errors: state.errors.boardErrors,
+        modal: state.ui.modal
     }
 };
 
@@ -27,7 +28,7 @@ const mapDispatchToProps = (dispatch) => ({
     destroyBoard: (boardId) => dispatch(destroyBoard(boardId)),
     requestBoardMembers: () => dispatch(requestBoardMembers()),
     requestUsers: () => dispatch(requestUsers()),
-    openModal: () => dispatch(openModal('board-membership-menu')),
+    openModal: (modal) => dispatch(openModal(modal)),
     clearErrors: () => dispatch(receiveBoardErrors([]))
 });
 
