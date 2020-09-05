@@ -13,7 +13,8 @@ class BoardShow extends React.Component{
         this.toggleSideBar = this.toggleSideBar.bind(this);
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);        
-        this.handleDelete = this.handleDelete.bind(this);        
+        this.handleDelete = this.handleDelete.bind(this);
+        this.boardMemberExpand = this.boardMemberExpand.bind(this);        
     }
 
     componentDidMount(){
@@ -24,6 +25,12 @@ class BoardShow extends React.Component{
         this.props.requestBoardMembers();
         this.props.requestUsers();
     }
+
+    // componentDidUpdate(){
+    //     if(this.props.board.id !== this.props.match.params.boardId){
+    //         this.props.requestBoard(this.props.match.params.boardId);      
+    //     }     
+    // }
 
     update(field){
         return e => {
@@ -41,7 +48,7 @@ class BoardShow extends React.Component{
     handleDelete(e){
         e.preventDefault();
         if(this.props.board.ownerId === this.props.currentUser.id){
-            this.props.destroyBoard(this.props.match.params.boardId)
+            this.props.destroyBoard(this.props.board.id)
                 .then(() => 
                 {
                     this.props.history.push(`/boards`)
@@ -67,8 +74,11 @@ class BoardShow extends React.Component{
         }
     }
 
-    render(){
+    boardMemberExpand(count){
+        return (<button className="left-show-btn" onClick={this.showModal('board-membership-index-menu')}><p className="left-show-content-btn count-btn">+{count - 5}</p></button>)
+    }
 
+    render(){
         let sideNavOpen = this.state.sideNavOpen ? 'open' : 'closed';
         let currentBoardId = parseInt(this.props.match.params.boardId);
 
@@ -79,6 +89,12 @@ class BoardShow extends React.Component{
         let boardMemberCount = this.props.boardMemberships
         .filter(boardMember => boardMember.boardId === currentBoardId); //Not DRY. Will have to revise later if I have time.
 
+        let boardMemberExpand = null;
+
+        if(boardMemberCount.length > 5){
+            boardMemberExpand = this.boardMemberExpand(boardMemberCount.length);
+        }
+
         let users = (boardMembers.length > 0 && this.props.userRoster.length > 0) ? (boardMembers
             .map((member) => {
 
@@ -88,8 +104,7 @@ class BoardShow extends React.Component{
                 //How would I pass the member.id to the Board Membership Show Component for this case?
                 return (
                 <ul>
-                    {/* <li key={member.id} onClick={this.showModal('board-membership-show')}>{user.username.substring(0, 1)}</li> */}
-                    <li data-text={user.username} className="tooltip" key={member.id}>{user.username.substring(0, 1)}</li>
+                    <li data-text={user.username} className="tooltip left-show-btn" key={member.id}><p className="left-show-content-btn user-btn">{user.username.substring(0, 1)}</p></li>
                 </ul>);            
         })) : (null);
 
@@ -107,7 +122,8 @@ class BoardShow extends React.Component{
                         </form>
                         {users}
 
-                        <button className="left-show-btn" onClick={this.showModal('board-membership-index-menu')}><p className="left-show-content-btn">+{boardMemberCount.length - 5}</p></button>
+                        {boardMemberExpand}
+                        {/* <button className="left-show-btn" onClick={this.showModal('board-membership-index-menu')}><p className="left-show-content-btn">+{boardMemberCount.length - 5}</p></button> */}
                         <button className="left-show-btn" onClick={this.showModal('board-membership-menu')}><p className="left-show-content-btn">Invite</p></button>
                     </div>
 

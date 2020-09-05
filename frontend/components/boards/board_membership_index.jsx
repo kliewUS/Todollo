@@ -22,8 +22,8 @@ class BoardMembershipIndex extends React.Component{
 
         return search.map((name, i) => {
             return (
-            <li data-text={name} class="tooltip" key={i}>
-                {name.substring(0, 1)}
+            <li data-text={name} className="tooltip bdm-show-btn" key={i}>
+                <p className="bdm-show-content-btn user-btn">{name.substring(0, 1)}</p>
             </li>)
         });
     }
@@ -37,8 +37,11 @@ class BoardMembershipIndex extends React.Component{
 
     render(){
         return(
-            <div>
-                <input className="bdm" type="text" placeholder="Search for a user" value={this.state.searchTerm} onChange={this.handleInput('searchTerm')}/>
+            <div className="bdm-index-content">
+                <p>Board Members</p>
+                <span onClick={this.props.closeModal} className="material-icons">clear</span>                   
+                <hr />
+                <input className="bdm" type="text" placeholder="Search members" value={this.state.searchTerm} onChange={this.handleInput('searchTerm')}/>
                 <ul className="bdm-index-search">
                     {this.dynamicSearch()}
                 </ul>

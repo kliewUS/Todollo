@@ -18,8 +18,6 @@ class Api::BoardMembershipsController < ApplicationController
     
     def create
         @bdmExist = BoardMembership.find_by(board_id: params[:board_membership][:board_id], user_id: params[:board_membership][:user_id])
-        debugger
-        puts @bdmExist
         if @bdmExist
             render json:["This person is already a member of this board"], status: 422
         else

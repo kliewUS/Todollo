@@ -14,7 +14,7 @@ const mapStateToProps = (state, ownProps) => {
     };
     return {
         currentUser: state.entities.users[state.session.id],        
-        board: state.entities.boards[ownProps.match.params.boardId] || defaultBoard,
+        board: state.entities.boards || defaultBoard,
         boardMemberships: Object.values(state.entities.boardMemberships),
         userRoster: Object.values(state.entities.userRoster),
         errors: state.errors.boardErrors,

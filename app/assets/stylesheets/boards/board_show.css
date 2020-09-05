@@ -177,3 +177,8 @@
 #visibility-show-btn option{
     color: black;
 }
+
+.left-show-content-btn.count-btn{
+    border-radius: 50%;
+    padding: 6.5px;    
+}

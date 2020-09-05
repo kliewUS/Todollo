@@ -51,14 +51,25 @@ class BoardMembershipMenu extends React.Component{
     }
 
     render(){
+        const bdmError = this.props.errors[0] ? 
+                            (<h1 className="errors-list">{this.props.errors[0]}</h1>) :
+                            (null);
+
         return(
             <div className="bdm-menu">
+
                 <form className="bdm-create-form" onSubmit={this.handleSubmit}>
-                    <input className="bdm-input" type="text" placeholder="Input a user" value={this.state.searchTerm} onChange={this.handleInput('searchTerm')}/>
+                    <p id="bdm-title">Invite To Board</p>
+                    <span onClick={this.props.closeModal} className="material-icons">clear</span>                    
+                    <hr className="bdm-line"/>
+                    <div className="bdm-create-input">                 
+                    <input className="bdm-input" type="text" placeholder="Enter name" value={this.state.searchTerm} onChange={this.handleInput('searchTerm')}/>
                     <ul className="member-search">
                         {this.dynamicSearch()}
                     </ul>
+                    {bdmError}
                     <button id="new-bdm-btn" type="submit" disabled={!this.state.searchTerm}>Invite User</button>
+                    </div>
                 </form>
             </div>
         )

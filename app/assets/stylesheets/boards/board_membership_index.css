@@ -2,7 +2,8 @@
 
 .tooltip {
     position:relative; /* making the .tooltip span a container for the tooltip text */
-    border-bottom:1px dashed #000; /* little indicater to indicate it's hoverable */
+    /* border-bottom:1px dashed #000;  */
+    /* little indicater to indicate it's hoverable */
   }
 
 .tooltip:before {
@@ -10,17 +11,20 @@
     position:absolute;
 
     /* vertically center */
-    top:50%;
+    /* top:0%; */
     transform:translateY(-50%);
 
     /* move to right */
-    left:100%;
-    margin-left:15px; /* and add a small left margin */
+    /* left:100%;
+    margin-left:15px; and add a small left margin */
+
+    bottom:10%;
+    margin-top:-15px;
 
     /* basic styles */
-    width:200px;
-    padding:10px;
-    border-radius:10px;
+    width:50px;
+    padding:7.5px;
+    border-radius:5px;
     background:#000;
     color: #fff;
     text-align:center;
@@ -28,7 +32,8 @@
     /* display:none; hide by default */
 
     opacity:0;
-    transition:.3s opacity;   
+    transition:.3s opacity;
+    z-index: 5;   
 }
 
 /* .tooltip:hover:before {
@@ -38,28 +43,80 @@
 } */
 
 .tooltip:after {
-    content: "";
-    position:absolute;
+    /* content: "";
+    position:absolute; */
     
     /* position tooltip correctly */
-    left:100%;
-    margin-left:-5px;
+    /* left:100%;
+    margin-left:-5px; */
+    /* bottom:10%;
+    margin-top:5px; */
    
     /* vertically center */
-    top:50%;
-    transform:translateY(-50%);
+    /* top:0%; */
+    /* transform:translateY(-50%); */
    
     /* the arrow */
-    border:10px solid #000;
-    border-color: transparent black transparent transparent;
+    /* border:10px solid #000;
+    border-color: black transparent transparent transparent; */
     
     /* display:none; */
 
-    opacity:0;
-    transition:.3s;    
+    /* opacity:0;
+    transition:.3s;     */
 }
 .tooltip:hover:before, .tooltip:hover:after {
     /* display:block; */
 
     opacity:1;    
+}
+
+.bdm-index-content{
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.bdm-show-btn:hover{
+    background-color: transparent;
+}
+
+
+.bdm-show-content-btn{
+    margin: 0 5px 0 5px;
+    background-color:rgba(245,245,245, 0.4);
+    border-radius: 5px;
+    padding: 7.5px;    
+}
+
+.bdm-show-content-btn.user-btn{
+    color: black;
+    background-color: lightgray;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 7.5px;
+    border-radius: 50%;
+    margin: auto 2px;
+    height: 20px;
+    width: 20px;
+    text-align: center;  
+}
+
+.left-show-content-btn:hover{
+    background-color:rgba(245,245,245, 0.6);    
+}
+
+.bdm-index-search{
+    display:flex;
+    margin-top: 15px;
+}
+
+.bdm{
+    border: 2px solid lightgray;
+    width: 100%;
+}
+
+.bdm:focus{
+    border: 2px solid green;
+    background: white;
 }
