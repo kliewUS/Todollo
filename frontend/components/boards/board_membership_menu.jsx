@@ -23,7 +23,8 @@ class BoardMembershipMenu extends React.Component{
         return search.map((name, i) => {
             return (
             <li key={i}>
-                <button onClick={this.handleClick}>{name}</button>
+                <button className="name-item">{name}</button>
+                {/* <button onClick={this.handleClick}>{name}</button> */}
             </li>)
         });
     }    
@@ -33,7 +34,7 @@ class BoardMembershipMenu extends React.Component{
     }
 
     handleClick(e){
-        console.log(e.target.textContent)
+        // console.log(e.target.textContent)
         this.setState({searchTerm: e.target.textContent});        
     }
 
@@ -47,20 +48,27 @@ class BoardMembershipMenu extends React.Component{
         e.preventDefault();
         const searchTerm = this.state.searchTerm;
         let user = this.props.userRoster.find(x => x.username === searchTerm);
-        this.props.postBoardMember({board_id: this.props.board[0].id, user_id: user.id});
+
+        if(user === undefined){
+            this.props.postBoardMember({board_id: this.props.board.id, user_id: 0});
+        }else{
+            this.props.postBoardMember({board_id: this.props.board.id, user_id: user.id});
+        }
+
+
     }
 
     render(){
-        const bdmError = this.props.errors[0] ? 
-                            (<h1 className="errors-list">{this.props.errors[0]}</h1>) :
-                            (null);
 
+        const bdmError = this.props.errors[0] ? 
+                            (<h1 className="bdm-errors-list">{this.props.errors[0]}</h1>) :
+                            (null);
         return(
             <div className="bdm-menu">
 
                 <form className="bdm-create-form" onSubmit={this.handleSubmit}>
                     <p id="bdm-title">Invite To Board</p>
-                    <span onClick={this.props.closeModal} className="material-icons">clear</span>                    
+                    <span onClick={this.props.closeModal} className="material-icons bdm-menu-close-btn">clear</span>                    
                     <hr className="bdm-line"/>
                     <div className="bdm-create-input">                 
                     <input className="bdm-input" type="text" placeholder="Enter name" value={this.state.searchTerm} onChange={this.handleInput('searchTerm')}/>

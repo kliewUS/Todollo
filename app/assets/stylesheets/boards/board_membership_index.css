@@ -72,9 +72,13 @@
 }
 
 .bdm-index-content{
+    position: absolute;      
     background-color: whitesmoke;
     padding: 10px;
     border-radius: 5px;
+    box-shadow: 5px 5px 25px 0px rgba(0,0,0,0.75);
+    left: 450px;
+    top: 88px;      
 }
 
 .bdm-show-btn:hover{
@@ -119,4 +123,11 @@
 .bdm:focus{
     border: 2px solid green;
     background: white;
+}
+
+.material-icons.bdm-index-close-btn{
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    cursor: pointer;   
 }

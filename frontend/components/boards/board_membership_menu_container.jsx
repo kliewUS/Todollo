@@ -7,7 +7,7 @@ import { postBoardMember, receiveBoardMemberErrors } from "../../actions/boardMe
 
 const mapStateToProps = (state) => ({
     userRoster: Object.values(state.entities.userRoster),
-    board: Object.values(state.entities.boards),
+    board: state.entities.boards,
     errors: state.errors.boardMembershipErrors
 });
 

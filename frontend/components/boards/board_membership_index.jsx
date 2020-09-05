@@ -39,7 +39,7 @@ class BoardMembershipIndex extends React.Component{
         return(
             <div className="bdm-index-content">
                 <p>Board Members</p>
-                <span onClick={this.props.closeModal} className="material-icons">clear</span>                   
+                <span onClick={this.props.closeModal} className="material-icons bdm-index-close-btn">clear</span>                   
                 <hr />
                 <input className="bdm" type="text" placeholder="Search members" value={this.state.searchTerm} onChange={this.handleInput('searchTerm')}/>
                 <ul className="bdm-index-search">
