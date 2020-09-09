@@ -15,7 +15,11 @@ class Board < ApplicationRecord
 
     belongs_to :owner,
         foreign_key: :owner_id,
-        class_name: :User    
+        class_name: :User
+        
+    has_many :lists,
+        foreign_key: :board_id,
+        class_name: :List          
 
     has_many :board_members,
         foreign_key: :board_id,

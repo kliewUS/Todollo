@@ -26,11 +26,13 @@ class BoardShow extends React.Component{
         this.props.requestUsers();
     }
 
-    // componentDidUpdate(){
-    //     if(this.props.board.id !== this.props.match.params.boardId){
-    //         this.props.requestBoard(this.props.match.params.boardId);      
-    //     }     
-    // }
+    componentDidUpdate(prevProps){
+        if(this.props.match.params.boardId !== prevProps.match.params.boardId){
+            this.props.requestBoard(this.props.match.params.boardId);
+            this.props.requestBoardMembers();
+            this.props.requestUsers();      
+        }     
+    }
 
     update(field){
         return e => {
