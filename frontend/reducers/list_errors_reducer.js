@@ -1,4 +1,4 @@
-import {RECEIVE_LIST, RECEIVE_LIST_ERRORS} from '../actions/board_actions';
+import {RECEIVE_LIST, RECEIVE_LIST_ERRORS} from '../actions/list_actions';
 
 const listErrorsReducer = (state = [], action) => {
     Object.freeze(state);

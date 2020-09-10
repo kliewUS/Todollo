@@ -20,7 +20,7 @@ export const removeList = (listId) => ({
     listId
 });
 
-export const receiveLists = (errors) => ({
+export const receiveListErrors = (errors) => ({
     type: RECEIVE_LIST_ERRORS,
     errors
 });

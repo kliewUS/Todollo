@@ -1,4 +1,4 @@
-import {RECEIVE_CARD, RECEIVE_CARD_ERRORS} from '../actions/board_actions';
+import {RECEIVE_CARD, RECEIVE_CARD_ERRORS} from '../actions/card_actions';
 
 const cardErrorsReducer = (state = [], action) => {
     Object.freeze(state);

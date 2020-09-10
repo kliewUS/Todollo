@@ -134,9 +134,13 @@ class BoardShow extends React.Component{
                     </div>
 
                 </div>
+
+                {/* Where the List Index will be located */}
                 <div className="board-lists">
                     <button className="show-btn"><p className="show-content-btn">Add New List</p></button>
                 </div>
+
+                
                 <div className={`side-nav ${sideNavOpen}`}>
                     <div className="side-nav-header">
                         <h3 id="sidenav-title">Menu</h3>
