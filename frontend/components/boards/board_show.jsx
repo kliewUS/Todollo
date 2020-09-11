@@ -1,4 +1,5 @@
 import React from 'react';
+import ListIndexContainer from '../lists/list_index_container';
 
 class BoardShow extends React.Component{
     constructor(props){
@@ -136,9 +137,10 @@ class BoardShow extends React.Component{
                 </div>
 
                 {/* Where the List Index will be located */}
-                <div className="board-lists">
+                <ListIndexContainer boardId={this.props.board.id} />
+                {/* <div className="board-lists">
                     <button className="show-btn"><p className="show-content-btn">Add New List</p></button>
-                </div>
+                </div> */}
 
                 
                 <div className={`side-nav ${sideNavOpen}`}>

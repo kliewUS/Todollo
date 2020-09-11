@@ -2,7 +2,10 @@ class Api::ListsController < ApplicationController
     before_action :require_login
 
     def index
-        @lists = List.where(board_id: params[:board_id])
+        # debugger;
+        @lists = List.all;
+        # debugger;
+        # puts params[:board_id]
 
         render :index
     end

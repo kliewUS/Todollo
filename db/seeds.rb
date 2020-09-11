@@ -9,6 +9,7 @@
 User.destroy_all
 Board.destroy_all
 BoardMembership.destroy_all
+List.destroy_all
 
 u1 = User.create!(
     username: 'Edmund',
@@ -65,3 +66,8 @@ bm16 = BoardMembership.create!(board_id: 7, user_id: 5)
 bm17 = BoardMembership.create!(board_id: 8, user_id: 5)
 bm18 = BoardMembership.create!(board_id: 9, user_id: 4)
 bm19 = BoardMembership.create!(board_id: 10, user_id: 3)
+
+l1 = List.create!(title: 'Test List', board_id: 4)
+l2 = List.create!(title: 'Test List 2', board_id: 4)
+l3 = List.create!(title: 'Test List 3', board_id: 2)
+l4 = List.create!(title: 'Test List 4', board_id: 2)
