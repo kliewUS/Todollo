@@ -41,14 +41,14 @@ export const requestList = (listId) => dispatch => {
 
 export const postList = (list) => dispatch => {
     return ListAPIUtil.createList(list)
-        .then(list => dispatch(receiveList(list)), 
+        .then(list => dispatch(receiveLists(list)), 
         err => dispatch(receiveListErrors(err.responseJSON))
         );
 }
 
 export const patchList = (list) => dispatch => {
     return ListAPIUtil.updateList(list)
-        .then(list => dispatch(receiveList(list)), 
+        .then(list => dispatch(receiveLists(list)), 
         err => dispatch(receiveListErrors(err.responseJSON))
         );
 }

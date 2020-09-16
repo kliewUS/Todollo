@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from 'react-redux';
-import ListIndex from "./list_index";
-import { requestLists, postList } from "../../actions/list_actions";
+import ListIndexItem from "./list_index_item";
+import { patchList } from "../../actions/list_actions";
 
 const mapStateToProps = (state) => {
     return {       
@@ -12,8 +12,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
     requestLists: () => dispatch(requestLists()),
-    postList: (list) => dispatch(postList(list)),
+    patchList: (list) => dispatch(patchList(list)),
+    destroyList: (listId) => dispatch(destroyList(listId)),
     clearErrors: () => dispatch(receiveListErrors([]))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ListIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(ListIndexItem);

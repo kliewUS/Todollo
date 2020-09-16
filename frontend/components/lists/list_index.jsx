@@ -1,25 +1,44 @@
 import React from 'react';
-import ListIndexItem from './list_index_item';
+import ListIndexItemContainer from './list_index_item_container';
 
 class ListIndex extends React.Component{
     constructor(props){
         super(props);
+
+        this.state = {
+            title: ""
+        }
+        this.update = this.update.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);  
     }
 
     componentDidMount(){
         this.props.requestLists();
     }
 
-    handleSubmit(){
+    update(field){
+        return e => {
+            this.setState({[field]: e.currentTarget.value});
+        }
+        
+    }    
+
+    handleSubmit(e){
+        e.preventDefault();
+        const newList = {title: this.state.title, board_id: this.props.boardId};
+        this.props.postList(newList)
+            .then(() => {
+                this.props.requestLists();
+            });
     }
 
     render(){
         // debugger;
         let list_arr = (this.props.lists !== undefined) ? this.props.lists
-        .filter(list => list.boardId !== this.props.boardId)
+        .filter(list => list.boardId === this.props.boardId)
         .map(list => {
             return (
-                <ListIndexItem list={list} key={list.id}/>
+                <ListIndexItemContainer list={list} key={list.id}/>
             );
         }) : (null);
 
@@ -27,7 +46,12 @@ class ListIndex extends React.Component{
         return(
         <div className="board-lists">
             {list_arr}
-            <button className="show-btn"><p className="show-content-btn">Add New List</p></button>
+            <div className="add-list-dropdown"> {/* Will make this a dropdown */}
+                <form onSubmit={this.handleSubmit}>
+                    <input id="list-create-input" type="text" value={this.state.title} onChange={this.update('title')}/>    
+                    <button className="show-btn"><p className="show-content-btn">Add New List</p></button>
+                </form>
+            </div>
         </div>
         );
 

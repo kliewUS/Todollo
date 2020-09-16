@@ -1,9 +1,13 @@
 class Api::ListsController < ApplicationController
     before_action :require_login
 
+    def fetch_all_lists
+        @lists = List.all;
+    end
+
     def index
         # debugger;
-        @lists = List.all;
+        fetch_all_lists();
         # debugger;
         # puts params[:board_id]
 
@@ -19,10 +23,11 @@ class Api::ListsController < ApplicationController
     def create
         @list = List.create(list_params)
 
-        @list.board_id = params[:board_id];
+        # @list.board_id = params[:board_id];
 
         if @list.save
-            render :show
+            fetch_all_lists();
+            render :index
         else
             render json: @list.errors.full_messages, status: 422
         end
@@ -32,6 +37,7 @@ class Api::ListsController < ApplicationController
         @list = List.find_by(id: params[:id])
 
         if @list.destroy
+            fetch_all_lists();
             render :index
         else
             render json: ["List deletion failed"], status: 422
@@ -42,6 +48,7 @@ class Api::ListsController < ApplicationController
         @list = List.find_by(id: params[:id])
 
         if @list.update(list_params)
+            fetch_all_lists();
             render :index
         else
             render json:["Unable to update the list"], status: 422 
