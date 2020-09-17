@@ -18,19 +18,21 @@ class CardIndex extends React.Component{
     }    
 
     render(){
-
-        // let card_arr = (this.props.cards !== undefined) ? this.props.cards
-        // .filter(card => card.listId === this.props.listId)
-        // .map(card => {
-        //     return (
-        //         <CardIndexItemContainer card={card} key={card.id}/>
-        //     );
-        // }) : (null);
+        console.log(this.props.cards);
+        let card_arr = (this.props.cards !== undefined) ? this.props.cards
+        .filter(card => card.listId === this.props.listId)
+        .map(card => {
+            return (
+                <CardIndexItemContainer card={card} key={card.id}/>
+            );
+        }) : (null);
 
         return (
         <div className="card-index">
-            <p>Card Index Rendering</p>
-            {/* {card_arr} */}
+            <ul className="cards">
+                {card_arr}
+            </ul>
+            {/* Where the card post functionality will go */}
         </div>)
     }
 

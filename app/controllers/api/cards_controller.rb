@@ -2,7 +2,7 @@ class Api::CardsController < ApplicationController
     before_action :require_login
 
     def index
-        @cards = Card.where(list_id: params[:list_id])
+        @cards = Card.all
 
         render :index
     end

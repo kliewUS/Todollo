@@ -71,3 +71,8 @@ l1 = List.create!(title: 'Test List', board_id: 4)
 l2 = List.create!(title: 'Test List 2', board_id: 4)
 l3 = List.create!(title: 'Test List 3', board_id: 2)
 l4 = List.create!(title: 'Test List 4', board_id: 2)
+
+c1 = Card.create!(title: 'Test Card', description: "", list_id: 2)
+c2 = Card.create!(title: 'Test Card 2', description: "Test Description", list_id: 1)
+c3 = Card.create!(title: 'Test Card 3', description: "Test Description 2", list_id: 2)
+c4 = Card.create!(title: 'Test Card 4', description: "Test Description 3", list_id: 1)

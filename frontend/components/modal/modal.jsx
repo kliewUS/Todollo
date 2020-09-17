@@ -9,15 +9,16 @@ import BoardNavMenuContainer from '../navbar/board_nav_menu_container';
 import BoardMembershipMenuContainer from '../boards/board_membership_menu_container';
 import BoardMembershipShowContainer from '../boards/board_membership_show_container';
 import BoardMembershipIndexContainer from '../boards/board_membership_index_container';
+import CardShowContainer from '../cards/card_show_container';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
     return null;
   }
-
+  // debugger;
   let component;
   let background = 'transparent';
-  switch (modal) {
+  switch (modal.type) {
     case 'account-menu':
         component = <AccountMenuContainer closeModal={closeModal} />;
         background = 'none';
@@ -49,7 +50,11 @@ function Modal({modal, closeModal}) {
     case 'board-membership-index-menu':
         component = <BoardMembershipIndexContainer closeModal={closeModal} />;
         background = 'none';        
-        break;                          
+        break;
+    case 'card-show-menu':
+        debugger;
+        component = <CardShowContainer closeModal={closeModal} cardId={modal.id}/>;    
+        break;                            
     default:
       return null;
   }
