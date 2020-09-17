@@ -30,7 +30,7 @@ class CardIndexItem extends React.Component{
         return (
             <li className="card-item">
                 <form onSubmit={this.handleSubmit}>
-                <input id="card-title-input" type="text" value={this.state.title} onChange={this.update('title')} onBlur={this.handleSubmit} />                    
+                    <input id="card-title-input" type="text" value={this.state.title} onChange={this.update('title')} onBlur={this.handleSubmit} />                    
                 </form>                
             </li>
         )        

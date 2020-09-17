@@ -5,17 +5,17 @@ export const RECEIVE_CARD = 'RECEIVE_CARD';
 export const REMOVE_CARD = 'REMOVE_CARD';
 export const RECEIVE_CARD_ERRORS = "RECEIVE_CARD_ERRORS";
 
-export const receiveLists = (cards) => ({
+export const receiveCards = (cards) => ({
     type: RECEIVE_CARDS,
     cards
 });
 
-export const receiveList = (card) => ({
+export const receiveCard = (card) => ({
     type: RECEIVE_CARD,
     card
 });
 
-export const removeList = (cardId) => ({
+export const removeCard = (cardId) => ({
     type: REMOVE_CARD,
     cardId
 });

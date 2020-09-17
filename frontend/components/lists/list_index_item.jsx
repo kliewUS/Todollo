@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CardIndexContainer from "../cards/card_index_container";
 
 class ListIndexItem extends React.Component{
     constructor(props){
@@ -29,19 +30,18 @@ class ListIndexItem extends React.Component{
     
     handleDelete(e){
         e.preventDefault();
-        this.props.destroyList(this.props.list.id)
-            .then(() => {
-                this.props.requestLists();
-            });         
+        this.props.destroyList(this.props.list.id)      
     }
     
     render(){
-        return (
+
+        return ( 
             <li className="list-item">
                 <form onSubmit={this.handleSubmit}>
                     <input className="list-title-input" type="text" value={this.state.title} onChange={this.update('title')} onBlur={this.handleSubmit} />                    
                 </form>
-                <li id="list-delete-btn" onClick={this.handleDelete}><p id="delete-list-text-btn">Delete List</p></li>                
+                <li id="list-delete-btn" onClick={this.handleDelete}><p id="delete-list-text-btn">Delete List</p></li> 
+                <CardIndexContainer listId={this.props.list.id} />
             </li>
         )        
     }

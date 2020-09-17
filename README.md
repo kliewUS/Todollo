@@ -27,5 +27,3 @@ Todollo will soon have the following features.
 * Creating, deleting, and updating Lists and Cards
 * Creating, deleting, and updating Comments
 * Putting labels on Cards.
-* Change the order of lists and cards by dragging and dropping
-* Setting and changing the Background of a board.

@@ -45,7 +45,9 @@ class ListIndex extends React.Component{
 
         return(
         <div className="board-lists">
-            {list_arr}
+            <ul className="lists">
+                {list_arr}
+            </ul>
             <div className="add-list-dropdown"> {/* Will make this a dropdown */}
                 <form onSubmit={this.handleSubmit}>
                     <input id="list-create-input" type="text" value={this.state.title} onChange={this.update('title')}/>    
