@@ -52,7 +52,7 @@ function Modal({modal, closeModal}) {
         background = 'none';        
         break;
     case 'card-show-menu':
-        debugger;
+        // debugger;
         component = <CardShowContainer closeModal={closeModal} cardId={modal.id}/>;    
         break;                            
     default:
