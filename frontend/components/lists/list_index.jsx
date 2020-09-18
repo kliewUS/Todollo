@@ -49,10 +49,10 @@ class ListIndex extends React.Component{
             <ul className="lists">
                 {list_arr}
             </ul>
-            <div className="add-list-dropdown"> {/* Will make this a dropdown */}
-                <form onSubmit={this.handleSubmit}>
-                    <input id="list-create-input" type="text" value={this.state.title} onChange={this.update('title')}/>    
-                    <button className="show-btn"><p className="show-content-btn">Add New List</p></button>
+            <div className="add-list-dropdown"> 
+                <form className="add-list-content" onSubmit={this.handleSubmit}>
+                    <input id="list-create-input" type="text" value={this.state.title} placeholder="Enter list title..." onChange={this.update('title')}/>    
+                    <button className="list-create-btn"><p className="list-create-content-btn">Add List</p></button>
                 </form>
             </div>
         </div>

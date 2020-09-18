@@ -1,5 +1,81 @@
+.board-lists{
+    min-height:calc(100vh - 43px);
+    display: flex;
+}
+
+.lists{
+    display:flex;
+    height: 100%;
+}
+
 .list-item{
-    background: whitesmoke;
+    background: #ebecf0;
     margin: 5px;
     border-radius: 5px;
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+}
+
+.list-item-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-list-content{
+    background: #ebecf0;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+    display: flex;
+    flex-direction: column;        
+}
+
+
+.list-create-content-btn{
+    background-color: green;
+    color:whitesmoke;
+    margin: 0 5px 0 5px;
+    border-radius: 5px;
+    padding: 7.5px 7.5px 7.5px 7.5px;      
+}
+
+.list-create-content-btn:hover{
+    background-color:rgba(81, 152, 57,0.8);    
+}
+
+#list-create-input{
+    background-color: #fff;
+    margin: auto 2px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 5px 5px 5px;
+    box-shadow: 0 1px 0 rgba(9,30,66,.25);
+    text-align: left;
+    min-width: 250px; 
+}
+
+#list-create-input:focus{
+    /* background-color: rgba(255, 255, 255, 0.3); */
+    border: 2px solid green;
+}
+
+.list-create-btn{
+    align-self:flex-start;
+    margin-bottom: 5px;
+}
+
+.list-title-input{
+    margin: 7.5px 5px 5px 10px;
+    cursor: pointer;
+}
+
+.list-title-input:focus{
+    border: 2px solid green;
+}
+
+.delete-list:hover{
+    color: firebrick;
+}
+
+.delete-list{
+    margin: 5px;
 }

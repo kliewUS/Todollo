@@ -35,7 +35,6 @@ class CardIndex extends React.Component{
     }    
 
     render(){
-        // console.log(this.props.cards);
         let card_arr = (this.props.cards !== undefined) ? this.props.cards
         .filter(card => card.listId === this.props.listId)
         .map(card => {
@@ -49,9 +48,9 @@ class CardIndex extends React.Component{
             <ul className="cards">
                 {card_arr}
             </ul>
-            <form onSubmit={this.handleSubmit}>
-                    <input id="card-create-input" type="text" value={this.state.title} onChange={this.update('title')}/>    
-                    <button className="card-show-btn"><p className="card-create-btn">Add New Card</p></button>
+            <form className="add-card-content" onSubmit={this.handleSubmit}>
+                    <input id="card-create-input" type="text" value={this.state.title} placeholder="Enter a title for this card..." onChange={this.update('title')}/>    
+                    <button className="card-create-btn"><p className="card-create-content-btn">Add Card</p></button>
             </form>
         </div>)
     }

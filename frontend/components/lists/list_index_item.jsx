@@ -37,10 +37,12 @@ class ListIndexItem extends React.Component{
 
         return ( 
             <li className="list-item">
-                <form onSubmit={this.handleSubmit}>
-                    <input className="list-title-input" type="text" value={this.state.title} onChange={this.update('title')} onBlur={this.handleSubmit} />                    
-                </form>
-                <li id="list-delete-btn" onClick={this.handleDelete}><p id="delete-list-text-btn">Delete List</p></li> 
+                <div className="list-item-content">
+                    <form className="list-item-form" onSubmit={this.handleSubmit}>
+                        <input className="list-title-input" type="text" value={this.state.title} onChange={this.update('title')} onBlur={this.handleSubmit} />                    
+                    </form>
+                    <button id="button-delete-btn" onClick={this.handleDelete}><span className="material-icons delete-list">delete</span></button> 
+                </div>
                 <CardIndexContainer listId={this.props.list.id} />
             </li>
         )        

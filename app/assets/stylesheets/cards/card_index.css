@@ -1,0 +1,53 @@
+.card-item{
+    background-color: #fff;
+    border-radius:3px;
+    box-shadow: 0 1px 0 rgba(9,30,66,.25);
+    margin: 5px 7.5px 5px 7.5px;
+    padding: 5px;
+}
+
+.card-item:hover{
+    background-color: #f4f5f7;
+}
+
+.add-card-content{
+    /* background: #ebecf0;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75); */
+    display: flex;
+    flex-direction: column;        
+}
+
+
+.card-create-content-btn{
+    background-color: green;
+    color:whitesmoke;
+    margin: 0 5px 0 5px;    
+    border-radius: 5px;
+    padding: 7.5px 7.5px 7.5px 7.5px;      
+}
+
+.card-create-content-btn:hover{
+    background-color:rgba(81, 152, 57,0.8);    
+}
+
+#card-create-input{
+    background-color: #fff;
+    /* margin: auto 2px; */
+    border-radius: 5px;
+    padding: 5px;
+    margin: 2.5px 7.5px 7.5px 7.5px;
+    box-shadow: 0 1px 0 rgba(9,30,66,.25);
+    text-align: left;
+    min-width: 250px; 
+}
+
+/* #card-create-input:focus{
+    background-color: rgba(255, 255, 255, 0.3);
+} */
+
+.card-create-btn{
+    align-self:flex-start;
+    margin-bottom: 5px;
+}
