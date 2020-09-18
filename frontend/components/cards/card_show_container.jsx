@@ -4,13 +4,24 @@ import CardShow from "./card_show";
 import { requestCard, patchCard, destroyCard } from "../../actions/card_actions";
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger;
-    const card = state.entities.cards[ownProps.cardId]
-    const listTitle = state.entities.lists[card.listId].title;
+    let card = "";
+    let listTitle = "";
+    let boardId = "";
+
+    if(state.entities.cards[ownProps.cardId] !== undefined){
+        card = state.entities.cards[ownProps.cardId]
+        listTitle = state.entities.lists[card.listId].title;
+        boardId = state.entities.lists[card.listId].boardId;
+    
+        if(card.description === null){
+            card.description = "";
+        }
+    }
 
     return {       
         card: card,
         listTitle: listTitle,
+        boardId: boardId,
         errors: state.errors.cardErrors
     }
 };

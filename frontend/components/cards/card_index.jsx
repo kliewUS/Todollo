@@ -30,6 +30,7 @@ class CardIndex extends React.Component{
         this.props.postCard(newCard)
             .then(() => {
                 this.props.requestCards();
+                this.setState({title: ""});
             });
     }    
 

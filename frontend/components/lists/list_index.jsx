@@ -29,6 +29,7 @@ class ListIndex extends React.Component{
         this.props.postList(newList)
             .then(() => {
                 this.props.requestLists();
+                this.setState({title: ""});
             });
     }
 

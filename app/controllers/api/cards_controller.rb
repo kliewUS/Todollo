@@ -16,6 +16,8 @@ class Api::CardsController < ApplicationController
     def create
         @card = Card.create(card_params)
 
+        @card.description = ""
+
         # @card.list_id = params[:list_id];
 
         if @card.save
@@ -29,7 +31,7 @@ class Api::CardsController < ApplicationController
         @card = Card.find_by(id: params[:id])
 
         if @card.destroy
-            render :index
+            render :show
         else
             render json: ["Card deletion failed"], status: 422
         end
@@ -46,7 +48,7 @@ class Api::CardsController < ApplicationController
     end
 
     def card_params
-        params.require(:card).permit(:title, :list_id)        
+        params.require(:card).permit(:title, :description, :list_id)        
     end    
 
 end
