@@ -10,6 +10,8 @@ User.destroy_all
 Board.destroy_all
 BoardMembership.destroy_all
 List.destroy_all
+Card.destroy_all
+Comment.destroy_all
 
 u1 = User.create!(
     username: 'Edmund',
@@ -76,3 +78,9 @@ c1 = Card.create!(title: 'Test Card', description: "", list_id: 2)
 c2 = Card.create!(title: 'Test Card 2', description: "Test Description", list_id: 1)
 c3 = Card.create!(title: 'Test Card 3', description: "Test Description 2", list_id: 2)
 c4 = Card.create!(title: 'Test Card 4', description: "Test Description 3", list_id: 1)
+
+co1 = Comment.create!(body: "Test Comment", user_id: 2, card_id: 3)
+co2 = Comment.create!(body: "Test Comment 2", user_id: 1, card_id: 3)
+co3 = Comment.create!(body: "Test Comment 3", user_id: 3, card_id: 1)
+co4 = Comment.create!(body: "Test Comment 4", user_id: 2, card_id: 3)
+co5 = Comment.create!(body: "Test Comment 5", user_id: 4, card_id: 1)

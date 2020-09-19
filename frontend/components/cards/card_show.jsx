@@ -1,4 +1,5 @@
 import React from 'react';
+import CommentIndexContainer from '../comments/comment_index_container';
 
 class CardShow extends React.Component{
     constructor(props){
@@ -61,7 +62,9 @@ class CardShow extends React.Component{
             <div className="card-comments">
                 <span className="material-icons card-icons">comment</span>
                 <h2>Activity</h2>
+                <CommentIndexContainer cardId={this.props.cardId} />
             </div>
+
             <h3 id="delete-card-title">Card Action</h3>
             <div id="delete-card">
                 <button id="delete-card-text-btn" onClick={this.handleDelete}>Delete Card</button>

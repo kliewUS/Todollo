@@ -18,6 +18,7 @@ class Card < ApplicationRecord
         
     has_many :comments,
         foreign_key: :card_id,
-        class_name: :Comment     
+        class_name: :Comment,
+        dependent: :destroy     
 
 end
