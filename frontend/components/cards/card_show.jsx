@@ -42,15 +42,30 @@ class CardShow extends React.Component{
     }    
 
     render(){
-        // console.log(this.props.boardId);
         return(
         <div className="card-show-menu">
-            <form onSubmit={this.handleSubmit}>
-                <input id="card-title-input" type="text" value={this.state.title} onChange={this.update('title')} onBlur={this.handleSubmit} />
-                <p>in list {this.props.listTitle}</p>
-                <input id="card-description-input" type="text" value={this.state.description} onChange={this.update('description')} onBlur={this.handleSubmit} />                
+
+            <form className="card-show-content" onSubmit={this.handleSubmit}>
+                <div className="card-title">
+                    <span className="material-icons main-card-icon">subject</span> 
+                    <input id="card-title-input" type="text" value={this.state.title} onChange={this.update('title')} onBlur={this.handleSubmit} />
+                    <span onClick={this.props.closeModal} className="material-icons card-show-close-btn">clear</span>   
+                </div>
+                <p id="card-list-text">in list <a href="#">{this.props.listTitle}</a></p>
+                <div className="card-description">
+                    <span className="material-icons card-icons">description</span>
+                    <h2>Description</h2>
+                </div>
+                <textarea id="card-description-input" type="text" value={this.state.description} placeholder="Add a more detailed description..." onChange={this.update('description')} onBlur={this.handleSubmit} rows="2" cols="50" />                
             </form>
-            <div id="delete-card-btn" onClick={this.handleDelete}><p id="delete-card-text-btn">Delete List</p></div>
+            <div className="card-comments">
+                <span className="material-icons card-icons">comment</span>
+                <h2>Activity</h2>
+            </div>
+            <h3 id="delete-card-title">Card Action</h3>
+            <div id="delete-card">
+                <button id="delete-card-text-btn" onClick={this.handleDelete}>Delete Card</button>
+            </div>
         </div>)
     }
 }

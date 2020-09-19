@@ -1,0 +1,129 @@
+.card-show-menu{
+    background: #f4f5f7;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 10%);    
+    width: 768px;  
+}
+
+#card-title-input{
+    font-size: 22px;
+    text-align: left;
+    position: relative;
+    right: 0.75%;
+    margin-top: 7.5px;
+    border-radius: 5px;
+    text-align: left;
+    padding: 2.5px;
+    width: 85%    
+}
+
+#card-title-input:focus{
+    background-color: #fff;
+    border: 2px solid green;
+}
+
+
+#card-list-text{
+    color: #5e6c84;
+    position: relative;
+    right: 36.5%;
+    /* margin-top: 4px; */
+}
+
+#card-list-text > a{
+    text-decoration: underline;
+}
+
+#card-list-text > a:hover{
+    color: #172b4d;
+}
+
+#card-description-input{
+    background-color: #eaecef;
+    color: #172b4d;
+    resize: none;
+    border-radius: 5px;
+    text-align: left;
+    padding: 7.5px;
+    width: 65%;
+    position: relative;
+    right: 9.5%;
+    margin-top: 7.5px;
+}
+
+#card-description-input:hover{
+    background-color: rgba(234,236,239, 0.4);
+}
+
+#card-description-input:focus{
+    background-color: #fff;
+    border: 2px solid green;
+}
+
+.main-card-icon{
+    position: relative;
+    right: 1.85%;
+    bottom: -5px;
+}
+
+.card-description > h2 {
+    font-size: 20px;
+    position: relative;
+    right: 37.5%
+}
+
+.card-comments > h2 {
+    font-size: 20px;
+    position: relative;
+    right: 39.5%
+}
+
+.card-icons{
+    position: relative;
+    right: 46.25%;
+    bottom: -30.5px;
+}
+
+#delete-card{
+    position: relative;
+    left: 42.5%;
+    top: -150px;
+}
+
+#delete-card-text-btn {
+	background-color: firebrick;
+	padding: 6px 12px;
+	border-radius: 5px;
+	color: #fff;
+	box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.75);
+}
+
+#delete-card-text-btn:hover{
+    background-color: #721616;
+}
+
+#delete-card-text-btn:active{
+    background-color: #721616;
+    box-shadow: 0px;
+}
+
+#delete-card-title {
+	position: relative;
+	left: 41.5%;
+	top: -155px;
+	font-size: 14px;
+	color: #5e6c84;
+	font-weight: 500;
+	letter-spacing: .04rem;
+	text-transform: uppercase;
+}
+
+.material-icons.card-show-close-btn {
+	position: relative;
+	left: 2.5%;
+	cursor: pointer;
+}
