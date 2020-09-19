@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :board_memberships, only: [:show, :index, :create, :destroy]
     resources :lists, only: [:index, :create, :destroy, :update, :show]
     resources :cards, only: [:show, :index, :create, :destroy, :update]
+    resources :comments, only: [:show, :index, :create, :destroy, :update]
   end
 
 

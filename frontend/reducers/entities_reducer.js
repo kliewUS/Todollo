@@ -6,6 +6,7 @@ import boardMembershipsReducer from "./board_memberships_reducer";
 import userRosterReducer from "./userRoster_reducer";
 import listsReducer from "./lists_reducer";
 import cardsReducer from "./cards_reducer";
+import commentsReducer from "./comments_reducer";
 
 const entitiesReducer = combineReducers({
   boards: boardsReducer,
@@ -13,7 +14,8 @@ const entitiesReducer = combineReducers({
   userRoster: userRosterReducer,
   lists: listsReducer,
   cards: cardsReducer,
-  users: usersReducer
+  users: usersReducer,
+  comments: commentsReducer
 });
 
 export default entitiesReducer;

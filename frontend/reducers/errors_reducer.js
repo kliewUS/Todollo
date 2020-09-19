@@ -5,6 +5,7 @@ import boardMembershipErrorsReducer from "./board_membership_errors_reducer";
 import userRosterErrorsReducer from "./userRoster_errors_reducer";
 import listErrorsReducer from "./list_errors_reducer"
 import cardErrorsReducer from "./card_errors_reducer";
+import commentErrorsReducer from "./comment_errors_reducer";
 
 const errorsReducer = combineReducers({
   sessionErrors: sessionErrorsReducer,
@@ -12,7 +13,8 @@ const errorsReducer = combineReducers({
   boardMembershipErrors: boardMembershipErrorsReducer,
   userRosterErrors: userRosterErrorsReducer,
   listErrors: listErrorsReducer,
-  cardErrors: cardErrorsReducer
+  cardErrors: cardErrorsReducer,
+  commentErrors: commentErrorsReducer
 });
 
 export default errorsReducer;

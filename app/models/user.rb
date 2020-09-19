@@ -27,9 +27,13 @@ class User < ApplicationRecord
         foreign_key: :user_id,
         class_name: :BoardMembership
 
+    has_many :comments,
+        foreign_key: :user_id,
+        class_name: :Comment
+
     has_many :shared_boards,
         through: :board_memberships,
-        source: :board
+        source: :board    
 
     #SPIRE
 
