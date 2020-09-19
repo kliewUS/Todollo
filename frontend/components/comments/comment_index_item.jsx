@@ -4,16 +4,74 @@ import { Link } from 'react-router-dom';
 class CardIndexItem extends React.Component{
     constructor(props){
         super(props);
+
+        this.state = {
+            body: this.props.comment.body,
+            commentBodyVisible: true
+        }
+
+        this.update = this.update.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);      
+        this.clickForm = this.clickForm.bind(this);      
+    }
+
+    update(field){
+        return e => {
+            this.setState({[field]: e.currentTarget.value});
+        }  
+    }
+    
+    handleSubmit(e){
+        e.preventDefault();
+        this.clickForm();
+        const updateComment = {id: this.props.comment.id, body: this.state.body, user_id: this.props.comment.userId, card_id: this.props.comment.cardId};
+        this.props.patchComment(updateComment)
+        .then(() => {
+            this.props.requestComments(); //Pretty hacky. Since I have to call RECEIVE_COMMENTS twice to rerender all the comments. Maybe there might be a better way?
+        });
+    }
+    
+    handleDelete(e){
+        e.preventDefault();
+        this.props.destroyComment(this.props.comment.id);
+    }
+    
+    clickForm(){
+        this.setState({
+            commentBodyVisible: !this.state.commentBodyVisible
+        })
     }
     
     render(){
+        // debugger;
+        let comment_body = (this.state.commentBodyVisible) ? 
+        (
+        <div className="comment-body">
+            <p>{this.props.comment.body}</p>
+            <p onClick={this.clickForm}>Edit</p>
+            <p onClick={this.handleDelete}>Delete</p>
+        </div>
+        )
+        : (        
+        <div className="comment-edit-form">
+            <form className="comment-edit" onSubmit={this.handleSubmit}>
+                <textarea id="comment-edit-input" type="text" value={this.state.body} onChange={this.update('body')} rows="2" cols="50" />  
+                <button>Save</button>
+                <span onClick={this.clickForm} className="material-icons">clear</span> 
+            </form>
+        </div>
+    )
+
 
         return (
             <li className="comment-item">
-                <p>{this.props.username.substring(0, 1)}</p> 
-                <p>{this.props.username}</p> 
-                <p>{this.props.comment.createdAt}</p>
-                <p>{this.props.comment.body}</p>
+                <div className="comment-main-content">
+                    <p>{this.props.username.substring(0, 1)}</p> 
+                    <p>{this.props.username}</p> 
+                    <p>{this.props.comment.createdAt}</p>
+                    {comment_body}
+                </div>
             </li>
         )        
     }

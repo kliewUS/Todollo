@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from 'react-redux';
 import CommentIndexItem from "./comment_index_item";
-import {patchComment, destroyComment} from "../../actions/comment_actions";
+import {patchComment, destroyComment, requestComments} from "../../actions/comment_actions";
 
 const mapStateToProps = (state, ownProps) => {
     let username = state.entities.userRoster[ownProps.comment.userId].username;
@@ -12,6 +12,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
+    requestComments: () => dispatch(requestComments()),
     patchComment: (comment) => dispatch(patchComment(comment)),
     destroyComment: (commentId) => dispatch(destroyComment(commentId)),
     clearErrors: () => dispatch(receiveCommentErrors([]))
