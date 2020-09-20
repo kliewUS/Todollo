@@ -8,4 +8,13 @@
 #  updated_at :datetime         not null
 #
 class Label < ApplicationRecord
+
+    has_many :card_labels,
+        foreign_key: :label_id,
+        class_name: :CardLabel
+
+    has_many :cards,
+        through: :card_labels,
+        source: :card
+    
 end

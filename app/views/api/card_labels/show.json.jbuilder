@@ -1,0 +1,1 @@
+json.extract! @cardlabel, :id, :card_id, :label_id

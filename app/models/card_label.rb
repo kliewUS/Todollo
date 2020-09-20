@@ -9,4 +9,14 @@
 #  updated_at :datetime         not null
 #
 class CardLabel < ApplicationRecord
+    validates :card_id, :label_id, presence: true
+
+    belongs_to :card,
+        foreign_key: :card_id,
+        class_name: :Card
+
+    belongs_to :label,
+        foreign_key: :label_id,
+        class_name: :Label
+
 end

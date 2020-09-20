@@ -19,6 +19,15 @@ class Card < ApplicationRecord
     has_many :comments,
         foreign_key: :card_id,
         class_name: :Comment,
-        dependent: :destroy     
+        dependent: :destroy
+        
+    has_many :card_labels,
+        foreign_key: :card_id,
+        class_name: :CardLabel,
+        dependent: :destroy
+
+    has_many :labels,
+        through: :card_labels,
+        source: :label
 
 end

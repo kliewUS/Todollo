@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :lists, only: [:index, :create, :destroy, :update, :show]
     resources :cards, only: [:show, :index, :create, :destroy, :update]
     resources :comments, only: [:show, :index, :create, :destroy, :update]
+    resources :labels, only: [:show, :index, :create, :destroy, :update]
+    resources :card_labels, only: [:show, :index, :create, :destroy]
   end
 
 
