@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_19_010845) do
+ActiveRecord::Schema.define(version: 2020_09_20_180846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 2020_09_19_010845) do
     t.index ["owner_id"], name: "index_boards_on_owner_id"
   end
 
+  create_table "card_labels", force: :cascade do |t|
+    t.integer "card_id", null: false
+    t.integer "label_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["card_id"], name: "index_card_labels_on_card_id"
+    t.index ["label_id"], name: "index_card_labels_on_label_id"
+  end
+
   create_table "cards", force: :cascade do |t|
     t.string "title", null: false
     t.string "description"
@@ -50,6 +59,12 @@ ActiveRecord::Schema.define(version: 2020_09_19_010845) do
     t.datetime "updated_at", null: false
     t.index ["card_id"], name: "index_comments_on_card_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "labels", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "lists", force: :cascade do |t|
