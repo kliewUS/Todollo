@@ -25,7 +25,7 @@ class CardIndex extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        const newComment = {body: this.state.body, user_id: this.props.userId, card_id: this.props.cardId};
+        const newComment = {body: this.state.body, user_id: this.props.currentUser.id, card_id: this.props.cardId};
         this.props.postComment(newComment)
             .then(() => {
                 this.props.requestComments();
@@ -45,10 +45,13 @@ class CardIndex extends React.Component{
 
         return (
         <div className="comments-index">
-            <form className="add-comment-content" onSubmit={this.handleSubmit}>
-                    <input id="comment-create-input" type="text" value={this.state.body} placeholder="Write a comment..." onChange={this.update('body')}/>    
-                    <button className="comment-create-btn"><p className="comment-create-content-btn">Add Comment</p></button>
-            </form>
+            <div className="add-comment">
+                <p className="poster-btn">{this.props.currentUser.username.substring(0, 1)}</p> 
+                <form className="add-comment-content" onSubmit={this.handleSubmit}>
+                        <input id="comment-create-input" type="text" value={this.state.body} placeholder="Write a comment..." onChange={this.update('body')}/>    
+                        <button className="comment-create-btn" disabled={!this.state.body}><p className="comment-create-content-btn">Save</p></button>
+                </form>
+            </div>
             <ul className="comments">
                 {comment_arr}
             </ul>

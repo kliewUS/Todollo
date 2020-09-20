@@ -5,7 +5,8 @@ import {patchComment, destroyComment, requestComments} from "../../actions/comme
 
 const mapStateToProps = (state, ownProps) => {
     let username = state.entities.userRoster[ownProps.comment.userId].username;
-    return {        
+    return {
+        currentUser: state.entities.users[state.session.id],         
         username: username,
         errors: state.errors.commentErrors
     }

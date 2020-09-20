@@ -5,7 +5,7 @@ import { requestComments, postComment } from "../../actions/comment_actions";
 
 const mapStateToProps = (state) => {
     return {
-        userId: state.session.id,        
+        currentUser: state.entities.users[state.session.id],          
         comments: Object.values(state.entities.comments),   
         errors: state.errors.commentErrors
     }
