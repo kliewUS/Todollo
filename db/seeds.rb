@@ -12,6 +12,8 @@ BoardMembership.destroy_all
 List.destroy_all
 Card.destroy_all
 Comment.destroy_all
+Label.destroy_all
+CardLabel.destroy_all
 
 u1 = User.create!(
     username: 'Edmund',
@@ -84,3 +86,15 @@ co2 = Comment.create!(body: "Test Comment 2", user_id: 1, card_id: 3)
 co3 = Comment.create!(body: "Test Comment 3", user_id: 3, card_id: 1)
 co4 = Comment.create!(body: "Test Comment 4", user_id: 2, card_id: 3)
 co5 = Comment.create!(body: "Test Comment 5", user_id: 4, card_id: 1)
+
+la1 = Label.create!(name: "")
+la2 = Label.create!(name: "")
+la3 = Label.create!(name: "")
+la4 = Label.create!(name: "Help needed")
+la5 = Label.create!(name: "Important")
+
+cl1 = CardLabel.create!(card_id: 3, label_id: 4)
+cl2 = CardLabel.create!(card_id: 3, label_id: 5)
+cl3 = CardLabel.create!(card_id: 3, label_id: 1)
+cl4 = CardLabel.create!(card_id: 1, label_id: 2)
+cl5 = CardLabel.create!(card_id: 1, label_id: 5)
