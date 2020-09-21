@@ -15,6 +15,7 @@ class CardIndex extends React.Component{
 
     componentDidMount(){
         this.props.requestCards();
+        this.props.requestCardLabels();
     }
     
     update(field){
@@ -38,8 +39,14 @@ class CardIndex extends React.Component{
         let card_arr = (this.props.cards !== undefined) ? this.props.cards
         .filter(card => card.listId === this.props.listId)
         .map(card => {
+            
+            let card_label_arr = this.props.cardLabels
+                .filter(cardLabel => cardLabel.cardId === card.id);
+
+            //filter card labels here. Will show up as rectangles if it has any.
+
             return (
-                <CardIndexItemContainer card={card} key={card.id}/>
+                <CardIndexItemContainer card={card} key={card.id} cardLabels={card_label_arr}/>
             );
         }) : (null);
 

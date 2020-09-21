@@ -2,7 +2,7 @@ class Api::CardLabelsController < ApplicationController
     before_action :require_login
 
     def index
-        @cardlabel = CardLabel.all
+        @cardlabels = CardLabel.all
         render :index
     end
 

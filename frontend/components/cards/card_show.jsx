@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentIndexContainer from '../comments/comment_index_container';
+import CardLabelIndexContainer from '../labels/card_label_index_container';
 
 class CardShow extends React.Component{
     constructor(props){
@@ -45,7 +46,6 @@ class CardShow extends React.Component{
     render(){
         return(
         <div className="card-show-menu">
-
             <form className="card-show-content" onSubmit={this.handleSubmit}>
                 <div className="card-title">
                     <span className="material-icons main-card-icon">subject</span> 
@@ -53,6 +53,10 @@ class CardShow extends React.Component{
                     <span onClick={this.props.closeModal} className="material-icons card-show-close-btn">clear</span>   
                 </div>
                 <p id="card-list-text">in list <a href="#">{this.props.listTitle}</a></p>
+
+                <p id="labels-title">Labels</p>
+                <CardLabelIndexContainer cardId={this.props.cardId}/>
+
                 <div className="card-description">
                     <span className="material-icons card-icons">description</span>
                     <h2>Description</h2>
