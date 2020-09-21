@@ -29,5 +29,6 @@ class Card < ApplicationRecord
     has_many :labels,
         through: :card_labels,
         source: :label
+        # dependent: :destroy
 
 end

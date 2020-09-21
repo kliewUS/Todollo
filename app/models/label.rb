@@ -11,10 +11,12 @@ class Label < ApplicationRecord
 
     has_many :card_labels,
         foreign_key: :label_id,
-        class_name: :CardLabel
+        class_name: :CardLabel,
+        dependent: :destroy
 
     has_many :cards,
         through: :card_labels,
         source: :card
+        # dependent: :destroy
     
 end
