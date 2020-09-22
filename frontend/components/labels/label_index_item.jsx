@@ -11,6 +11,9 @@ class LabelIndexItem extends React.Component{
         }
 
         this.handleClick = this.handleClick.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
+        this.clickForm = this.clickForm.bind(this);
     }
 
     handleClick(e){
@@ -21,14 +24,14 @@ class LabelIndexItem extends React.Component{
             const card_label = {card_id: this.props.cardId, label_id: this.props.labelId};
             this.props.postCardLabel(card_label)
                 .then(() => {
-                    this.props.requestLabels();
+                    // this.props.requestLabels();
                     this.props.requestCardLabels();
                     this.setState({checkMark: !this.state.checkMark})
                 });
         }else{
             this.props.destroyCardLabel(cardLabelCheck.id)
                 .then(() => {
-                    this.props.requestLabels();
+                    // this.props.requestLabels();
                     this.props.requestCardLabels();
                     this.setState({checkMark: !this.state.checkMark})
                 });
@@ -41,17 +44,21 @@ class LabelIndexItem extends React.Component{
         }  
     }
     
-    handleSubmit(e){
+    handleUpdate(e){
         e.preventDefault();
         this.clickForm();
         const updateLabel = {id: this.props.labelId, name: this.state.labelName};
         this.props.patchLabel(updateLabel)
-        // .then(() => {
-        //     this.props.requestLabels(); 
-        // });
+        .then(() => {
+            this.props.requestLabels(); 
+        });
+    }
+    
+    handleDelete(e){
+        e.preventDefault();
+        this.props.destroyLabel(this.props.labelId);
     }
 
-    
     clickForm(){
         this.setState({
             inputVisible: !this.state.inputVisible
@@ -62,11 +69,21 @@ class LabelIndexItem extends React.Component{
         let labelName = (this.props.labelName !== "") ? (<p className="label-index-text" onClick={this.handleClick}>{this.props.labelName}</p>) : (<p className="label-index-text" onClick={this.handleClick}>&nbsp;</p>);
         let updateLabel = (this.state.inputVisible) ? 
         (
-            <form className="label-update" onSubmit={this.handleSubmit}>
-                <input id="label-update-input" type="text" value={this.state.title} onChange={this.update('title')} onBlur={this.handleSubmit} />
+            <form className="label-update" onSubmit={this.handleUpdate}>
+                <input id="label-update-input" type="text" value={this.state.labelName} onChange={this.update('labelName')} />
+                <button className="label-update-btn"><span className="material-icons">done</span></button>
+                <button className="label-update-clear-btn" onClick={this.clickForm}><span className="material-icons">clear</span></button>
             </form>
         ) : 
         (labelName);
+
+        let editbtns = (!this.state.inputVisible) ? 
+        (
+            <div className="label-edit-btns">
+                <span className="material-icons" onClick={this.clickForm}>create</span>
+                <span className="material-icons" onClick={this.handleDelete}>delete</span>
+            </div>
+        ) : (null);
         
         let check = (this.state.checkMark) ? (<span className="material-icons">done</span>) : (null);
         return (
@@ -75,7 +92,7 @@ class LabelIndexItem extends React.Component{
                     {updateLabel}
                     {check}
                 </div>
-                {/* Edit Label button here */}
+                {editbtns}
             </div>
             );
     }

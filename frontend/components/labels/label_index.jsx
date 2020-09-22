@@ -4,11 +4,35 @@ import LabelIndexItemContainer from './label_index_item_container';
 class LabelIndex extends React.Component{
     constructor(props){
         super(props);
+
+        this.state = {
+            name: ""
+        }
+
+        this.update = this.update.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);    
     }
 
     componentDidMount(){
         this.props.requestLabels();
     }
+
+    update(field){
+        return e => {
+            this.setState({[field]: e.currentTarget.value});
+        }
+    }        
+
+    handleSubmit(e){
+        e.preventDefault();
+        const newLabel = {name: this.state.name};
+        this.props.postLabel(newLabel)
+            .then(() => {
+                this.props.requestLabels();
+                this.setState({name: ""});
+            });
+    }        
+
 
     render(){
         let labels_arr = this.props.labels
@@ -23,7 +47,10 @@ class LabelIndex extends React.Component{
         return(
             <div className="label-index">
                 {labels_arr}
-                {/* Create Label onClick will be placed here. Will need to pass in LabelId to get back to label_index (LabelForm) */}
+                <form className="label-create" onSubmit={this.handleSubmit}>
+                    <input id="label-create-input" type="text" value={this.state.name} onChange={this.update('name')} />
+                    <button className="label-create-btn"><p className="label-create-content-btn">Save</p></button>
+                </form>
             </div>
         );
     }

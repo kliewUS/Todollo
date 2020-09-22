@@ -14,7 +14,10 @@ class Api::LabelsController < ApplicationController
     end
 
     def create
+        debugger
         @label = Label.create(label_params)
+        debugger
+        puts @label
 
         if @label.save
             render :show
@@ -42,6 +45,8 @@ class Api::LabelsController < ApplicationController
             render json:["Unable to update the label"], status: 422 
         end 
     end
+
+    private
 
     def label_params
         params.require(:label).permit(:name)        

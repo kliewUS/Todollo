@@ -1,9 +1,7 @@
 import React from "react";
 import {connect} from 'react-redux';
 import LabelIndex from "./label_index";
-import { requestLabels } from "../../actions/label_actions";
-import { postCardLabel, destroyCardLabel } from "../../actions/cardLabel_actions";
-
+import { requestLabels, postLabel } from "../../actions/label_actions";
 const mapStateToProps = (state) => {
     // debugger;
 
@@ -16,8 +14,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
     requestLabels: () => dispatch(requestLabels()),
-    postCardLabel: (cardLabel) => dispatch(postCardLabel(cardLabel)),
-    destroyCardLabel: (cardLabelId) => dispatch(destroyCardLabel(cardLabelId)),
+    postLabel: (label) => dispatch(postLabel(label)),
     clearErrors: () => dispatch(receiveLabelErrors([]))
 });
 
