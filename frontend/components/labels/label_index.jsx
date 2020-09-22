@@ -1,11 +1,32 @@
 import React from 'react';
+import label_index_item_container from './label_index_item_container';
 
 class LabelIndex extends React.Component{
-    render(){
-        return(
-        <div className="label-index">
+    constructor(props){
+        super(props);
+    }
 
-        </div>);
+    
+    componentDidMount(){
+        this.props.requestLabels();
+    }
+
+    render(){
+        let labels_arr = this.props.labels
+            .map((label) => {
+                let labelCheck = this.props.cardLabels.find(cardLabel => cardLabel.labelId === label.id && cardLabel.cardId === this.props.cardId);
+                let checkMark = (labelCheck !== undefined) ? (true) : (false);
+                return (
+                    <LabelIndexItemContainer labelName={label.name} labelId={label.id} cardId={this.props.cardId} checkMark={checkMark}/>
+                )
+            });
+
+        return(
+            <div className="label-index">
+                {labels_arr}
+                {/* Create Label onClick will be placed here. Will need to pass in LabelId to get back to label_index (LabelForm) */}
+            </div>
+        );
     }
 
 }

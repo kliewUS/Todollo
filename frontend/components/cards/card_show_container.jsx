@@ -2,6 +2,7 @@ import React from "react";
 import {connect} from 'react-redux';
 import CardShow from "./card_show";
 import { requestCard, patchCard, destroyCard } from "../../actions/card_actions";
+import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
     let card = "";
@@ -30,6 +31,9 @@ const mapDispatchToProps = (dispatch) => ({
     requestCard: (cardId) => dispatch(requestCard(cardId)),
     patchCard: (card) => dispatch(patchCard(card)),
     destroyCard: (cardId) => dispatch(destroyCard(cardId)),
+    openModal: (id) => {
+        dispatch(openModal('label-index-menu', id))
+    },    
     clearErrors: () => dispatch(receiveCardErrors([]))
 });
 

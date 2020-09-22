@@ -1,13 +1,11 @@
 import React from "react";
 import {connect} from 'react-redux';
-import LabelIndex from "./label_index";
-import { requestLabels } from "../../actions/label_actions";
+import LabelIndexItem from "./label_index";
 import { postCardLabel, destroyCardLabel } from "../../actions/cardLabel_actions";
 
 const mapStateToProps = (state) => {
     return {
-        cardLabels: Object.values(state.entities.cardlabels), 
-        labels: Object.values(state.entities.labels),            
+        cardLabels: Object.values(state.entities.cardlabels),          
         errors: state.errors.cardLabelErrors
     }
 };
@@ -19,4 +17,4 @@ const mapDispatchToProps = (dispatch) => ({
     clearErrors: () => dispatch(receiveLabelErrors([]))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(LabelIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(LabelIndexItem);

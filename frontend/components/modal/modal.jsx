@@ -10,6 +10,7 @@ import BoardMembershipMenuContainer from '../boards/board_membership_menu_contai
 import BoardMembershipShowContainer from '../boards/board_membership_show_container';
 import BoardMembershipIndexContainer from '../boards/board_membership_index_container';
 import CardShowContainer from '../cards/card_show_container';
+import LabelIndexContainer from '../labels/label_index_container';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -52,9 +53,11 @@ function Modal({modal, closeModal}) {
         background = 'none';        
         break;
     case 'card-show-menu':
-        // debugger;
         component = <CardShowContainer closeModal={closeModal} cardId={modal.id}/>;    
-        break;                            
+        break;
+      case 'label-index-menu':
+        component = <LabelIndexContainer closeModal={closeModal} cardId={modal.id}/>;    
+        break;                                     
     default:
       return null;
   }
