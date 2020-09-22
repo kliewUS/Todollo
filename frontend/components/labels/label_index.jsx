@@ -1,12 +1,11 @@
 import React from 'react';
-import label_index_item_container from './label_index_item_container';
+import LabelIndexItemContainer from './label_index_item_container';
 
 class LabelIndex extends React.Component{
     constructor(props){
         super(props);
     }
 
-    
     componentDidMount(){
         this.props.requestLabels();
     }
@@ -17,7 +16,7 @@ class LabelIndex extends React.Component{
                 let labelCheck = this.props.cardLabels.find(cardLabel => cardLabel.labelId === label.id && cardLabel.cardId === this.props.cardId);
                 let checkMark = (labelCheck !== undefined) ? (true) : (false);
                 return (
-                    <LabelIndexItemContainer labelName={label.name} labelId={label.id} cardId={this.props.cardId} checkMark={checkMark}/>
+                    <LabelIndexItemContainer key={label.id} labelName={label.name} labelId={label.id} cardId={this.props.cardId} checkMark={checkMark}/>
                 )
             });
 

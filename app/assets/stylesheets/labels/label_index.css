@@ -1,0 +1,12 @@
+/* .label-index{
+    background-color:whitesmoke;
+    padding: 15px;
+} */
+
+.label-index-item{
+    margin: 5px 0 5px 0;
+}
+
+.label-index-item-main{
+    background: green;
+}

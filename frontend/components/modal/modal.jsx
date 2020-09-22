@@ -55,9 +55,9 @@ function Modal({modal, closeModal}) {
     case 'card-show-menu':
         component = <CardShowContainer closeModal={closeModal} cardId={modal.id}/>;    
         break;
-      case 'label-index-menu':
-        component = <LabelIndexContainer closeModal={closeModal} cardId={modal.id}/>;    
-        break;                                     
+    // case 'label-index-menu':
+    //     component = <LabelIndexContainer closeModal={closeModal} cardId={modal.id}/>;    
+    //     break;                                     
     default:
       return null;
   }

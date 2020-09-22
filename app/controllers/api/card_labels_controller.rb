@@ -35,7 +35,7 @@ class Api::CardLabelsController < ApplicationController
     private
 
     def card_label_params
-        params.require(:card_label).permit(:card_id, :label_id)        
+        params.require(:cardLabel).permit(:card_id, :label_id)        
     end    
 
 end

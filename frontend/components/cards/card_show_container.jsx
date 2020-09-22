@@ -31,9 +31,9 @@ const mapDispatchToProps = (dispatch) => ({
     requestCard: (cardId) => dispatch(requestCard(cardId)),
     patchCard: (card) => dispatch(patchCard(card)),
     destroyCard: (cardId) => dispatch(destroyCard(cardId)),
-    openModal: (id) => {
-        dispatch(openModal('label-index-menu', id))
-    },    
+    // openModal: (id) => {
+    //     dispatch(openModal('label-index-menu', id))
+    // },    
     clearErrors: () => dispatch(receiveCardErrors([]))
 });
 

@@ -19,7 +19,7 @@ class CardLabelIndex extends React.Component{
                 let labelName = this.props.labels.find(label => cardLabel.labelId === label.id);
                 let cardLabelName = (labelName !== undefined) ? (<p className="card-label-name">{labelName.name}</p>) : (<p className="card-label-name">&nbsp;</p>)
                 return (
-                    <div className="card-label-show">
+                    <div className="card-label-show" key={cardLabel.id}>
                         {cardLabelName}
                     </div>
                 )

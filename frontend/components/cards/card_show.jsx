@@ -1,6 +1,7 @@
 import React from 'react';
 import CommentIndexContainer from '../comments/comment_index_container';
 import CardLabelIndexContainer from '../labels/card_label_index_container';
+import LabelIndexContainer from '../labels/label_index_container';
 
 class CardShow extends React.Component{
     constructor(props){
@@ -69,7 +70,12 @@ class CardShow extends React.Component{
                 <CommentIndexContainer cardId={this.props.cardId} />
             </div>
 
-            <h3 id="delete-card-title">Card Action</h3>
+            <h3 id="delete-card-title">Card Actions</h3>
+
+            <div id="add-label">
+                <LabelIndexContainer cardId={this.props.cardId} />
+            </div>
+
             <div id="delete-card">
                 <button id="delete-card-text-btn" onClick={this.handleDelete}>Delete Card</button>
             </div>

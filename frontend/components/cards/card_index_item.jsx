@@ -9,9 +9,9 @@ class CardIndexItem extends React.Component{
     render(){
         // console.log(this.props.cardLabels);
         let cardLabelBoxes = this.props.cardLabels
-        .map(() => {
+        .map((cardLabel) => {
             return (
-                <li className="card-label-item">&nbsp;</li>
+                <li className="card-label-item" key={cardLabel.id}>&nbsp;</li>
             );
         });
 
