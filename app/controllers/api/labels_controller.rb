@@ -14,10 +14,7 @@ class Api::LabelsController < ApplicationController
     end
 
     def create
-        debugger
         @label = Label.create(label_params)
-        debugger
-        puts @label
 
         if @label.save
             render :show

@@ -14,6 +14,7 @@ class CardLabelIndex extends React.Component{
         (            
         this.props.cardLabels
             .filter(cardLabel => cardLabel.cardId === this.props.cardId)
+            .sort((a,b) => a.labelId > b.labelId)
             .map((cardLabel) =>
             {
                 let labelName = this.props.labels.find(label => cardLabel.labelId === label.id);

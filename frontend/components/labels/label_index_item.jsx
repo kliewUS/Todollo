@@ -56,7 +56,10 @@ class LabelIndexItem extends React.Component{
     
     handleDelete(e){
         e.preventDefault();
-        this.props.destroyLabel(this.props.labelId);
+        this.props.destroyLabel(this.props.labelId)
+        .then(() => {
+            this.props.requestCardLabels(); 
+        });
     }
 
     clickForm(){
