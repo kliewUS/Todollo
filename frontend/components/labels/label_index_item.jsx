@@ -66,13 +66,24 @@ class LabelIndexItem extends React.Component{
     }    
 
     render(){
-        let labelName = (this.props.labelName !== "") ? (<p className="label-index-text" onClick={this.handleClick}>{this.props.labelName}</p>) : (<p className="label-index-text" onClick={this.handleClick}>&nbsp;</p>);
+        let check = (this.state.checkMark) ? (<span className="material-icons checkmark-icon">done</span>) : (null);
+        let labelName = (this.props.labelName !== "") ? (
+        <div className="label-index-content-2" onClick={this.handleClick}>
+            <p className="label-index-text">{this.props.labelName}</p>
+            {check}
+        </div>
+        ) : (
+        <div className="label-index-content-2" onClick={this.handleClick}>
+            <p className="label-index-text">&nbsp;</p>                        
+            {check}
+        </div>
+        );
         let updateLabel = (this.state.inputVisible) ? 
         (
             <form className="label-update" onSubmit={this.handleUpdate}>
                 <input id="label-update-input" type="text" value={this.state.labelName} onChange={this.update('labelName')} />
-                <button className="label-update-btn"><span className="material-icons">done</span></button>
-                <button className="label-update-clear-btn" onClick={this.clickForm}><span className="material-icons">clear</span></button>
+                <button className="label-update-btn"><span className="material-icons submit-button">done</span></button>
+                <button className="label-update-clear-btn" onClick={this.clickForm}><span className="material-icons label-clear-button">clear</span></button>
             </form>
         ) : 
         (labelName);
@@ -80,17 +91,16 @@ class LabelIndexItem extends React.Component{
         let editbtns = (!this.state.inputVisible) ? 
         (
             <div className="label-edit-btns">
-                <span className="material-icons" onClick={this.clickForm}>create</span>
-                <span className="material-icons" onClick={this.handleDelete}>delete</span>
+                <span className="material-icons edit-button" onClick={this.clickForm}>create</span>
+                <span className="material-icons delete-button" onClick={this.handleDelete}>delete</span>
             </div>
         ) : (null);
-        
-        let check = (this.state.checkMark) ? (<span className="material-icons">done</span>) : (null);
         return (
             <div className="label-index-item">
                 <div className="label-index-item-main">
-                    {updateLabel}
-                    {check}
+                    <div className="label-index-content">
+                        {updateLabel}
+                    </div>
                 </div>
                 {editbtns}
             </div>

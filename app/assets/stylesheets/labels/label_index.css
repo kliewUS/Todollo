@@ -1,12 +1,136 @@
-/* .label-index{
-    background-color:whitesmoke;
-    padding: 15px;
-} */
-
-.label-index-item{
-    margin: 5px 0 5px 0;
+#add-label {
+	width: 25%;
+	position: relative;
+	left: 75%;
+	top: -350px;
 }
 
-.label-index-item-main{
-    background: green;
+.label-index-item {
+	margin: 5px 0 5px 0;
+	display: flex;
+	justify-content: space-between;
+}
+
+.label-index-item-main {
+	background: green;
+	min-width: 125px;
+	max-width: 125px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	border-radius: 3px;
+}
+
+.label-index-content-2 {
+	display: flex;
+	justify-content: space-between;
+}
+
+.label-index-text {
+	margin: 5px;
+}
+
+.label-edit-btns {
+	margin: 0 5px 0 5px;
+}
+
+.material-icons.checkmark-icon {
+	margin: 5px;
+}
+
+.material-icons.edit-button {
+    cursor: pointer;
+}
+
+.material-icons.delete-button {
+    cursor: pointer;
+}
+
+.material-icons.edit-button:hover {
+    color: green;
+}
+
+.material-icons.delete-button:hover {
+    color: firebrick;
+}
+
+#label-update-input {
+	width: 60%;
+	border-radius: 3px;
+	margin: 2.5px 0 2.5px 0;
+}
+
+.label-update-btn {
+	position: relative;
+	top: 2.5px;
+	min-height: 18px;
+	max-height: 18px;
+	background: limegreen;
+	box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.75);
+	margin-left: 2.5px;
+}
+
+.material-icons.submit-button {
+	font-size: 18px;
+}
+
+.label-update-btn:hover {
+    background-color: rgb(50,205,50, 0.5);
+}
+
+.label-update-clear-btn {
+	position: relative;
+	top: 2.5px;
+	background-color: firebrick;
+	box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.75);
+	min-height: 18px;
+	max-height: 18px;
+	margin-left: 2.5px;
+}
+
+.label-update-clear-btn:hover{
+    background-color: rgba(178,34,34, 0.5);
+}
+
+.material-icons.label-clear-button {
+	font-size: 18px;
+}
+
+#label-create-input {
+	background-color: #eaecef;
+	color: #172b4d;
+	border-radius: 5px;
+	text-align: left;
+	padding: 3px;
+	border: 2px solid green;
+	margin-bottom: 5px;
+	position: relative;
+	right: 5px;
+	width: 90%;
+	margin-top: 5px;
+}
+
+#label-create-input:hover{
+    background-color: rgba(234,236,239, 0.4);
+}
+
+#label-create-input:focus{
+    background-color: #fff;
+}
+
+.label-create-btn {
+	background-color: green;
+	padding: 6px 12px;
+	border-radius: 5px;
+	color: #fff;
+	box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.75);
+	position: relative;
+	right: 71px;
+}
+
+.label-create-btn:hover{
+    background-color: rgb(0,128,0.5);
+}
+
+.label-index-hr {
+	width: 95%;
 }

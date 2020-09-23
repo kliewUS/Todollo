@@ -55,8 +55,10 @@ class CardShow extends React.Component{
                 </div>
                 <p id="card-list-text">in list <a href="#">{this.props.listTitle}</a></p>
 
-                <p id="labels-title">Labels</p>
-                <CardLabelIndexContainer cardId={this.props.cardId}/>
+                <div className="card-labels-content">
+                    <p id="labels-title">Labels</p>
+                    <CardLabelIndexContainer cardId={this.props.cardId}/>
+                </div>
 
                 <div className="card-description">
                     <span className="material-icons card-icons">description</span>
@@ -70,15 +72,15 @@ class CardShow extends React.Component{
                 <CommentIndexContainer cardId={this.props.cardId} />
             </div>
 
-            <h3 id="delete-card-title">Card Actions</h3>
+                <h3 id="delete-card-title">Card Actions</h3>
 
-            <div id="add-label">
-                <LabelIndexContainer cardId={this.props.cardId} />
-            </div>
+                <div id="add-label">
+                    <LabelIndexContainer cardId={this.props.cardId} />
+                </div>
 
-            <div id="delete-card">
-                <button id="delete-card-text-btn" onClick={this.handleDelete}>Delete Card</button>
-            </div>
+                <div id="delete-card">
+                    <button id="delete-card-text-btn" onClick={this.handleDelete}>Delete Card</button>
+                </div>
         </div>)
     }
 }

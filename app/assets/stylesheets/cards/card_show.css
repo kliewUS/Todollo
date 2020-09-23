@@ -88,10 +88,11 @@
     bottom: -30.5px;
 }
 
-#delete-card{
-    position: relative;
-    left: 42.5%;
-    top: -150px;
+#delete-card {
+	position: relative;
+	left: 75%;
+	top: -350px;
+	width: 25%;
 }
 
 #delete-card-text-btn {
@@ -113,13 +114,14 @@
 
 #delete-card-title {
 	position: relative;
-	left: 41.5%;
-	top: -155px;
+	left: 68%;
+	top: -350px;
 	font-size: 14px;
 	color: #5e6c84;
 	font-weight: 500;
 	letter-spacing: .04rem;
 	text-transform: uppercase;
+	width: 25%;
 }
 
 .material-icons.card-show-close-btn {

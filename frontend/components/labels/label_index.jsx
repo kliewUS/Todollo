@@ -47,10 +47,12 @@ class LabelIndex extends React.Component{
         return(
             <div className="label-index">
                 {labels_arr}
+                <hr className="label-index-hr" />
                 <form className="label-create" onSubmit={this.handleSubmit}>
                     <input id="label-create-input" type="text" value={this.state.name} onChange={this.update('name')} />
                     <button className="label-create-btn"><p className="label-create-content-btn">Save</p></button>
                 </form>
+                <hr className="label-index-hr" />
             </div>
         );
     }

@@ -1,3 +1,22 @@
+.card-labels-content {
+	margin-right: 25%;
+	margin-top: 15px;
+}
+
+#labels-title {
+	font-size: 14px;
+	color: #5e6c84;
+	font-weight: 500;
+	letter-spacing: .04rem;
+	text-transform: uppercase;
+	width: 25%;
+}
+
+.card-label-index {
+	margin: 5px 5px 5px 5px;
+	margin-left: 52.5px;
+}
+
 .card-label-index-2 {
 	display: flex;
 }
