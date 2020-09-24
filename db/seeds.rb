@@ -40,6 +40,31 @@ u5 = User.create!(
     password: 'grassgrows'
 )
 
+u6 = User.create!(
+    username: 'Felix',
+    password: 'jaguar94'
+)
+
+u7 = User.create!(
+    username: 'Niko',
+    password: 'hunter12'
+)
+
+u8 = User.create!(
+    username: 'George',
+    password: 'notfound'
+)
+
+u9 = User.create!(
+    username: 'Clay',
+    password: 'dreamnot'
+)
+
+u10 = User.create!(
+    username: 'Paul',
+    password: 'hunter10'
+)
+
 b1 = Board.create!(title: 'Building the Azure Cub Inn', owner_id: 2, visibility: true)
 b2 = Board.create!(title: 'Renovate the Golden Fawn Cafe', owner_id: 1, visibility: true)
 b3 = Board.create!(title: 'Planning a dinner in the Screaming Fledglings', owner_id: 3, visibility: false)
@@ -70,6 +95,10 @@ bm16 = BoardMembership.create!(board_id: 7, user_id: 5)
 bm17 = BoardMembership.create!(board_id: 8, user_id: 5)
 bm18 = BoardMembership.create!(board_id: 9, user_id: 4)
 bm19 = BoardMembership.create!(board_id: 10, user_id: 3)
+bm20 = BoardMembership.create!(board_id: 4, user_id: 6)
+bm21 = BoardMembership.create!(board_id: 4, user_id: 8)
+bm22 = BoardMembership.create!(board_id: 4, user_id: 9)
+bm23 = BoardMembership.create!(board_id: 4, user_id: 10)
 
 l1 = List.create!(title: 'Test List', board_id: 4)
 l2 = List.create!(title: 'Test List 2', board_id: 4)

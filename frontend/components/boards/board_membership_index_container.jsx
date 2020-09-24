@@ -8,7 +8,6 @@ import {requestUser} from "../../actions/userRoster_actions";
 const mapStateToProps = (state) => ({
     userRoster: Object.values(state.entities.userRoster),
     boardMemberships: Object.values(state.entities.boardMemberships),
-    board: Object.values(state.entities.boards)
     // errors: state.errors.boardMembershipErrors
 });
 

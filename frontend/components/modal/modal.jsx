@@ -41,15 +41,15 @@ function Modal({modal, closeModal}) {
         break;
     case 'board-membership-menu':
         // debugger;
-        component = <BoardMembershipMenuContainer closeModal={closeModal} />;
+        component = <BoardMembershipMenuContainer closeModal={closeModal} boardId={modal.id} />;
         background = 'none';        
         break;
     case 'board-membership-show':
-        component = <BoardMembershipShowContainer closeModal={closeModal} />;
+        component = <BoardMembershipShowContainer closeModal={closeModal} boardId={modal.id} />;
         background = 'none';        
         break;
     case 'board-membership-index-menu':
-        component = <BoardMembershipIndexContainer closeModal={closeModal} />;
+        component = <BoardMembershipIndexContainer closeModal={closeModal} boardId={modal.id} />;
         background = 'none';        
         break;
     case 'card-show-menu':

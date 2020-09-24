@@ -60,11 +60,11 @@ class BoardShow extends React.Component{
     }
 
 
-    showModal(field){
+    showModal(field, id){
         if(this.props.modal === field){
             return () => this.props.closeModal();
         }else{
-            return () => this.props.openModal(field);
+            return () => this.props.openModal(field, id);
         }
     }    
 
@@ -78,7 +78,7 @@ class BoardShow extends React.Component{
     }
 
     boardMemberExpand(count){
-        return (<button className="left-show-btn" onClick={this.showModal('board-membership-index-menu')}><p className="left-show-content-btn count-btn">+{count - 5}</p></button>)
+        return (<button className="left-show-btn" onClick={this.showModal('board-membership-index-menu', this.props.match.params.boardId)}><p className="left-show-content-btn count-btn">+{count - 5}</p></button>)
     }
 
     render(){
@@ -111,6 +111,7 @@ class BoardShow extends React.Component{
                 </ul>);            
         })) : (null);
 
+        // console.log(this.props.match.params.boardId);
         return (
             <div className="board-show-main">
                 <div className="board-show-navbar">
@@ -126,8 +127,7 @@ class BoardShow extends React.Component{
                         {users}
 
                         {boardMemberExpand}
-                        {/* <button className="left-show-btn" onClick={this.showModal('board-membership-index-menu')}><p className="left-show-content-btn">+{boardMemberCount.length - 5}</p></button> */}
-                        <button className="left-show-btn" onClick={this.showModal('board-membership-menu')}><p className="left-show-content-btn">Invite</p></button>
+                        <button className="left-show-btn" onClick={this.showModal('board-membership-menu', this.props.match.params.boardId)}><p className="left-show-content-btn">Invite</p></button>
                     </div>
 
                     <div id="right-show-menu">
@@ -136,12 +136,7 @@ class BoardShow extends React.Component{
 
                 </div>
 
-                {/* Where the List Index will be located */}
                 <ListIndexContainer boardId={this.props.board.id} />
-                {/* <div className="board-lists">
-                    <button className="show-btn"><p className="show-content-btn">Add New List</p></button>
-                </div> */}
-
                 
                 <div className={`side-nav ${sideNavOpen}`}>
                     <div className="side-nav-header">

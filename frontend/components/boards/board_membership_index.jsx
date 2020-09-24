@@ -3,8 +3,12 @@ import React from 'react';
 class BoardMembershipIndex extends React.Component{
     constructor(props){
         super(props);
+
+        let currentBoardId = parseInt(this.props.boardId);
+
         let boardMembers = this.props.boardMemberships
-        .filter(boardMember => boardMember.boardId === this.props.board[0]);
+        .filter(boardMember => boardMember.boardId === currentBoardId);
+
         let users = boardMembers.map((member) => {
             let user = this.props.userRoster.find(x => x.id === member.userId); 
             return user.username;              

@@ -167,7 +167,7 @@
     background-color:rgba(245,245,245, 0.4);
     border-radius: 5px;
     padding: 5px;      
-    
+    text-align: center;
 }
 
 #visibility-show-btn:hover{
@@ -178,7 +178,15 @@
     color: black;
 }
 
-.left-show-content-btn.count-btn{
-    border-radius: 50%;
-    padding: 6.5px;    
+.left-show-content-btn.count-btn {
+	border-radius: 50%;
+	padding: 7.5px;
+	min-width: 20px;
+	max-width: 20px;
+	max-height: 20px;
+	min-height: 20px;
+	font-size: 15px;
+	font-weight: 600;
+	margin: auto 2px;
+	text-align: center;
 }

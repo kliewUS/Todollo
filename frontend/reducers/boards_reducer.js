@@ -15,8 +15,9 @@ const boardsReducer = (state = {}, action) => {
           return action.boards;
         }
       case RECEIVE_BOARD:
-        // nextState[action.board.id] = action.board;
-        return action.board;
+        nextState[action.board.id] = action.board;
+        return nextState;
+        // return action.board;
       case REMOVE_BOARD: //Will need to check back at this case later.
         delete nextState[action.boardId];
         return nextState;

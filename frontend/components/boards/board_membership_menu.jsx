@@ -34,7 +34,7 @@ class BoardMembershipMenu extends React.Component{
     }
 
     handleClick(e){
-        // console.log(e.target.textContent)
+        
         this.setState({searchTerm: e.target.textContent});        
     }
 
@@ -50,16 +50,15 @@ class BoardMembershipMenu extends React.Component{
         let user = this.props.userRoster.find(x => x.username === searchTerm);
 
         if(user === undefined){
-            this.props.postBoardMember({board_id: this.props.board.id, user_id: 0});
+            this.props.postBoardMember({board_id: this.props.boardId, user_id: 0});
         }else{
-            this.props.postBoardMember({board_id: this.props.board.id, user_id: user.id});
+            this.props.postBoardMember({board_id: this.props.boardId, user_id: user.id});
         }
 
 
     }
 
     render(){
-
         const bdmError = this.props.errors[0] ? 
                             (<h1 className="bdm-errors-list">{this.props.errors[0]}</h1>) :
                             (null);
