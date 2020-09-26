@@ -12,22 +12,31 @@ class BoardMembershipIndex extends React.Component{
         let users = boardMembers.map((member) => {
             let user = this.props.userRoster.find(x => x.id === member.userId); 
             return user.username;              
-        })
+        });
+
 
         this.state = {
             names: users,
+            bdms: boardMembers,
             searchTerm: ''  
         }
+        this.handleClick = this.handleClick.bind(this);  
         this.dynamicSearch = this.dynamicSearch.bind(this);  
+    }
+
+    handleClick(e, memberId){
+        e.preventDefault();
+        this.props.openModal(memberId);
     }
 
     dynamicSearch(){
         let search = this.state.names.filter(name => name.toLowerCase().includes(this.state.searchTerm.toLowerCase()));
 
         return search.map((name, i) => {
+
             return (
             <li data-text={name} className="tooltip bdm-show-btn" key={i}>
-                <p className="bdm-show-content-btn user-btn">{name.substring(0, 1)}</p>
+                <p className="bdm-show-content-btn user-btn" onClick={(e) => this.handleClick(e,this.state.bdms[i].id)}>{name.substring(0, 1)}</p>
             </li>)
         });
     }

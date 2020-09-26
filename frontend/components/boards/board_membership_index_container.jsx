@@ -4,18 +4,15 @@ import BoardMembershipIndex from './board_membership_index';
 import { withRouter } from 'react-router-dom';
 import { destroyBoardMember, requestBoardMember } from "../../actions/boardMembership_actions";
 import {requestUser} from "../../actions/userRoster_actions";
+import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state) => ({
     userRoster: Object.values(state.entities.userRoster),
     boardMemberships: Object.values(state.entities.boardMemberships),
-    // errors: state.errors.boardMembershipErrors
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    // destroyBoardMember: boardMemberId => dispatch(destroyBoardMember(boardMemberId)),
-    // requestBoardMember: (boardMemberId) => dispatch(requestBoardMember(boardMemberId)),
-    // requestUser: (userId) => dispatch(requestUser(userId)),
-    // clearBoardMemberErrors: () => dispatch(receiveBoardMemberErrors([]))
+    openModal: (id) => dispatch(openModal('bdm-index-show-menu', id))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(BoardMembershipIndex));

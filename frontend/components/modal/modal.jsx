@@ -8,6 +8,7 @@ import BoardFormContainer from '../boards/board_form_container';
 import BoardNavMenuContainer from '../navbar/board_nav_menu_container';
 import BoardMembershipMenuContainer from '../boards/board_membership_menu_container';
 import BoardMembershipShowContainer from '../boards/board_membership_show_container';
+import BoardMembershipIndexShowContainer from '../boards/board_membership_index_show_container';
 import BoardMembershipIndexContainer from '../boards/board_membership_index_container';
 import CardShowContainer from '../cards/card_show_container';
 import LabelIndexContainer from '../labels/label_index_container';
@@ -40,24 +41,24 @@ function Modal({modal, closeModal}) {
         background = 'none';        
         break;
     case 'board-membership-menu':
-        // debugger;
         component = <BoardMembershipMenuContainer closeModal={closeModal} boardId={modal.id} />;
         background = 'none';        
         break;
     case 'board-membership-show':
-        component = <BoardMembershipShowContainer closeModal={closeModal} boardId={modal.id} />;
+        component = <BoardMembershipShowContainer closeModal={closeModal} memberId={modal.id} />;
         background = 'none';        
         break;
     case 'board-membership-index-menu':
         component = <BoardMembershipIndexContainer closeModal={closeModal} boardId={modal.id} />;
         background = 'none';        
         break;
+    case 'bdm-index-show-menu':
+        component = <BoardMembershipIndexShowContainer closeModal={closeModal} memberId={modal.id} />;
+        background = 'none';        
+        break;    
     case 'card-show-menu':
         component = <CardShowContainer closeModal={closeModal} cardId={modal.id}/>;    
-        break;
-    // case 'label-index-menu':
-    //     component = <LabelIndexContainer closeModal={closeModal} cardId={modal.id}/>;    
-    //     break;                                     
+        break;                                 
     default:
       return null;
   }

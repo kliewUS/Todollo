@@ -103,15 +103,11 @@ class BoardShow extends React.Component{
 
                 let user = this.props.userRoster.find(x => x.id === member.userId); 
 
-                //Key is not unique even though I have set the key to the primary key of the member object.
-                //How would I pass the member.id to the Board Membership Show Component for this case?
                 return (
-                <ul>
-                    <li data-text={user.username} className="tooltip left-show-btn" key={member.id}><p className="left-show-content-btn user-btn">{user.username.substring(0, 1)}</p></li>
-                </ul>);            
+                    <li data-text={user.username} className="tooltip left-show-btn" key={member.id} onClick={this.showModal('board-membership-show', member.id)}><p className="left-show-content-btn user-btn">{user.username.substring(0, 1)}</p></li>
+                );            
         })) : (null);
 
-        // console.log(this.props.match.params.boardId);
         return (
             <div className="board-show-main">
                 <div className="board-show-navbar">
@@ -124,9 +120,12 @@ class BoardShow extends React.Component{
                                 <option value="false">Private</option>
                             </select>                            
                         </form>
-                        {users}
 
-                        {boardMemberExpand}
+                        <ul className="bdm-members-list">
+                            {users}
+                            {boardMemberExpand}
+                        </ul>
+
                         <button className="left-show-btn" onClick={this.showModal('board-membership-menu', this.props.match.params.boardId)}><p className="left-show-content-btn">Invite</p></button>
                     </div>
 

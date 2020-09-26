@@ -1,9 +1,10 @@
 import React from "react";
 import {connect} from 'react-redux';
-import BoardMembershipShow from './board_membership_show';
+import BoardMembershipIndexShow from './board_membership_index_show';
 import { withRouter } from 'react-router-dom';
 import { destroyBoardMember, requestBoardMember } from "../../actions/boardMembership_actions";
 import {requestUser} from "../../actions/userRoster_actions";
+import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state) => ({
     currentUser: state.entities.users[state.session.id],  
@@ -14,10 +15,11 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
+    openModal: (id) => dispatch(openModal('board-membership-index-menu', id)),
     destroyBoardMember: boardMemberId => dispatch(destroyBoardMember(boardMemberId)),
     // requestBoardMember: (boardMemberId) => dispatch(requestBoardMember(boardMemberId)),
     // requestUser: (userId) => dispatch(requestUser(userId)),
     clearBoardMemberErrors: () => dispatch(receiveBoardMemberErrors([]))
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(BoardMembershipShow));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(BoardMembershipIndexShow));

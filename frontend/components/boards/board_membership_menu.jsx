@@ -16,26 +16,26 @@ class BoardMembershipMenu extends React.Component{
         this.handleSubmit = this.handleSubmit.bind(this);
         this.dynamicSearch = this.dynamicSearch.bind(this);  
     }
+
+    handleClick(e){
+        e.preventDefault();
+        this.setState({searchTerm: e.target.textContent});        
+    }    
     
     dynamicSearch(){
         let search = this.state.names.filter(name => name.toLowerCase().includes(this.state.searchTerm.toLowerCase()));
 
         return search.map((name, i) => {
             return (
-            <li key={i}>
+            <li key={i} onClick={this.handleClick}>
                 <button className="name-item">{name}</button>
-                {/* <button onClick={this.handleClick}>{name}</button> */}
+                {/* <button>{name}</button> */}
             </li>)
         });
     }    
 
     componentWillUnmount(){
         this.props.clearBoardMemberErrors();
-    }
-
-    handleClick(e){
-        
-        this.setState({searchTerm: e.target.textContent});        
     }
 
     handleInput(type){
@@ -52,7 +52,7 @@ class BoardMembershipMenu extends React.Component{
         if(user === undefined){
             this.props.postBoardMember({board_id: this.props.boardId, user_id: 0});
         }else{
-            this.props.postBoardMember({board_id: this.props.boardId, user_id: user.id});
+            this.props.postBoardMember({board_id: this.props.boardId, user_id: user.id}).then(() => {this.setState({searchTerm: ""});});
         }
 
 
