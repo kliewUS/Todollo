@@ -64,3 +64,40 @@
 .card-label-list {
 	display: flex;
 }
+
+.add-card-btn-content {
+	display: flex;
+	min-width: 250px;
+	border-radius: 5px;
+	color: #5e6c84;
+	margin: 5px 5px 5px 5px;
+	padding: 4px 8px;
+}
+
+.add-card-btn-content:hover {
+    background-color:rgba(9,30,66,.08);
+}
+
+.add-card-content-btn {
+	margin-top: 1px;
+	margin-left: 2px;
+}
+
+.add-card-btn:hover {
+    background-color: transparent;
+}
+
+.material-icons.card-clear-btn {
+	cursor: pointer;
+	color: #42526e;
+	min-width: 24px;
+	max-width: 24px;
+	min-height: 24px;
+	max-height: 24px;
+	position: relative;
+	top: 5px;
+}
+
+.material-icons.card-clear-btn:hover {
+    color: #172b4d;
+}
