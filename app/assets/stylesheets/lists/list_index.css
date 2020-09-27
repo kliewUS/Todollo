@@ -80,3 +80,39 @@
 .delete-list{
     margin: 5px;
 }
+
+.add-list-btn {
+	display: flex;
+	flex-direction: column;
+    background-color: rgba(235,236,240, 0.3);
+    color: #fff;
+	margin: 5px;
+	border-radius: 5px;
+	height: 100%;
+	padding: 10px;
+	width: 13%;
+}
+
+.add-list-btn-content {
+	display: flex;
+}
+
+.add-list-content-btn {
+	margin-top: 1px;
+	margin-left: 2px;
+}
+
+.material-icons.list-clear-btn {
+	cursor: pointer;
+	color: #42526e;
+	min-width: 24px;
+	max-width: 24px;
+	min-height: 24px;
+	max-height: 24px;
+	position: relative;
+	top: 5px;
+}
+
+.material-icons.list-clear-btn:hover {
+    color: #172b4d;
+}

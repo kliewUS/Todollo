@@ -6,10 +6,12 @@ class ListIndex extends React.Component{
         super(props);
 
         this.state = {
-            title: ""
+            title: "",
+            showInput: false
         }
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);  
+        this.handleClick = this.handleClick.bind(this);  
     }
 
     componentDidMount(){
@@ -33,8 +35,13 @@ class ListIndex extends React.Component{
             });
     }
 
+    handleClick(e){
+        e.preventDefault();
+        this.setState({showInput: !this.state.showInput});               
+    }
+
     render(){
-        // debugger;
+
         let list_arr = (this.props.lists !== undefined) ? this.props.lists
         .filter(list => list.boardId === this.props.boardId)
         .map(list => {
@@ -43,18 +50,34 @@ class ListIndex extends React.Component{
             );
         }) : (null);
 
+        let addListInput = (this.state.showInput === true) 
+        ? (           
+            <div className="add-list-dropdown"> 
+                <form className="add-list-content" onSubmit={this.handleSubmit}>
+                    <input id="list-create-input" type="text" value={this.state.title} placeholder="Enter list title..." onChange={this.update('title')}/>
+                    <div className="list-create-controls">
+                        <button className="list-create-btn"><p className="list-create-content-btn">Add List</p></button>
+                        <span onClick={this.handleClick} className="material-icons list-clear-btn">clear</span> 
+                    </div>    
+                </form>
+            </div>
+        )    
+        : (
+            <button className="add-list-btn" onClick={this.handleClick}>
+                <div className="add-list-btn-content">
+                    <span className="material-icons add-icon">add</span>
+                    <p className="add-list-content-btn">Add New List</p>
+                </div>
+            </button>
+        );
+
 
         return(
         <div className="board-lists">
             <ul className="lists">
                 {list_arr}
             </ul>
-            <div className="add-list-dropdown"> 
-                <form className="add-list-content" onSubmit={this.handleSubmit}>
-                    <input id="list-create-input" type="text" value={this.state.title} placeholder="Enter list title..." onChange={this.update('title')}/>    
-                    <button className="list-create-btn"><p className="list-create-content-btn">Add List</p></button>
-                </form>
-            </div>
+            {addListInput}
         </div>
         );
 
