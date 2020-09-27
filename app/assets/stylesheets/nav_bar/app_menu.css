@@ -1,0 +1,31 @@
+.app-menu{
+    position: relative;
+    background-color: whitesmoke;
+    min-width: 300px;
+    min-height: 100px; 
+    right: 795px;
+    top: 48px;    
+    border-radius: 4px;
+    box-shadow: 5px 5px 25px 0px rgba(0,0,0,0.75);
+    color: rgba(0, 0, 0, 0.8);   
+}
+
+.material-icons.app-close-btn{
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    cursor: pointer;
+}
+
+.app-header-content {
+	padding-top: 7.5px;
+}
+
+#app-menu-content li{
+    padding: 8px;
+    cursor: pointer;
+}
+
+#app-menu-content li:hover{
+    background-color: rgba(169,169,169, 0.3);
+}

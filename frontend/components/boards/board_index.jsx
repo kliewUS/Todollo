@@ -33,13 +33,19 @@ class BoardIndex extends React.Component{
 
         return(
             <div className="boards-content">
+
+                <ul className="boards-side-tab">
+                    <li><span className="material-icons boards-side-icons">assignment_ind</span> <p>Your Boards</p></li>
+                    <li><span className="material-icons boards-side-icons">group</span> <p>Team Boards</p></li>
+                </ul>
+
                 <div className="boards-index-main">
 
                     <div className="boards-header">
                         <div>
                             <span className="material-icons">assignment_ind</span>
                         </div>
-                        <h1>Your Boards</h1>
+                        <h1 id="owned-boards">Your Boards</h1>
                     </div>
 
                     <ul className="boards-list">
@@ -51,7 +57,7 @@ class BoardIndex extends React.Component{
                         <div>
                             <span className="material-icons">group</span>
                         </div>
-                        <h1>Team Boards</h1>
+                        <h1 id="team-boards">Team Boards</h1>
                     </div>
 
                     <ul className="boards-list">

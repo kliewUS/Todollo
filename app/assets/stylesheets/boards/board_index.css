@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    /* flex-direction: column; */
     margin-top: 25px;
 }
 
@@ -70,4 +70,28 @@
 .boards-index-main{
     min-width: 900px;
     max-width: 900px;
+}
+
+.boards-side-tab {
+	position: relative;
+	top: -130px;
+	width: 240px;
+	padding: 0 16px;
+}
+
+.boards-side-tab > li {
+    cursor: pointer;
+    font-weight: 700;
+    display: flex;
+    padding: 5px;
+}
+
+.boards-side-tab > li:hover {
+    background-color: rgba(169,169,169, 0.3);
+    border-radius: 5px;
+}
+
+.material-icons.boards-side-icons {
+    font-size: 20px;
+    margin-right: 5px;
 }

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import AccountMenuContainer from '../navbar/account_menu_container';
 import NotificationsMenu from '../navbar/notifications_menu';
 import InformationMenu from '../navbar/information_menu';
+import AppMenu from '../navbar/app_menu';
 import BoardFormContainer from '../boards/board_form_container';
 import BoardNavMenuContainer from '../navbar/board_nav_menu_container';
 import BoardMembershipMenuContainer from '../boards/board_membership_menu_container';
@@ -58,7 +59,11 @@ function Modal({modal, closeModal}) {
         break;    
     case 'card-show-menu':
         component = <CardShowContainer closeModal={closeModal} cardId={modal.id}/>;    
-        break;                                 
+        break;
+      case 'app-menu':
+        component = <AppMenu closeModal={closeModal} />;
+        background = 'none';        
+        break;                                     
     default:
       return null;
   }
