@@ -37,3 +37,171 @@
     margin-left: 5px;
     max-width: 50%;
 }
+
+.teamwork-img {
+    margin-left: 5px;
+	max-width: 912px;
+}
+
+.teamwork-text {
+	width: 80%;
+	margin: 10px 50px 10px;
+}
+
+.teamwork-container{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    max-width: 1300px;
+}
+
+.info-container{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    max-width: 1300px;
+    padding-bottom: 3.5rem;
+}
+
+.startup-container {
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+    max-width: 1300px;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+#footer-menu{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    max-width: 1300px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.info-img {
+	margin-right: 5px;
+	max-width: 50%;
+}
+
+#footer-menu > li > img {
+	max-width: 24px;
+	max-height: 24px;
+	min-width: 24px;
+	min-height: 24px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+#teamwork-section {
+	background-color: whitesmoke;
+}
+
+#info-section {
+	background: linear-gradient(#f5f5f5, #519839);
+}
+
+#startup-section{
+	background: linear-gradient(#519839, #395198);   
+}
+
+#splash-footer{
+	background: linear-gradient(#395198, #f5f5f5);
+}
+
+.teamwork-text > h2 {
+	font-weight: bold;
+	font-size: 3rem;
+	line-height: 1.2;
+	margin-bottom: 10px;
+}
+
+.teamwork-text > p {
+	font-weight: 300;
+	font-size: 1.5rem;
+	line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.splash-login-btn {
+	background-color: #519839;
+	color: whitesmoke;
+	padding: 7.5px;
+	font-weight: bold;
+	font-size: 18px;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.info-text {
+	width: 80%;
+	margin: 10px 50px 10px;
+}
+
+.info-text > h2 {
+	font-weight: bold;
+	font-size: 3rem;
+	line-height: 1.2;
+	margin-bottom: 10px;
+}
+
+.info-text > p {
+	font-weight: 300;
+	font-size: 1.5rem;
+	line-height: 1.2;
+	margin-bottom: 25px;
+}
+
+.startup-text {
+	text-align: center;
+}
+
+.startup-text > h2 {
+	font-weight: bold;
+	font-size: 2.25rem;
+	line-height: 1.2;
+	margin-bottom: 10px;
+}
+
+.startup-text > p {
+	font-weight: 300;
+	font-size: 1.5rem;
+	line-height: 1.2;
+	margin-bottom: 1.9rem;
+}
+
+#footer-menu > li {
+	display: flex;
+	margin: 0 30px;
+	font-size: 1.5rem;
+}
+
+#footer-menu > li > a:hover{
+    text-decoration: underline;
+}
