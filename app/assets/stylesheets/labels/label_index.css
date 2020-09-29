@@ -1,7 +1,17 @@
-.label-index{
-	background-color: whitesmoke;
+.label-index {
+	background-color: #fafbfc;
 	border-radius: 5px;
-    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+	width: 304px;
+	padding: 0 15px;
+}
+
+.label-update-modal {
+	background-color: #fafbfc;
+	border-radius: 5px;
+	box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+	position: absolute;
+	width: 304px;
 }
 
 #add-label {
@@ -16,11 +26,13 @@
 
 .label-index-item-main {
 	background: green;
-	min-width: 125px;
-	max-width: 125px;
+	min-width: 75%;
+	max-width: 75%;
 	text-overflow: ellipsis;
 	overflow: hidden;
 	border-radius: 3px;
+	margin-left: 10px;
+	color: #fff;
 }
 
 .label-index-content-2 {
@@ -62,39 +74,7 @@
 	margin: 2.5px 0 2.5px 0;
 }
 
-.label-update-btn {
-	position: relative;
-	top: 2.5px;
-	min-height: 18px;
-	max-height: 18px;
-	background: limegreen;
-	box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.75);
-	margin-left: 2.5px;
-}
-
 .material-icons.submit-button {
-	font-size: 18px;
-}
-
-.label-update-btn:hover {
-    background-color: rgba(50,205,50, 0.5);
-}
-
-.label-update-clear-btn {
-	position: relative;
-	top: 2.5px;
-	background-color: firebrick;
-	box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.75);
-	min-height: 18px;
-	max-height: 18px;
-	margin-left: 2.5px;
-}
-
-.label-update-clear-btn:hover{
-    background-color: rgba(178,34,34, 0.5);
-}
-
-.material-icons.label-clear-button {
 	font-size: 18px;
 }
 
@@ -104,10 +84,8 @@
 	border-radius: 5px;
 	text-align: left;
 	padding: 3px;
-	border: 2px solid green;
+	border: 2px solid #dfe1e6;
 	margin-bottom: 5px;
-	position: relative;
-	right: 5px;
 	width: 90%;
 	margin-top: 5px;
 }
@@ -117,23 +95,129 @@
 }
 
 #label-create-input:focus{
-    background-color: #fff;
+	background-color: #fff;
+	border: 2px solid green;
 }
 
 .label-create-btn {
+	background-color: rgba(9,30,66,.04);
+	padding: 6px 12px;
+	border-radius: 5px;
+	color: #172b4d;
+	margin: 10px;
+	width: 85%;
+}
+
+.label-create-btn:hover{
+    background-color: rgba(9,30,66,.08);
+}
+
+.label-index > hr {
+	margin-bottom: 15px;
+	width: 95%;
+}
+
+.label-index-clear-icon {
+	position: absolute;
+	cursor: pointer;
+	top: 4px;
+	right: 10px;
+}
+.label-index > h1 {
+	padding: 5px 0;
+}
+
+.label-index > p {
+	font-size: 14px;
+	color: #5e6c84;
+	font-weight: 500;
+	letter-spacing: .04rem;
+	text-transform: uppercase;
+	text-align: left;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+
+.label-create-btn-2 {
 	background-color: green;
 	padding: 6px 12px;
 	border-radius: 5px;
 	color: #fff;
-	box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.75);
-	position: relative;
-	right: 71px;
+	margin: 10px;
 }
 
-.label-create-btn:hover{
-    background-color: rgb(0,128,0.5);
+.label-create-btn-2:hover{
+    background-color: rgba(0,128,0,.5);
 }
 
-.label-index-hr {
-	width: 95%;
+.label-create-btns{
+	display:flex;
+	justify-content: left;
+}
+
+.label-create-close-btn {
+	min-height: 24px;
+	max-height: 24px;
+	max-width: 24px;
+	min-width: 24px;
+	cursor: pointer;
+	margin-top: 15px;
+}
+
+#label-update-input {
+	background-color: #eaecef;
+	color: #172b4d;
+	border-radius: 5px;
+	text-align: left;
+	padding: 3px;
+	border: 2px solid #dfe1e6;
+	margin-bottom: 5px;
+	width: 90%;
+	margin-top: 5px;
+}
+
+#label-update-input:hover{
+	background-color: rgba(234,236,239, 0.4);
+}
+
+#label-update-input:focus{
+	background-color: #fff;
+	border: 2px solid green;
+}
+
+.label-update-modal > h1 {
+	padding: 5px 0;
+}
+
+.label-update-clear-btn {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+}
+
+.label-update-btn {
+	display: flex;
+}
+
+.label-update-modal > hr {
+	width: 90%;
+}
+
+.label-update > label {
+	text-align: left;
+	font-weight: 700;
+	color: #5e6c84;
+	font-size: 14px;
+	display: block;
+	margin-left: 10px;
+}
+
+.label-create > label {
+	text-align: left;
+	font-weight: 700;
+	color: #5e6c84;
+	font-size: 14px;
+	display: block;
+	margin-left: 10px;
+	margin-top: 10px;
 }

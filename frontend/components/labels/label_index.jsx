@@ -8,11 +8,11 @@ class LabelIndex extends React.Component{
         this.state = {
             name: "",
             showInput: false,
-
         }
 
         this.update = this.update.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);    
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.clickForm = this.clickForm.bind(this);    
     }
 
     componentDidMount(){
@@ -33,7 +33,13 @@ class LabelIndex extends React.Component{
                 this.props.requestLabels();
                 this.setState({name: ""});
             });
-    }        
+    } 
+    
+    clickForm(){
+        this.setState({
+            showInput: !this.state.showInput
+        })
+    }    
 
 
     render(){
@@ -49,14 +55,22 @@ class LabelIndex extends React.Component{
         let addLabelInput = (this.state.showInput === true) ? 
         (
             <form className="label-create" onSubmit={this.handleSubmit}>
+                <label>Name</label>
                 <input id="label-create-input" type="text" value={this.state.name} onChange={this.update('name')} />
-                <button className="label-create-btn"><p className="label-create-content-btn">Save</p></button>
+                <div className="label-create-btns">
+                    <button className="label-create-btn-2"><p className="label-create-content-btn-2">Save</p></button>
+                    <span onClick={this.clickForm} className="material-icons label-create-close-btn">clear</span> 
+                </div>
             </form>
-        ) : (null);
+        ) : (<button className="label-create-btn" onClick={this.clickForm}><p className="label-create-content-btn">Create Label</p></button>);
 
 
         return(
             <div className="label-index">
+                <span onClick={this.props.handleClick} className="material-icons label-index-clear-icon">clear</span> 
+                <h1>Labels</h1>
+                <hr />
+                <p>Labels</p>
                 {labels_arr}
                 {addLabelInput}
             </div>

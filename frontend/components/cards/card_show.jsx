@@ -56,7 +56,7 @@ class CardShow extends React.Component{
         let openlabelModal = (this.state.labelModal) 
         ? (
         <div id="add-label">
-            <LabelIndexContainer cardId={this.props.cardId} />
+            <LabelIndexContainer cardId={this.props.cardId} handleClick={this.handleClick} />
         </div>
         ) : (null);
 

@@ -84,10 +84,15 @@ class LabelIndexItem extends React.Component{
         let updateLabel = (this.state.inputVisible) ? 
         (
             <div className="label-update-modal">
+                <h1>Change Label</h1>
                 <button className="label-update-clear-btn" onClick={this.clickForm}><span className="material-icons label-clear-button">clear</span></button>
+                <hr />
                 <form className="label-update" onSubmit={this.handleUpdate}>
+                    <label>Name</label>
                     <input id="label-update-input" type="text" value={this.state.labelName} onChange={this.update('labelName')} />
-                    <button className="label-update-btn">Save</button>
+                    <div className="label-update-btn">
+                        <button className="label-create-btn-2"><p className="label-create-content-btn-2">Save</p></button>
+                    </div>
                 </form>
             </div>
         ) : (null);
