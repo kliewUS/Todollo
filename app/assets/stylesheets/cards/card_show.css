@@ -1,5 +1,5 @@
 .card-show-menu{
-    background: #f4f5f7;
+    background: #fafbfc;
     margin: 5px;
     border-radius: 5px;
     box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
@@ -42,17 +42,17 @@
     color: #172b4d;
 }
 
-#card-description-input{
-    background-color: #eaecef;
-    color: #172b4d;
-    resize: none;
-    border-radius: 5px;
-    text-align: left;
-    padding: 7.5px;
-    width: 65%;
-    position: relative;
-    right: 9.5%;
-    margin-top: 7.5px;
+#card-description-input {
+	background-color: #eaecef;
+	color: #172b4d;
+	resize: none;
+	border-radius: 5px;
+	text-align: left;
+	padding: 7.5px;
+	width: 85%;
+	position: relative;
+	margin-top: 7.5px;
+	left: 1%;
 }
 
 #card-description-input:hover{
@@ -71,20 +71,22 @@
 }
 
 .card-description > h2 {
-    font-size: 20px;
-    position: relative;
-    right: 37.5%
+	font-size: 20px;
+	position: relative;
+	max-width: 90px;
+	left: 6.3%;
 }
 
 .card-comments > h2 {
-    font-size: 20px;
-    position: relative;
-    right: 39%
+	font-size: 20px;
+	position: relative;
+	max-width: 65px;
+	left: 6.5%;
 }
 
 .card-icons{
     position: relative;
-    right: 46.25%;
+    right: 47.6%;
     bottom: -30.5px;
 }
 
@@ -98,34 +100,62 @@
 #delete-card-text-btn {
 	background-color: firebrick;
 	padding: 6px 12px;
-	border-radius: 5px;
+	border-radius: 3px;
 	color: #fff;
-	box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.75);
+    display: flex;
+    margin: 5px 0;
+    padding-right: 85px;
 }
 
 #delete-card-text-btn:hover{
     background-color: #721616;
 }
 
-#delete-card-text-btn:active{
-    background-color: #721616;
-    box-shadow: 0px;
-}
-
 #delete-card-title {
-	position: relative;
-	left: 68%;
-	top: -350px;
 	font-size: 14px;
 	color: #5e6c84;
 	font-weight: 500;
 	letter-spacing: .04rem;
 	text-transform: uppercase;
-	width: 25%;
+    text-align: left;
 }
 
 .material-icons.card-show-close-btn {
 	position: relative;
 	left: 2.5%;
 	cursor: pointer;
+}
+
+#add-labels-btn {
+	background-color: rgba(9,30,66,.04);
+	padding: 6px 12px;
+	border-radius: 3px;
+	color: #172b4d;
+    display: flex;
+    margin: 5px 0;
+    padding-right: 93px;
+}
+
+#add-labels-btn:hover{
+    background-color: rgba(9,30,66,.08);
+}
+
+.card-show-content-2 {
+	float: left;
+	margin: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	min-height: 24px;
+	padding: 0 8px 8px 16px;
+	position: relative;
+	width: 552px;
+}
+
+.card-actions {
+	float: right;
+	padding: 0 16px 8px 8px;
+	width: 168px;
+	height: 100%;
+	top: 115px;
+	position: relative;
 }

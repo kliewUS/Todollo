@@ -24,14 +24,12 @@ class LabelIndexItem extends React.Component{
             const card_label = {card_id: this.props.cardId, label_id: this.props.labelId};
             this.props.postCardLabel(card_label)
                 .then(() => {
-                    // this.props.requestLabels();
                     this.props.requestCardLabels();
                     this.setState({checkMark: !this.state.checkMark})
                 });
         }else{
             this.props.destroyCardLabel(cardLabelCheck.id)
                 .then(() => {
-                    // this.props.requestLabels();
                     this.props.requestCardLabels();
                     this.setState({checkMark: !this.state.checkMark})
                 });
@@ -70,6 +68,7 @@ class LabelIndexItem extends React.Component{
 
     render(){
         let check = (this.state.checkMark) ? (<span className="material-icons checkmark-icon">done</span>) : (null);
+
         let labelName = (this.props.labelName !== "") ? (
         <div className="label-index-content-2" onClick={this.handleClick}>
             <p className="label-index-text">{this.props.labelName}</p>
@@ -81,31 +80,30 @@ class LabelIndexItem extends React.Component{
             {check}
         </div>
         );
+
         let updateLabel = (this.state.inputVisible) ? 
         (
-            <form className="label-update" onSubmit={this.handleUpdate}>
-                <input id="label-update-input" type="text" value={this.state.labelName} onChange={this.update('labelName')} />
-                <button className="label-update-btn"><span className="material-icons submit-button">done</span></button>
+            <div className="label-update-modal">
                 <button className="label-update-clear-btn" onClick={this.clickForm}><span className="material-icons label-clear-button">clear</span></button>
-            </form>
-        ) : 
-        (labelName);
-
-        let editbtns = (!this.state.inputVisible) ? 
-        (
-            <div className="label-edit-btns">
-                <span className="material-icons edit-button" onClick={this.clickForm}>create</span>
-                <span className="material-icons delete-button" onClick={this.handleDelete}>delete</span>
+                <form className="label-update" onSubmit={this.handleUpdate}>
+                    <input id="label-update-input" type="text" value={this.state.labelName} onChange={this.update('labelName')} />
+                    <button className="label-update-btn">Save</button>
+                </form>
             </div>
         ) : (null);
+
         return (
             <div className="label-index-item">
                 <div className="label-index-item-main">
                     <div className="label-index-content">
-                        {updateLabel}
+                        {labelName}
                     </div>
                 </div>
-                {editbtns}
+                <div className="label-edit-btns">
+                    <span className="material-icons edit-button" onClick={this.clickForm}>create</span>
+                    {updateLabel}
+                    <span className="material-icons delete-button" onClick={this.handleDelete}>delete</span>
+                </div>
             </div>
             );
     }
