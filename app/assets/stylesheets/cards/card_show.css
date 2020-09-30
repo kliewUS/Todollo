@@ -102,9 +102,9 @@
 	padding: 6px 12px;
 	border-radius: 3px;
 	color: #fff;
-    display: flex;
-    margin: 5px 0;
-    padding-right: 85px;
+	display: flex;
+	margin: 5px 0;
+	width: 85%
 }
 
 #delete-card-text-btn:hover{
@@ -133,7 +133,7 @@
 	color: #172b4d;
     display: flex;
     margin: 5px 0;
-    padding-right: 93px;
+	width: 85%
 }
 
 #add-labels-btn:hover{
@@ -160,3 +160,13 @@
 	position: relative;
 }
 
+.material-icons.card-actions-btn {
+	font-size: 20px;
+	margin-top: 1px;
+	min-width: 20px;
+	max-width: 20px;
+	min-height: 20px;
+	max-height: 20px;
+	margin-right: 7.5px;
+	margin: 1px 6px 0 -6px;
+}

@@ -96,9 +96,9 @@ class CardShow extends React.Component{
 
                 <div className="card-actions">
                     <h3 id="delete-card-title">Card Actions</h3>
-                    <button id="add-labels-btn" onClick={this.handleClick}>Add Labels</button>
+                    <button id="add-labels-btn" onClick={this.handleClick}><span className="material-icons card-actions-btn">label</span>Add Labels</button>
                     {openlabelModal}
-                    <button id="delete-card-text-btn" onClick={this.handleDelete}>Delete Card</button>
+                    <button id="delete-card-text-btn" onClick={this.handleDelete}><span className="material-icons card-actions-btn">delete</span>Delete Card</button>
                 </div>
         </div>)
     }

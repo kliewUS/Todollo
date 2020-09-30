@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Todollo is based on the site, Trello. This site clone offers tools to assist in project management and allows users to streamline their workflows by creating boards, lists, and cards.
+Todollo is based on the site, Trello. This site clone offers tools to assist in project management and allows users to streamline their workflows by creating boards, lists, and cards. Additionally, labels and comments can added onto cards for additional feedback.
 
 ## Technologies used
 
@@ -18,12 +18,13 @@ Users are able to sign up or log in by clicking either buttons on the top of the
 
 ### Boards
 
-Users has a dashboard that displays all of their personal boards. They are able to create new boards by clicking on the Create New Board button and are promptly redirected to the newly created board upon successful creation. Users are also able to update a board's title and delete a board.
+Users have a dashboard that displays all of their personal boards. They are able to create new boards by clicking on the Create New Board button and are promptly redirected to the newly created board upon successful creation. Users are also able to update a board's title and delete a board. Additionally, board owners have the ability to add or remove users from their boards.
 
-## Features to be implemented
+### Lists and Cards
+Board Owners and board members can add lists and cards by clicking on the Add List and Add Card buttons respectively. A list can have its title updated and can be deleted when no longer needed. Each card has it's own profile where a user can update its title and a description can be add on to the card to provide more information about it.
 
-Todollo will soon have the following features.
+### Comments
+Comments can be added on any cards to provided feedback about a specfic card. Comments can only be edited or deleted by the original poster in case changes to the comment are needed.
 
-* Creating, deleting, and updating Lists and Cards
-* Creating, deleting, and updating Comments
-* Putting labels on Cards.
+### Labels
+Labels can be accessed via the Add Labels button in the card profile modal. Labels can be added or removed from a card. In addition, you can modify an existing label or create a new label for all cards to use. Labels can also be deleted if no longer needed.
