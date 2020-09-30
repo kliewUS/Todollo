@@ -11,8 +11,8 @@ const AppMenu = (props) => {
                 <hr className='menu-line'/>
                 <ul id="app-menu-content">
                     <li><a href="https://github.com/kliewUS">Github</a></li>
-                    <li><a href="#">Linkedin</a></li>
-                    <li><a href="#">Angelist</a></li>
+                    <li><a href="https://www.linkedin.com/in/khai-yuan-liew-397600143/">Linkedin</a></li>
+                    <li><a href="https://angel.co/u/khai-yuan-liew">AngelList</a></li>
                 </ul>
             </div>
         </div>

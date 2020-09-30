@@ -70,11 +70,11 @@ class Splash extends React.Component{
                         </li>
                         <li>
                             <img src="https://gist.githubusercontent.com/kliewUS/049d8cfda828ab0fe5a9caaf7270c6aa/raw/24dcf48c459a09ac70a3466f2e64a0bf4654ed2a/icons8-linkedin-24.png" />
-                            <a href="#">Linkedin</a>
+                            <a href="https://www.linkedin.com/in/khai-yuan-liew-397600143/">Linkedin</a>
                         </li>
                         <li>
                             <img src="https://gist.githubusercontent.com/kliewUS/049d8cfda828ab0fe5a9caaf7270c6aa/raw/24dcf48c459a09ac70a3466f2e64a0bf4654ed2a/icons8-angellist-24.png" />
-                            <a href="#">Angelist</a>
+                            <a href="https://angel.co/u/khai-yuan-liew">AngelList</a>
                         </li>
                     </ul>
                 </footer>
