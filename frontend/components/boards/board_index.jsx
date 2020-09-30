@@ -12,9 +12,6 @@ class BoardIndex extends React.Component{
     }
 
     render(){
-        console.log(this.props.boards);
-
-
         let boards_arr = (this.props.boards !== undefined) ? this.props.boards
         .filter(board => board.ownerId === this.props.currentUser.id)
         .map(board => {
