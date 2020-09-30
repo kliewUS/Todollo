@@ -56,7 +56,9 @@ class CardIndexItem extends React.Component{
         let comment_body = (this.state.commentBodyVisible) ? 
         (
         <div className="comment-body">
-            <p className="comment-body-content">{this.props.comment.body}</p>
+            <div className="comment-body-2">
+                <p className="comment-body-content">{this.props.comment.body}</p>
+            </div>
             {edit_btns}
         </div>
         )

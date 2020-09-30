@@ -145,9 +145,18 @@ class BoardShow extends React.Component{
                     <ul>
                         <hr className='menu-line'/>
                         <div className="sidenav-links">
-                            <li><a href="https://github.com/kliewUS">Github</a></li>
-                            <li><a href="#">Linkedin</a></li>
-                            <li><a href="#">Portfolio</a></li>
+                            <li>
+                                <img src="https://gist.githubusercontent.com/kliewUS/049d8cfda828ab0fe5a9caaf7270c6aa/raw/24dcf48c459a09ac70a3466f2e64a0bf4654ed2a/icons8-github-24.png" />
+                                <a href="https://github.com/kliewUS">Github</a>
+                            </li>
+                            <li>
+                                <img src="https://gist.githubusercontent.com/kliewUS/049d8cfda828ab0fe5a9caaf7270c6aa/raw/24dcf48c459a09ac70a3466f2e64a0bf4654ed2a/icons8-linkedin-24.png" />
+                                <a href="#">Linkedin</a>
+                            </li>
+                            <li>
+                                <img src="https://gist.githubusercontent.com/kliewUS/049d8cfda828ab0fe5a9caaf7270c6aa/raw/24dcf48c459a09ac70a3466f2e64a0bf4654ed2a/icons8-angellist-24.png" />
+                                <a href="#">Angelist</a>
+                            </li>
                         </div>
                         <hr className='menu-line'/>
                         <li id="delete-btn" onClick={this.handleDelete}><p id="delete-text-btn">Delete Board</p></li>
