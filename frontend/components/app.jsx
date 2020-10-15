@@ -14,7 +14,7 @@ class App extends React.Component{
 
   initializeReactGA() {
     ReactGA.initialize('UA-180664984-1');
-    ReactGA.pageview('/');
+    ReactGA.pageview('/boards');
   }
 
   render(){
