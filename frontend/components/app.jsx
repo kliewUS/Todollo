@@ -8,25 +8,37 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import { AuthRoute, ProtectedRoute } from '../util/routes_util'
 import BoardIndexContainer from "./boards/board_index_container";
 import BoardShowContainer from "./boards/board_show_container";
+import ReactGA from 'react-ga';
 
-const App = () => (
-  <div className="todollo">
-    
-    <Switch>
-      <AuthRoute exact path="/" component={Splash}/>
-      <AuthRoute path="/login" component={LoginFormContainer} />
-      <AuthRoute path="/signup" component={SignupFormContainer} />
-      <ProtectedRoute path="/" component={NavBarContainer} />
-      <Redirect to="/" />
-    </Switch>
+class App extends React.Component{
 
-      <Modal />
+  initializeReactGA() {
+    ReactGA.initialize('UA-180664984-1');
+    ReactGA.pageview('/');
+  }
 
-    <Switch>
-      <ProtectedRoute exact path="/boards" component={BoardIndexContainer} />
-      <ProtectedRoute exact path="/boards/:boardId" component={BoardShowContainer} />
-    </Switch>
-  </div>
-);
+  render(){
+    return (
+      <div className="todollo">
+        <Switch>
+          <AuthRoute exact path="/" component={Splash}/>
+          <AuthRoute path="/login" component={LoginFormContainer} />
+          <AuthRoute path="/signup" component={SignupFormContainer} />
+          <ProtectedRoute path="/" component={NavBarContainer} />
+          <Redirect to="/" />
+        </Switch>
+
+          <Modal />
+
+        <Switch>
+          <ProtectedRoute exact path="/boards" component={BoardIndexContainer} />
+          <ProtectedRoute exact path="/boards/:boardId" component={BoardShowContainer} />
+        </Switch>
+      </div>
+    );
+  }
+
+} 
+
 
 export default App;
