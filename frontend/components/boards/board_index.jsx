@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import BoardIndexItem from './board_index_item';
+import ReactGA from 'react-ga';
 
 class BoardIndex extends React.Component{
     constructor(props){
@@ -9,6 +10,7 @@ class BoardIndex extends React.Component{
 
     componentDidMount(){
         this.props.requestBoards();
+        ReactGA.pageview('/boards');
     }
 
     render(){
