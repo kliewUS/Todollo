@@ -10,7 +10,6 @@ import BoardIndexContainer from "./boards/board_index_container";
 import BoardShowContainer from "./boards/board_show_container";
 import ReactGA from 'react-ga';
 
-ReactGA.initialize('UA-180664984-1');
 
 const App = () => (
   <div className="todollo">

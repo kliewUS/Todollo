@@ -10,7 +10,8 @@ class BoardIndex extends React.Component{
 
     componentDidMount(){
         this.props.requestBoards();
-        ReactGA.pageview('/boards');
+        ReactGA.initialize('UA-180664984-1');
+        ReactGA.pageview(window.location.pathname + window.location.search);
     }
 
     render(){
