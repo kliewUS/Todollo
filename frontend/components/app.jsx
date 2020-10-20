@@ -9,7 +9,15 @@ import { AuthRoute, ProtectedRoute } from '../util/routes_util'
 import BoardIndexContainer from "./boards/board_index_container";
 import BoardShowContainer from "./boards/board_show_container";
 import ReactGA from 'react-ga';
+import createHistory from 'history/createBrowserHistory';
 
+const history = createHistory();
+ReactGA.initialize('UA-180664984-1');
+ReactGA.pageview('/');
+history.listen((location, action) => {
+  ReactGA.pageview(location.pathname + location.search);
+  console.log(location.pathname)
+});
 
 const App = () => (
   <div className="todollo">

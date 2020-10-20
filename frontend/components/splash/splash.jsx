@@ -3,6 +3,7 @@ import LoginBar from '../loginbar/loginbar';
 import { Link } from 'react-router-dom';
 
 class Splash extends React.Component{
+
     render(){
         return(
             <div>
