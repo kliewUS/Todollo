@@ -13,6 +13,7 @@ const AppMenu = (props) => {
                     <li><a href="https://github.com/kliewUS">Github</a></li>
                     <li><a href="https://www.linkedin.com/in/khai-yuan-liew-397600143/">Linkedin</a></li>
                     <li><a href="https://angel.co/u/khai-yuan-liew">AngelList</a></li>
+                    <li><a href="https://kliewus.github.io/portfolio/">Portfolio</a></li>
                 </ul>
             </div>
         </div>

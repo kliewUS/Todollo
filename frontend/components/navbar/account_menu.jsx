@@ -25,6 +25,7 @@ class AccountMenu extends React.Component{
                     <li><a href="https://github.com/kliewUS">Github</a></li>
                     <li><a href="https://www.linkedin.com/in/khai-yuan-liew-397600143/">Linkedin</a></li>
                     <li><a href="https://angel.co/u/khai-yuan-liew">AngelList</a></li>
+                    <li><a href="https://kliewus.github.io/portfolio/">Portfolio</a></li>
                     <hr className='menu-line'/>
                     <li onClick={logoutUser}>Logout</li>
                 </ul>

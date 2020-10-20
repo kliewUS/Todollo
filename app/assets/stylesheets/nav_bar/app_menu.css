@@ -29,3 +29,10 @@
 #app-menu-content li:hover{
     background-color: rgba(169,169,169, 0.3);
 }
+
+#app-menu-content li a { 
+    margin: 0px; 
+    display: block; 
+    width: 100%; 
+    height: 100%; 
+}
