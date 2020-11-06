@@ -2,10 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Root from "./components/root";
 import configureStore from "./store/store";
+import ReactGA from 'react-ga';
+
+
+
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
-    const root = document.getElementById('root');
-
+  const root = document.getElementById('root');
+  ReactGA.initialize('UA-180664984-1');
+  ReactGA.pageview('/');
+  
     let store;
     if (window.currentUser) {
       const preloadedState = {
